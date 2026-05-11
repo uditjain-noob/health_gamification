@@ -1,0 +1,54 @@
+{
+  "organs": {
+    "liver": {
+      "weight": 0.15,
+      "emoji": "🫀",
+      "critical": [],
+      "parameters": [
+        "SGOT", "SGPT", "GGT", "ALKALINE PHOSPHATASE",
+        "BILIRUBIN TOTAL", "BILIRUBIN DIRECT", "BILIRUBIN INDIRECT",
+        "ALBUMIN", "PROTEIN TOTAL", "GLOBULIN", "AG RATIO", "SGOT SGPT RATIO",
+        "ALB GLOBULIN RATIO"
+      ]
+    },
+    "kidney": {
+      "weight": 0.15,
+      "emoji": "🫘",
+      "critical": ["CREATININE", "EGFR"],
+      "parameters": [
+        "CREATININE", "BUN", "EGFR", "URIC ACID",
+        "SODIUM", "POTASSIUM", "CHLORIDE", "BLOOD UREA NITROGEN"
+      ]
+    },
+    "blood": {
+      "weight": 0.15,
+      "emoji": "🩸",
+      "critical": ["HEMOGLOBIN"],
+      "parameters": [
+        "HEMOGLOBIN", "HEMATOCRIT", "WBC", "RBC", "PLATELETS",
+        "MCV", "MCH", "MCHC", "NEUTROPHILS", "LYMPHOCYTES",
+        "EOSINOPHILS", "MONOCYTES", "BASOPHILS", "PCV",
+        "WHITE BLOOD CELL", "RED BLOOD CELL", "PLATELET COUNT"
+      ]
+    },
+    "metabolic": {
+      "weight": 0.15,
+      "emoji": "⚡",
+      "critical": ["HBA1C", "GLUCOSE"],
+      "parameters": [
+        "GLUCOSE", "HBA1C", "FASTING GLUCOSE", "INSULIN",
+        "HOMA-IR", "BLOOD GLUCOSE", "GLYCATED HEMOGLOBIN"
+      ]
+    }
+  },
+  "organ_weights": {
+    "liver": 0.15,
+    "kidney": 0.15,
+    "blood": 0.15,
+    "metabolic": 0.15,
+    "heart": 0.20,
+    "thyroid": 0.10,
+    "vitamins": 0.05,
+    "hormones": 0.05
+  }
+}

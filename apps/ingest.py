@@ -12,17 +12,18 @@ def ingest_report(
     file_path: str | None,
     data: list[dict] | None,
 ) -> str:
-    if patient_id is None:
-        patient_id = store.create_patient(name=patient_name)
-
-    if file_path:
+    # Parse first, create patient only on success
+    if file_path is not None:
         normalized = parser.parse_pdf(file_path)
         source = file_path
-    elif data:
+    elif data is not None:
         normalized = parser.parse_json(data)
         source = "json_upload"
     else:
-        return f"Error: provide file_path or data. patient_id={patient_id}"
+        return "Error: provide file_path or data"
+
+    if patient_id is None:
+        patient_id = store.create_patient(name=patient_name)
 
     # Assign organs and annotate
     for item in normalized:
@@ -36,7 +37,7 @@ def ingest_report(
     for item in normalized:
         organ_counts[item["organ"]] = organ_counts.get(item["organ"], 0) + 1
 
-    breakdown = ", ".join(f"{v} {k}" for k, v in organ_counts.items() if k != "other")
+    breakdown = ", ".join(f"{v} {k}" for k, v in sorted(organ_counts.items()) if k != "other")
     return (
         f"Report ingested. patient_id={patient_id} | "
         f"{len(normalized)} parameters ({breakdown}) | +50 XP awarded"

@@ -6,7 +6,7 @@
 
 **Architecture:** Modular FastMCP server with independent `core/`, `db/`, `llm/`, `apps/`, and `agent/` layers. A module-level singleton pattern (`get_store()`, `get_client()`) keeps dependency injection simple for `stdio` Phase 1. The Gemini agent loop runs internally inside `run_health_agent` — the outer MCP client only sees the final `PrefabApp`.
 
-**Tech Stack:** FastMCP ≥3.2, prefab-ui ≥0.19.1, google-genai, pdfplumber, pydantic v2, Python 3.11+, stdlib sqlite3, pytest
+**Tech Stack:** FastMCP ≥3.2, prefab-ui ≥0.19.1, google-genai, pdfplumber, pydantic v2, Python 3.11+, libsql-experimental (Turso), pytest
 
 ---
 
@@ -20,7 +20,7 @@
 | `core/organs.py` | Loads organ_map.json; maps raw parameter names → organ via exact + substring match |
 | `core/parser.py` | Normalizes any JSON shape to canonical list; PDF → LLM → canonical |
 | `core/scorer.py` | Pure scoring functions: parameter score, organ score, overall score, rank, level |
-| `db/store.py` | sqlite3 wrapper: schema init, CRUD, key queries, singleton `get_store()` |
+| `db/store.py` | libsql-experimental (Turso) wrapper: schema init, CRUD, key queries, singleton `get_store()` |
 | `llm/gemini.py` | `GeminiClient`: `complete()` and `tool_loop()` |
 | `apps/ingest.py` | `upload_report` MCP tool |
 | `apps/dashboard.py` | `show_health_dashboard` MCP tool (Prefab UI) |
@@ -72,6 +72,7 @@ dependencies = [
     "pdfplumber>=0.11",
     "google-genai>=1.0",
     "pydantic>=2.0",
+    "libsql-experimental>=0.0.17",
 ]
 
 [project.optional-dependencies]
@@ -92,7 +93,14 @@ from pathlib import Path
 
 GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY", "")
 LLM_MODEL: str = os.getenv("LLM_MODEL", "gemini-2.0-flash")
+
+# Turso / libsql config
+# For local dev: set DB_PATH only (no TURSO_URL needed)
+# For Turso cloud: set TURSO_URL + TURSO_AUTH_TOKEN (DB_PATH used as local replica file)
 DB_PATH: str = os.getenv("DB_PATH", "healthquest.db")
+TURSO_URL: str = os.getenv("TURSO_URL", "")          # e.g. libsql://your-db.turso.io
+TURSO_AUTH_TOKEN: str = os.getenv("TURSO_AUTH_TOKEN", "")
+
 DATA_DIR: Path = Path(__file__).parent / "data"
 
 # Singletons — populated lazily on first call
@@ -103,7 +111,7 @@ def get_store():
     global _store
     if _store is None:
         from db.store import Store
-        _store = Store(DB_PATH)
+        _store = Store(db_path=DB_PATH, turso_url=TURSO_URL, auth_token=TURSO_AUTH_TOKEN)
         _store.initialize()
     return _store
 
@@ -120,7 +128,14 @@ def get_client():
 ```
 GOOGLE_API_KEY=your-google-ai-studio-key
 LLM_MODEL=gemini-2.0-flash
+
+# Database — local dev (no Turso):
 DB_PATH=healthquest.db
+
+# Database — Turso cloud (set both to enable remote sync):
+# TURSO_URL=libsql://your-db-name.turso.io
+# TURSO_AUTH_TOKEN=your-turso-auth-token
+# DB_PATH=healthquest.db   # local replica file path
 ```
 
 - [ ] **Step 4: Create all `__init__.py` files**
@@ -540,7 +555,8 @@ from db.store import Store
 
 @pytest.fixture
 def store():
-    s = Store(":memory:")
+    # libsql-experimental supports :memory: for tests (no Turso URL = local only)
+    s = Store(db_path=":memory:")
     s.initialize()
     return s
 
@@ -625,74 +641,80 @@ Expected: `ModuleNotFoundError: No module named 'db.store'`
 
 - [ ] **Step 3: Implement `db/store.py`**
 
+`libsql-experimental` provides a sqlite3-compatible API. When `turso_url` is provided it acts as an embedded replica (local file + cloud sync). When omitted it works as a plain local SQLite file — no code changes between dev and prod.
+
 ```python
-import sqlite3
 import uuid
 from datetime import datetime, timezone
+import libsql_experimental as libsql
 
 
 class Store:
-    def __init__(self, db_path: str):
+    def __init__(self, db_path: str, turso_url: str = "", auth_token: str = ""):
         self._path = db_path
-        self._conn: sqlite3.Connection | None = None
+        self._turso_url = turso_url
+        self._auth_token = auth_token
+        self._conn = None
 
-    def _get_conn(self) -> sqlite3.Connection:
+    def _get_conn(self):
         if self._conn is None:
-            self._conn = sqlite3.connect(self._path, check_same_thread=False)
-            self._conn.row_factory = sqlite3.Row
-            self._conn.execute("PRAGMA foreign_keys = ON")
+            if self._turso_url:
+                # Embedded replica: local file synced to Turso cloud
+                self._conn = libsql.connect(
+                    self._path,
+                    sync_url=self._turso_url,
+                    auth_token=self._auth_token,
+                )
+                self._conn.sync()
+            else:
+                # Local-only (dev / tests)
+                self._conn = libsql.connect(self._path)
         return self._conn
+
+    def _sync(self):
+        if self._turso_url and self._conn:
+            self._conn.sync()
 
     def initialize(self):
         conn = self._get_conn()
-        conn.executescript("""
-            CREATE TABLE IF NOT EXISTS patients (
-                id          TEXT PRIMARY KEY,
-                name        TEXT,
-                created_at  TEXT NOT NULL
-            );
-            CREATE TABLE IF NOT EXISTS reports (
-                id          TEXT PRIMARY KEY,
-                patient_id  TEXT NOT NULL REFERENCES patients(id),
-                source_file TEXT,
-                ingested_at TEXT NOT NULL
-            );
-            CREATE TABLE IF NOT EXISTS parameters (
-                id          TEXT PRIMARY KEY,
-                report_id   TEXT NOT NULL REFERENCES reports(id),
-                patient_id  TEXT NOT NULL REFERENCES patients(id),
-                name        TEXT NOT NULL,
-                raw_name    TEXT,
-                unit        TEXT,
-                organ       TEXT,
-                ref_min     REAL,
-                ref_max     REAL
-            );
-            CREATE TABLE IF NOT EXISTS readings (
-                id           TEXT PRIMARY KEY,
-                parameter_id TEXT NOT NULL REFERENCES parameters(id),
-                result_date  TEXT,
-                value        REAL,
-                status       TEXT
-            );
-            CREATE TABLE IF NOT EXISTS xp_log (
-                id         TEXT PRIMARY KEY,
+        statements = [
+            """CREATE TABLE IF NOT EXISTS patients (
+                id TEXT PRIMARY KEY, name TEXT, created_at TEXT NOT NULL)""",
+            """CREATE TABLE IF NOT EXISTS reports (
+                id TEXT PRIMARY KEY,
                 patient_id TEXT NOT NULL REFERENCES patients(id),
-                event      TEXT,
-                xp_awarded INTEGER,
-                created_at TEXT NOT NULL
-            );
-        """)
+                source_file TEXT, ingested_at TEXT NOT NULL)""",
+            """CREATE TABLE IF NOT EXISTS parameters (
+                id TEXT PRIMARY KEY,
+                report_id TEXT NOT NULL REFERENCES reports(id),
+                patient_id TEXT NOT NULL REFERENCES patients(id),
+                name TEXT NOT NULL, raw_name TEXT, unit TEXT,
+                organ TEXT, ref_min REAL, ref_max REAL)""",
+            """CREATE TABLE IF NOT EXISTS readings (
+                id TEXT PRIMARY KEY,
+                parameter_id TEXT NOT NULL REFERENCES parameters(id),
+                result_date TEXT, value REAL, status TEXT)""",
+            """CREATE TABLE IF NOT EXISTS xp_log (
+                id TEXT PRIMARY KEY,
+                patient_id TEXT NOT NULL REFERENCES patients(id),
+                event TEXT, xp_awarded INTEGER, created_at TEXT NOT NULL)""",
+        ]
+        for stmt in statements:
+            conn.execute(stmt)
         conn.commit()
+        self._sync()
+
+    def _row_to_dict(self, row, cursor) -> dict:
+        cols = [d[0] for d in cursor.description]
+        return dict(zip(cols, row))
 
     def create_patient(self, name: str | None = None) -> str:
         pid = str(uuid.uuid4())
         now = datetime.now(timezone.utc).isoformat()
-        self._get_conn().execute(
-            "INSERT INTO patients (id, name, created_at) VALUES (?, ?, ?)",
-            (pid, name, now)
-        )
-        self._get_conn().commit()
+        conn = self._get_conn()
+        conn.execute("INSERT INTO patients (id, name, created_at) VALUES (?, ?, ?)", (pid, name, now))
+        conn.commit()
+        self._sync()
         return pid
 
     def save_report(self, patient_id: str, source_file: str, parameters: list[dict]) -> str:
@@ -701,7 +723,7 @@ class Store:
         conn = self._get_conn()
         conn.execute(
             "INSERT INTO reports (id, patient_id, source_file, ingested_at) VALUES (?, ?, ?, ?)",
-            (rid, patient_id, source_file, now)
+            (rid, patient_id, source_file, now),
         )
         for p in parameters:
             param_id = str(uuid.uuid4())
@@ -711,76 +733,78 @@ class Store:
                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (param_id, rid, patient_id,
                  p["name"], p.get("raw_name", p["name"]), p.get("unit", ""),
-                 p.get("organ", "other"), p.get("ref_min"), p.get("ref_max"))
+                 p.get("organ", "other"), p.get("ref_min"), p.get("ref_max")),
             )
             for r in p.get("readings", []):
                 conn.execute(
                     "INSERT INTO readings (id, parameter_id, result_date, value, status) VALUES (?, ?, ?, ?, ?)",
-                    (str(uuid.uuid4()), param_id, r["date"], r["value"], r["status"])
+                    (str(uuid.uuid4()), param_id, r["date"], r["value"], r["status"]),
                 )
         conn.commit()
+        self._sync()
         return rid
 
     def get_parameters_for_organ(self, patient_id: str, organ: str) -> list[dict]:
         conn = self._get_conn()
-        rows = conn.execute(
-            "SELECT * FROM parameters WHERE patient_id = ? AND organ = ?",
-            (patient_id, organ)
-        ).fetchall()
+        cur = conn.execute(
+            "SELECT id, name, raw_name, unit, organ, ref_min, ref_max FROM parameters WHERE patient_id = ? AND organ = ?",
+            (patient_id, organ),
+        )
+        rows = cur.fetchall()
         result = []
         for row in rows:
-            readings = conn.execute(
-                "SELECT * FROM readings WHERE parameter_id = ? ORDER BY result_date DESC",
-                (row["id"],)
-            ).fetchall()
-            result.append({
-                "id": row["id"], "name": row["name"], "raw_name": row["raw_name"],
-                "unit": row["unit"], "organ": row["organ"],
-                "ref_min": row["ref_min"], "ref_max": row["ref_max"],
-                "readings": [dict(r) for r in readings]
-            })
+            param = dict(zip([d[0] for d in cur.description], row))
+            rcur = conn.execute(
+                "SELECT id, result_date, value, status FROM readings WHERE parameter_id = ? ORDER BY result_date DESC",
+                (param["id"],),
+            )
+            param["readings"] = [dict(zip([d[0] for d in rcur.description], r)) for r in rcur.fetchall()]
+            result.append(param)
         return result
 
     def get_all_parameters(self, patient_id: str) -> list[dict]:
         conn = self._get_conn()
-        rows = conn.execute(
-            "SELECT DISTINCT organ FROM parameters WHERE patient_id = ?",
-            (patient_id,)
-        ).fetchall()
-        organs = [r["organ"] for r in rows]
+        cur = conn.execute(
+            "SELECT DISTINCT organ FROM parameters WHERE patient_id = ?", (patient_id,)
+        )
+        organs = [row[0] for row in cur.fetchall()]
         result = []
         for organ in organs:
             result.extend(self.get_parameters_for_organ(patient_id, organ))
         return result
 
     def get_latest_report(self, patient_id: str) -> dict | None:
-        row = self._get_conn().execute(
-            "SELECT * FROM reports WHERE patient_id = ? ORDER BY ingested_at DESC LIMIT 1",
-            (patient_id,)
-        ).fetchone()
-        return dict(row) if row else None
+        cur = self._get_conn().execute(
+            "SELECT id, patient_id, source_file, ingested_at FROM reports WHERE patient_id = ? ORDER BY ingested_at DESC LIMIT 1",
+            (patient_id,),
+        )
+        row = cur.fetchone()
+        if not row:
+            return None
+        return dict(zip([d[0] for d in cur.description], row))
 
     def log_xp(self, patient_id: str, event: str, xp: int):
-        self._get_conn().execute(
+        conn = self._get_conn()
+        conn.execute(
             "INSERT INTO xp_log (id, patient_id, event, xp_awarded, created_at) VALUES (?, ?, ?, ?, ?)",
-            (str(uuid.uuid4()), patient_id, event, xp, datetime.now(timezone.utc).isoformat())
+            (str(uuid.uuid4()), patient_id, event, xp, datetime.now(timezone.utc).isoformat()),
         )
-        self._get_conn().commit()
+        conn.commit()
+        self._sync()
 
     def get_xp_total(self, patient_id: str) -> int:
-        row = self._get_conn().execute(
-            "SELECT SUM(xp_awarded) as total FROM xp_log WHERE patient_id = ?",
-            (patient_id,)
-        ).fetchone()
-        return row["total"] or 0
+        cur = self._get_conn().execute(
+            "SELECT SUM(xp_awarded) FROM xp_log WHERE patient_id = ?", (patient_id,)
+        )
+        row = cur.fetchone()
+        return int(row[0] or 0)
 
     def get_organ_summaries(self, patient_id: str) -> list[dict]:
-        conn = self._get_conn()
-        rows = conn.execute(
+        cur = self._get_conn().execute(
             "SELECT DISTINCT organ FROM parameters WHERE patient_id = ? AND organ != 'other'",
-            (patient_id,)
-        ).fetchall()
-        return [{"organ": r["organ"]} for r in rows]
+            (patient_id,),
+        )
+        return [{"organ": row[0]} for row in cur.fetchall()]
 ```
 
 - [ ] **Step 4: Run tests to verify they pass**
@@ -2733,7 +2757,7 @@ git commit -m "feat: server wiring — registers all MCP tools, HealthQuest Phas
 - ✅ `run_health_agent` with 5 internal agent tools → Tasks 15, 16, 17
 - ✅ XP + Level + Rank scoring → Task 6 (`scorer.py`), XP logged in Task 9
 - ✅ Multi-patient support via `patient_id` → Tasks 4, 5, 9
-- ✅ SQLite persistence → Task 5
+- ✅ Turso/libsql-experimental persistence (local dev + cloud sync) → Task 5
 - ✅ Gemini LLM client → Task 8
 - ✅ `progressive` / `batch` agent styles → Task 15 (`prompts.py`)
 - ✅ Ring (gauge) + Sparkline (trend) substitutions → Tasks 11, 12

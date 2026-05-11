@@ -21,9 +21,10 @@ class ToolCall:
 
 
 class GeminiClient:
-    def __init__(self, api_key: str, model: str = "gemini-2.0-flash"):
+    def __init__(self, api_key: str, model: str = "gemini-2.0-flash", stop_tool: str = "finish_dashboard"):
         self._client = genai.Client(api_key=api_key)
         self._model = model
+        self._stop_tool = stop_tool
 
     def complete(self, system: str, user: str) -> str:
         response = self._client.models.generate_content(
@@ -77,12 +78,15 @@ class GeminiClient:
                     output = {"error": f"Unknown tool: {fc.name}"}
                 else:
                     args = dict(fc.args)
-                    output = tool.fn(**args)
+                    try:
+                        output = tool.fn(**args)
+                    except Exception as e:
+                        output = {"error": str(e)}
 
                 call = ToolCall(name=fc.name, input=dict(fc.args), output=output)
                 results.append(call)
 
-                if fc.name == "finish_dashboard":
+                if fc.name == self._stop_tool:
                     return results
 
                 function_responses.append(

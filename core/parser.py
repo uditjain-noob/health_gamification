@@ -90,11 +90,16 @@ class Parser:
             return [_normalize_sample(item) for item in data]
         if fmt == "simple":
             return [_normalize_simple(item) for item in data]
+        if self._llm is None:
+            raise ValueError("Unknown JSON format and no LLM client provided for fallback normalization")
         raw = self._llm.complete(
             system="You are a data normalization assistant.",
             user=_LLM_NORMALIZE_PROMPT.format(data=json.dumps(data))
         )
-        normalized = json.loads(raw)
+        try:
+            normalized = json.loads(raw)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"LLM returned invalid JSON: {e}") from e
         return [_normalize_simple(item) for item in normalized]
 
     def parse_pdf(self, file_path: str) -> list[dict]:
@@ -109,4 +114,8 @@ class Parser:
 Lab report text:
 {text}"""
         raw = self._llm.complete(system="You are a medical data extraction assistant.", user=prompt)
-        return json.loads(raw)
+        try:
+            normalized = json.loads(raw)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"LLM returned invalid JSON: {e}") from e
+        return [_normalize_simple(item) for item in normalized]

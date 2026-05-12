@@ -1,0 +1,878 @@
+Test Code,Test Name,Organ / System,Category
+%TSA,% TRANSFERRIN SATURATION,Blood,Iron Studies
+17OH,17 OH PROGESTERONE,Adrenal Gland,Adrenal & Stress Hormones
+323CA,3-OH ISOVALERYL-2METHYL-3-OH BUTYRYL-CARNITINE (C5OH),Metabolism,Acylcarnitine Profile
+3HCAR,3-HYDROXYBUTYRYL-CARNITINE (C4OH),Metabolism,Acylcarnitine Profile
+3HDEC,3-HYDROXYOCTADECANOYL-CARNITINE (C18-0H),Metabolism,Acylcarnitine Profile
+A/GR,SERUM ALB/GLOBULIN RATIO,Liver,Liver Function
+A1AGP,ALPHA1 ACID GLYCOPROTEIN,Immune System,Special Proteins
+A1MGL,ALPHA1 MICROGLOBULIN,Kidney,Special Proteins
+A2MGL,ALPHA2 MACROGLOBULIN,Immune System,Special Proteins
+AAT,ALPHA-1-ANTITRYPSIN (AAT),Lungs,Special Proteins
+ABAS,BASOPHILS - ABSOLUTE COUNT,Blood,Complete Blood Count
+ABG,AVERAGE BLOOD GLUCOSE (ABG),Pancreas,Blood Glucose & Diabetes
+AC_A,CARDIOLIPIN ANTIBODY (ACL) - IGA,Blood,Autoimmune Markers
+AC_G,CARDIOLIPIN ANTIBODY (ACL) -IGG,Blood,Autoimmune Markers
+AC_M,CARDIOLIPIN ANTIBODY (ACL) - IGM,Blood,Autoimmune Markers
+ACAG,ANTI CHLAMYDIA ANTIBODY IGG,Immune System,Viral Serology
+ACAM,ANTI CHLAMYDIA ANTIBODY IGM,Immune System,Viral Serology
+ACAR,ACETYL CARNITINE (C2),Metabolism,Acylcarnitine Profile
+ACCP,ANTI CCP (ACCP),Joints,Autoimmune Markers
+ACD3,ABSOLUTE CD3 + T LYMPHOCYTES COUNT,Immune System,Lymphocyte Subsets
+ACD4,ABSOLUTE CD4 + T  HELPER CELLS COUNT,Immune System,Lymphocyte Subsets
+ACD8,ABSOLUTE CD8 + T SUPPRESSOR CELL COUNT,Immune System,Lymphocyte Subsets
+ACETA,ACETAMINOPHEN,Toxicology,Drug Testing & Monitoring
+ACP,ACID PHOSPHATASE,Bone,Bone & Parathyroid
+ACRAB,ACETYLCHOLINE RECEPTOR AUTOANTIBODY,Nervous System,Autoimmune Markers
+ACTH,ADRENOCORTICOTROPIC HORMONE (ACTH),Adrenal Gland,Adrenal & Stress Hormones
+ACTNI,TROPONIN I HEART ATTACK RISK,Heart,Cardiac Markers
+ADA,ADENOSINE DEAMINASE,Liver,Liver Function
+ADNAB,ANTIDNASE-B (DNB),Immune System,Infection & Serology
+AEALM,Allergy Almond (By Elisa),Immune System,Allergy Testing
+AEALP,Allergy Alpha Lactoglobulin (By Elisa),Immune System,Allergy Testing
+AEAMO,Allergy Drug Amoxycillin (By Elisa),Immune System,Allergy Testing
+AEAMP,Allergy Drug Ampicillin (By Elisa),Immune System,Allergy Testing
+AEAPP,Allergy Apple (By Elisa),Immune System,Allergy Testing
+AEASF,Allergy Aspergillus Fumigatus (By Elisa),Immune System,Allergy Testing
+AEASN,Allergy Aspergillus Niger (By Elisa),Immune System,Allergy Testing
+AEASP,Allergy Drug Aspirin (By Elisa),Immune System,Allergy Testing
+AEBAJ,Allergy Bajra (By Elisa),Immune System,Allergy Testing
+AEBAN,Allergy Banana (By Elisa),Immune System,Allergy Testing
+AEBAR,Allergy Barley (By Elisa),Immune System,Allergy Testing
+AEBEF,Allergy Beef (By Elisa),Immune System,Allergy Testing
+AEBET,Allergy Beta Lactoglobulin (By Elisa),Immune System,Allergy Testing
+AEBRI,Allergy Brinjal (By Elisa),Immune System,Allergy Testing
+AEBRO,Allergy Drug Bromhexine (By Elisa),Immune System,Allergy Testing
+AEBRU,Allergy Drug Brufen (Ibuprofen) (By Elisa),Immune System,Allergy Testing
+AEBUF,Allergy Buffalo Dander (By Elisa),Immune System,Allergy Testing
+AECAB,Allergy Cabbage (By Elisa),Immune System,Allergy Testing
+AECAP,Allergy Capsicum (By Elisa),Immune System,Allergy Testing
+AECAR,Allergy Cardamom (By Elisa),Immune System,Allergy Testing
+AECAS,Allergy Casein (By Elisa),Immune System,Allergy Testing
+AECAT,Allergy Cat Dander (By Elisa),Immune System,Allergy Testing
+AECAU,Allergy Cauliflower (By Elisa),Immune System,Allergy Testing
+AECCO,Allergy Cocoa (By Elisa),Immune System,Allergy Testing
+AECEF,Allergy Drug Cefixime (Cefaclor) (By Elisa),Immune System,Allergy Testing
+AECHD,Allergy Chicken Dropping (By Elisa),Immune System,Allergy Testing
+AECHE,Allergy Cherry (By Elisa),Immune System,Allergy Testing
+AECHF,Allergy Chicken Feathers (By Elisa),Immune System,Allergy Testing
+AECHI,Allergy Chicken (By Elisa),Immune System,Allergy Testing
+AECHO,Allergy Chocolate (By Elisa),Immune System,Allergy Testing
+AECHP,Allergy Chili Pepper (By Elisa),Immune System,Allergy Testing
+AECHS,Allergy Cheese (By Elisa),Immune System,Allergy Testing
+AECIP,Allergy Drug Ciprofloxacin (By Elisa),Immune System,Allergy Testing
+AECKP,Allergy Chick Pea (By Elisa),Immune System,Allergy Testing
+AECLO,Allergy Drug Cloxacillin (By Elisa),Immune System,Allergy Testing
+AECLV,Allergy Cloves (By Elisa),Immune System,Allergy Testing
+AECNT,Allergy Coconut (By Elisa),Immune System,Allergy Testing
+AECOC,Allergy Cockroach Dust (By Elisa),Immune System,Allergy Testing
+AECOT,Allergy Cotton Linters (By Elisa),Immune System,Allergy Testing
+AECOW,Allergy Cow Dander (By Elisa),Immune System,Allergy Testing
+AECRA,Allergy Crab (By Elisa),Immune System,Allergy Testing
+AECRY,Allergy Curry (By Elisa),Immune System,Allergy Testing
+AECUC,Allergy Cucumber (By Elisa),Immune System,Allergy Testing
+AECUM,Allergy Cumin (By Elisa),Immune System,Allergy Testing
+AECUR,Allergy Curd (By Elisa),Immune System,Allergy Testing
+AECYN,Allergy Bermuda Grass (By Elisa),Immune System,Allergy Testing
+AEDAL,Allergy Dal Chana (By Elisa),Immune System,Allergy Testing
+AEDET,Allergy Detergent (By Elisa),Immune System,Allergy Testing
+AEDIC,Allergy Drug Diclofenac (By Elisa),Immune System,Allergy Testing
+AEDOG,Allergy Dog Dander (By Elisa),Immune System,Allergy Testing
+AEDOX,Allergy Drug Doxycycline (By Elisa),Immune System,Allergy Testing
+AEEGG,Allergy Egg (By Elisa),Immune System,Allergy Testing
+AEEGP,Allergy Egg Plant/Aubergine (By Elisa),Immune System,Allergy Testing
+AEERY,Allergy Drug Erythromycin (By Elisa),Immune System,Allergy Testing
+AEFEN,Allergy Fennel Seed (By Elisa),Immune System,Allergy Testing
+AEFIG,Allergy Fig (By Elisa),Immune System,Allergy Testing
+AEFIS,Allergy Fish (By Elisa),Immune System,Allergy Testing
+AEGAR,Allergy Garlic (By Elisa),Immune System,Allergy Testing
+AEGIN,Allergy Ginger (By Elisa),Immune System,Allergy Testing
+AEGLU,Allergy Gluten (By Elisa),Immune System,Allergy Testing
+AEGOA,Allergy Goat Dander (By Elisa),Immune System,Allergy Testing
+AEGRA,Allergy Grape (By Elisa),Immune System,Allergy Testing
+AEGUA,Allergy Guava (By Elisa),Immune System,Allergy Testing
+AEHAI,Allergy Hair Dye (By Elisa),Immune System,Allergy Testing
+AEHAY,Allergy Hay Dust (By Elisa),Immune System,Allergy Testing
+AEHDM,Allergy House Dust Mite (By Elisa),Immune System,Allergy Testing
+AEHDU,Allergy House Dust (By Elisa),Immune System,Allergy Testing
+AEHFY,Allergy House Fly (By Elisa),Immune System,Allergy Testing
+AEHON,Allergy Honey (By Elisa),Immune System,Allergy Testing
+AEHOR,Allergy Horse Dander (By Elisa),Immune System,Allergy Testing
+AEINS,Allergy Drug Insulin (By Elisa),Immune System,Allergy Testing
+AEJOW,Allergy Jowar (By Elisa),Immune System,Allergy Testing
+AEKAJ,Allergy Cashew Nut (By Elisa),Immune System,Allergy Testing
+AEKIW,Allergy Kiwi (By Elisa),Immune System,Allergy Testing
+AELEM,Allergy Lemon (By Elisa),Immune System,Allergy Testing
+AELEN,Allergy Lentil (By Elisa),Immune System,Allergy Testing
+AEMAI,Allergy Maize (By Elisa),Immune System,Allergy Testing
+AEMAN,Allergy Mango (By Elisa),Immune System,Allergy Testing
+AEMAS,Allergy Masoor Dal (By Elisa),Immune System,Allergy Testing
+AEMEL,Allergy Melon (By Elisa),Immune System,Allergy Testing
+AEMET,Allergy Drug Metamizol (By Elisa),Immune System,Allergy Testing
+AEMIL,Allergy Milk (By Elisa),Immune System,Allergy Testing
+AEMLT,Allergy Millet (By Elisa),Immune System,Allergy Testing
+AEMOO,Allergy Moong Dal (By Elisa),Immune System,Allergy Testing
+AEMOS,Allergy Mosquito (By Elisa),Immune System,Allergy Testing
+AEMSH,Allergy Mushroom (By Elisa),Immune System,Allergy Testing
+AEMUG,Allergy Mugwort (By Elisa),Immune System,Allergy Testing
+AEMUS,Allergy Mustard (By Elisa),Immune System,Allergy Testing
+AEMUT,Allergy Mutton (By Elisa),Immune System,Allergy Testing
+AENOR,Allergy Drug Norfloxacin (By Elisa),Immune System,Allergy Testing
+AEOAT,Allergy Oats (By Elisa),Immune System,Allergy Testing
+AEOFL,Allergy Drug Ofloxacin (By Elisa),Immune System,Allergy Testing
+AEONI,Allergy Onion (By Elisa),Immune System,Allergy Testing
+AEORA,Allergy Orange (By Elisa),Immune System,Allergy Testing
+AEOS,EOSINOPHILS - ABSOLUTE COUNT,Blood,Complete Blood Count
+AEOXA,Allergy Drug Oxacillin (By Elisa),Immune System,Allergy Testing
+AEPAI,Allergy Paints (By Elisa),Immune System,Allergy Testing
+AEPAP,Allergy Papaya (By Elisa),Immune System,Allergy Testing
+AEPAR,Allergy Drug Paracetamol (By Elisa),Immune System,Allergy Testing
+AEPDU,Allergy Paper Dust (By Elisa),Immune System,Allergy Testing
+AEPEA,Allergy Peas (By Elisa),Immune System,Allergy Testing
+AEPEN,Allergy Drug Penicillin (By Elisa),Immune System,Allergy Testing
+AEPER,Allergy Pear (By Elisa),Immune System,Allergy Testing
+AEPHL,Allergy Timothy Grass (By Elisa),Immune System,Allergy Testing
+AEPID,Allergy Pigeon Dropping (By Elisa),Immune System,Allergy Testing
+AEPIF,Allergy Pigeon Feathers (By Elisa),Immune System,Allergy Testing
+AEPIN,Allergy Pineapple (By Elisa),Immune System,Allergy Testing
+AEPIS,Allergy Pistachio Nut (By Elisa),Immune System,Allergy Testing
+AEPLU,Allergy Plum (By Elisa),Immune System,Allergy Testing
+AEPNT,Allergy Peanut (By Elisa),Immune System,Allergy Testing
+AEPOM,Allergy Pomegranate (By Elisa),Immune System,Allergy Testing
+AEPOR,Allergy Pork (By Elisa),Immune System,Allergy Testing
+AEPOT,Allergy Potato (By Elisa),Immune System,Allergy Testing
+AEPRA,Allergy Prawn (By Elisa),Immune System,Allergy Testing
+AEPRF,Allergy Perfume (By Elisa),Immune System,Allergy Testing
+AEPTN,Allergy Parthenium (Common Ragweed) (By Elisa),Immune System,Allergy Testing
+AEPUM,Allergy Pumpkin Seed (By Elisa),Immune System,Allergy Testing
+AERAG,Allergy Ragi (By Elisa),Immune System,Allergy Testing
+AERAI,Allergy Raisin (By Elisa),Immune System,Allergy Testing
+AERAJ,Allergy Rajma Dal (By Elisa),Immune System,Allergy Testing
+AERIC,Allergy Rice (By Elisa),Immune System,Allergy Testing
+AESAF,Allergy Saffron (By Elisa),Immune System,Allergy Testing
+AESEM,Allergy Semolina(Rawa) (By Elisa),Immune System,Allergy Testing
+AESES,Allergy Sesame (By Elisa),Immune System,Allergy Testing
+AESHR,Allergy Shrimp (By Elisa),Immune System,Allergy Testing
+AESOR,Allergy Johnson Grass (By Elisa),Immune System,Allergy Testing
+AESOY,Allergy Soya Bean (By Elisa),Immune System,Allergy Testing
+AESPI,Allergy Spinach (By Elisa),Immune System,Allergy Testing
+AESTO,Allergy Storage Mite (By Elisa),Immune System,Allergy Testing
+AESTR,Allergy Strawberry (By Elisa),Immune System,Allergy Testing
+AESUL,Allergy Drug Sulpha (By Elisa),Immune System,Allergy Testing
+AESUN,Allergy Sunflower (By Elisa),Immune System,Allergy Testing
+AESWE,Allergy Sweet Potato (By Elisa),Immune System,Allergy Testing
+AETET,Allergy Drug Tetracycline (By Elisa),Immune System,Allergy Testing
+AETIN,Allergy Drug Tinidazole (By Elisa),Immune System,Allergy Testing
+AETOB,Allergy Tobbaco (By Elisa),Immune System,Allergy Testing
+AETOM,Allergy Tomatoes (By Elisa),Immune System,Allergy Testing
+AETOO,Allergy Toor Dal (By Elisa),Immune System,Allergy Testing
+AETUR,Allergy Turmeric (By Elisa),Immune System,Allergy Testing
+AEUDA,Allergy Udad Dal (By Elisa),Immune System,Allergy Testing
+AEWAT,Allergy Watermelon (By Elisa),Immune System,Allergy Testing
+AEWHE,Allergy Wheat Flour (By Elisa),Immune System,Allergy Testing
+AEWOO,Allergy Wood Dust (By Elisa),Immune System,Allergy Testing
+AEXYL,Allergy Drug Xylocaine (Lidocaine) (By Elisa),Immune System,Allergy Testing
+AEYEA,Allergy Yeast (By Elisa),Immune System,Allergy Testing
+AEYOG,Allergy Yogurt (By Elisa),Immune System,Allergy Testing
+AFP,ALPHA FETO PROTEIN (AFP),Liver,Cancer Markers
+AFP-C,ALPHA FETO PROTEIN,Liver,Cancer Markers
+AGMAG,ASPERGILLUS GALACTOMANNAN ANTIGEN,Lungs,Infection & Serology
+AHBE,HEPATITIS B ENVELOPE ANTIBODY,Liver,Hepatitis & Liver Infections
+AHCV,ANTI HEPATITIS C VIRUS (ANTI HCV) - TOTAL,Liver,Hepatitis & Liver Infections
+AHGLU,"1,5 ANHYDROGLUCITOL",Pancreas,Blood Glucose & Diabetes
+ALDOL,ALDOLASE,Liver,Liver Function
+ALHBD,ALPHA HYDROXYBUTYRATE DEHYDROGENASE,Liver,Liver Function
+ALKP,ALKALINE PHOSPHATASE,Liver,Liver Function
+ALR01,ALLERGY - DERMATOPHAGOIDES FARINAE,Immune System,Allergy Testing
+ALR02,ALLERGY - TOMATO ,Immune System,Allergy Testing
+ALR03,ALLERGY - SPINACH,Immune System,Allergy Testing
+ALR04,ALLERGY - CABBAGE,Immune System,Allergy Testing
+ALR05,ALLERGY - PAPRIKA,Immune System,Allergy Testing
+ALR06,ALLERGY - LENTIL,Immune System,Allergy Testing
+ALR07,ALLERGY - CRAB,Immune System,Allergy Testing
+ALR08,ALLERGY - CODFISH,Immune System,Allergy Testing
+ALR09,ALLERGY - MANGO,Immune System,Allergy Testing
+ALR10,ALLERGY - EGG PLANT,Immune System,Allergy Testing
+ALR11,ALLERGY - RED KIDNEY BEAN,Immune System,Allergy Testing
+ALR12,ALLERGY - PAPAYA,Immune System,Allergy Testing
+ALR13,ALLERGY - SHRIMP,Immune System,Allergy Testing
+ALR14,ALLERGY - COCONUT,Immune System,Allergy Testing
+ALR15,ALLERGY - MUSHROOM,Immune System,Allergy Testing
+ALR16,ALLERGY - COCKROACH,Immune System,Allergy Testing
+ALR17,ALLERGY - DERMATOPHAGOIDES PTERNYSSINUS,Immune System,Allergy Testing
+ALR18,ALLERGY - ORCHARD GRASS,Immune System,Allergy Testing
+ALR19,ALLERGY - SWEET VERNAL GRASS,Immune System,Allergy Testing
+ALYM,LYMPHOCYTES - ABSOLUTE COUNT,Blood,Complete Blood Count
+ALYMP,ABSOLUTE LYMPHOCYTE COUNT,Blood,Complete Blood Count
+AMA,Anti-TPO antibody (Anti-Thyroid Peroxidase),Thyroid,Thyroid Function
+AME_G,ENTAMOEBA HISTOLYTICA - IGG,Digestive System,Infection & Serology
+AMH,ANTI MULLERIAN HORMONE (AMH),Reproductive System,Reproductive Hormones
+AMMON,BLOOD AMMONIA,Liver,Liver Function
+AMON,MONOCYTES - ABSOLUTE COUNT,Blood,Complete Blood Count
+AMPHE,AMPHETAMINES,Toxicology,Drug Testing & Monitoring
+AMXD,MIXED - ABSOLUTE COUNT,Blood,Complete Blood Count
+AMYL,AMYLASE,Pancreas,Pancreatic Function
+ANA,ANTI NUCLEAR ANTIBODIES (ANA),Immune System,Autoimmune Markers
+ANDR,ANDROSTENEDIONE (A4),Adrenal Gland,Adrenal & Stress Hormones
+ANEU,NEUTROPHILS - ABSOLUTE COUNT,Blood,Complete Blood Count
+ANTCE,ANGIOTENSIN CONVERTING ENZYME,Adrenal Gland,Adrenal & Stress Hormones
+ANTH3,ANTITHROMBIN III,Blood,Coagulation & Clotting
+APACA,ALLERGY ACACIA ( BY PHADIA),Immune System,Allergy Testing
+APALM,ALLERGY ALMOND ( BY PHADIA),Immune System,Allergy Testing
+APALT,ALLERGY ALTERNARIA ALTERNATA ( BY PHADIA),Immune System,Allergy Testing
+APAMO,ALLERGY AMOXICILLOYL (BY PHADIA),Immune System,Allergy Testing
+APAMP,ALLERGY AMPICILLOYL ( BY PHADIA),Immune System,Allergy Testing
+APAPP,ALLERGY APPLE ( BY PHADIA),Immune System,Allergy Testing
+APASF,ALLERGY ASPERGILLUS FUMIGATUS ( BY PHADIA),Immune System,Allergy Testing
+APASN,ALLERGY ASPERGILLUS NIGER ( BY PHADIA),Immune System,Allergy Testing
+APASP,ALLERGY ASPERGILLUS FLAVUS ( BY PHADIA),Immune System,Allergy Testing
+APAST,ALLERGY ASPERGILLUS TERREUS ( BY PHADIA),Immune System,Allergy Testing
+APAUB,ALLERGY AUBERGINE -EGGPLANT (BY PHADIA),Immune System,Allergy Testing
+APB/,APO B / APO A1 RATIO (APO B/A1),Heart,Lipid Profile
+APBAH,ALLERGY BAHIA GRASS ( BY PHADIA),Immune System,Allergy Testing
+APBAN,ALLERGY BANANA ( BY PHADIA),Immune System,Allergy Testing
+APBAR,ALLERGY BARLEY (BY PHADIA),Immune System,Allergy Testing
+APBAS,ALLERGY BASIL (BY PHADIA),Immune System,Allergy Testing
+APBEE,ALLERGY BEEF (BY PHADIA),Immune System,Allergy Testing
+APBER,ALLERGY BERMUDA GRASS ( BY PHADIA),Immune System,Allergy Testing
+APBLP,ALLERGY BLACK PEPPER (BY PHADIA),Immune System,Allergy Testing
+APBLU,ALLERGY BLUE MUSSEL (BY PHADIA),Immune System,Allergy Testing
+APBRN,ALLERGY BRAZIL NUT ( BY PHADIA),Immune System,Allergy Testing
+APCAB,ALLERGY CABBAGE (PHADIA),Immune System,Allergy Testing
+APCAC,ALLERGY CACAO (BY PHADIA),Immune System,Allergy Testing
+APCAN,ALLERGY CANDIDA ALBICANS ( BY PHADIA),Immune System,Allergy Testing
+APCAR,ALLERGY CARROT (BY PHADIA),Immune System,Allergy Testing
+APCAS,ALLERGY CASHEW NUT (BY PHADIA),Immune System,Allergy Testing
+APCAT,ALLERGY CAT DANDER ( BY PHADIA),Immune System,Allergy Testing
+APCAU,ALLERGY CAULIFLOWER (BY PHADIA),Immune System,Allergy Testing
+APCEL,ALLERGY CELERY ( BY PHADIA),Immune System,Allergy Testing
+APCH2,ALLERGY CHICKEN ( BY PHADIA),Immune System,Allergy Testing
+APCH3,ALLERGY CHICKEN FEATHERS (BY PHADIA),Immune System,Allergy Testing
+APCH4,ALLERGY CHILIPEPPER (BY PHADIA),Immune System,Allergy Testing
+APCHE,ALLERGY CHEESE- CHEDDAR TYPE (BY PHADIA),Immune System,Allergy Testing
+APCHL,ALLERGY CHLORHEXIDINE (BY PHADIA),Immune System,Allergy Testing
+APCHP,ALLERGY CHICK PEA ( BY PHADIA),Immune System,Allergy Testing
+APCLA,ALLERGY CLADOSPORIUM HERBARUM ( BY PHADIA),Immune System,Allergy Testing
+APCLO,ALLERGY CLOVE (BY PHADIA),Immune System,Allergy Testing
+APCO2,ALLERGY COMMON SILVER BIRCH ( BY PHADIA),Immune System,Allergy Testing
+APCO3,ALLERGY COCKROACH AMERICAN (BY PHADIA),Immune System,Allergy Testing
+APCOB,ALLERGY COCKLEBUR (BY PHADIA),Immune System,Allergy Testing
+APCOC,ALLERGY COCKROACH GERMAN ( BY PHADIA),Immune System,Allergy Testing
+APCOF,ALLERGY COFFEE (BY PHADIA),Immune System,Allergy Testing
+APCON,ALLERGY COCONUT ( BY PHADIA),Immune System,Allergy Testing
+APCOR,ALLERGY COMMON RAGWEED ( BY PHADIA),Immune System,Allergy Testing
+APCOT,ALLERGY COTTONWOOD (BY PHADIA),Immune System,Allergy Testing
+APCOW,ALLERGY COW DANDER ( BY PHADIA),Immune System,Allergy Testing
+APCPW,ALLERGY COMMON PIGWEED (BY PHADIA),Immune System,Allergy Testing
+APCRA,ALLERGY CRAB (BY PHADIA),Immune System,Allergy Testing
+APCUC,ALLERGY CUCUMBER (BY PHADIA),Immune System,Allergy Testing
+APCUL,ALLERGY CULTIVATED RYE (BY PHADIA),Immune System,Allergy Testing
+APDOG,ALLERGY DOG DANDER ( BY PHADIA),Immune System,Allergy Testing
+APDUS,ALLERGY HOUSE DUST ( BY PHADIA),Immune System,Allergy Testing
+APEAC,ALLERGY PEACH ( BY PHADIA),Immune System,Allergy Testing
+APEGG,ALLERGY EGG ( BY PHADIA),Immune System,Allergy Testing
+APEGW,ALLERGY EGG WHITE ( BY PHADIA),Immune System,Allergy Testing
+APEGY,ALLERGY EGG YOLK (BY PHADIA),Immune System,Allergy Testing
+APELM,ALLERGY ELM ( BY PHADIA),Immune System,Allergy Testing
+APENC,ALLERGY PENICILLIUM CHRYSOGENUM ( BY PHADIA),Immune System,Allergy Testing
+APEUC,ALLERGY EUCALYPTUS ( BY PHADIA),Immune System,Allergy Testing
+APFIR,ALLERGY FIRE ANT ( BY PHADIA),Immune System,Allergy Testing
+APFIS,ALLERGY FISH COD ( BY PHADIA),Immune System,Allergy Testing
+APGAR,ALLERGY GARLIC ( BY PHADIA),Immune System,Allergy Testing
+APGLU,ALLERGY GLUTEN ( BY PHADIA),Immune System,Allergy Testing
+APGOO,ALLERGY GOOSEFOOT ( BY PHADIA),Immune System,Allergy Testing
+APGRA,ALLERGY GRAPE (BY PHADIA),Immune System,Allergy Testing
+APGRB,ALLERGY GREEN BEAN (BY PHADIA),Immune System,Allergy Testing
+APGRE,ALLERGY GREEN PEPPER (BY PHADIA),Immune System,Allergy Testing
+APGRP,ALLERGY GREY ALDER (BY PHADIA),Immune System,Allergy Testing
+APGUI,ALLERGY GUINEA PIG EPITHELIUM (BY PHADIA),Immune System,Allergy Testing
+APHAZ,ALLERGY HAZEL NUT ( BY PHADIA),Immune System,Allergy Testing
+APHDB,ALLERGY HOUSE DUST MITE - BLOMIA TROPICALIS (BY PHADIA),Immune System,Allergy Testing
+APHDF,ALLERGY HOUSE DUST MITE- DERMATOPHAGOIDES FARINAE ( BY PHADIA),Immune System,Allergy Testing
+APHDG,ALLERGY HOUSE DUST- GREER LABS INC (BY PHADIA),Immune System,Allergy Testing
+APHDM,ALLERGY HOUSE DUST MITE- DERMATOPHAGOIDES MICROCERAS (BY PHADIA),Immune System,Allergy Testing
+APHDP,ALLERGY HOUSE DUST MITE - DERMATOPHAGOIDES PTERONYSSINUS ( BY PHADIA),Immune System,Allergy Testing
+APHO2,ALLERGY HONEY BEE (BY PHADIA),Immune System,Allergy Testing
+APHON,ALLERGY HONEY BEE VENOM ( BY PHADIA),Immune System,Allergy Testing
+APHOR,ALLERGY HORSE DANDER ( BY PHADIA),Immune System,Allergy Testing
+APINS,ALLERGY INSULIN HUMAN ( BY PHADIA),Immune System,Allergy Testing
+APJOH,ALLERGY JOHNSON GRASS ( BY PHADIA),Immune System,Allergy Testing
+APKIW,ALLERGY KIWI ( BY PHADIA),Immune System,Allergy Testing
+APLAT,ALLERGY LATEX (BY PHADIA),Immune System,Allergy Testing
+APLEM,ALLERGY LEMON ( BY PHADIA),Immune System,Allergy Testing
+APLEN,ALLERGY LENTIL ( BY PHADIA),Immune System,Allergy Testing
+APLET,ALLERGY LETTUCE (BY PHADIA),Immune System,Allergy Testing
+APLG,ANTI PHOSPHOLIPID ANTIBODY (APL) - IGG,Blood,Autoimmune Markers
+APLM,ANTI PHOSPHOLIPID ANTIBODY (APL) - IGM,Blood,Autoimmune Markers
+APLOB,ALLERGY LOBSTER (BY PHADIA),Immune System,Allergy Testing
+APMAI,ALLERGY MAIZE (BY PHADIA),Immune System,Allergy Testing
+APMAL,ALLERGY MALASSEZIA SPP. YEAST (BY PHADIA),Immune System,Allergy Testing
+APMAN,ALLERGY MANGO (BY PHADIA),Immune System,Allergy Testing
+APME2,ALLERGY MEADOW FESCUE (BY PHADIA),Immune System,Allergy Testing
+APMEA,ALLERGY MEADOW GRASS ( BY PHADIA),Immune System,Allergy Testing
+APMEL,ALLERGY MELON ( BY PHADIA),Immune System,Allergy Testing
+APMEP,ALLERGY MELALEUCA ( BY PHADIA),Immune System,Allergy Testing
+APMES,ALLERGY MESQUITE ( BY PHADIA),Immune System,Allergy Testing
+APMI2,ALLERGY MILK CASEIN (BY PHADIA),Immune System,Allergy Testing
+APMIL,ALLERGY MILK ( BY PHADIA),Immune System,Allergy Testing
+APMOR,ALLERGY MORPHINE (BY PHADIA),Immune System,Allergy Testing
+APMOS,ALLERGY MOSQUITO ( BY PHADIA),Immune System,Allergy Testing
+APMOU,ALLERGY MOUSE EPITHELIUM (BY PHADIA),Immune System,Allergy Testing
+APMUC,ALLERGY MUCOR RACEMOSUS ( BY PHADIA),Immune System,Allergy Testing
+APMUG,ALLERGY MUGWORT ( BY PHADIA),Immune System,Allergy Testing
+APMUL,ALLERGY MULBERRY (BY PHADIA),Immune System,Allergy Testing
+APMUR,ALLERGY MUSTARD (BY PHADIA),Immune System,Allergy Testing
+APMUS,ALLERGY MUSHROOM (BY PHADIA),Immune System,Allergy Testing
+APMUT,ALLERGY MUTTON (BY PHADIA),Immune System,Allergy Testing
+APNET,ALLERGY NETTLE (BY PHADIA),Immune System,Allergy Testing
+APOA,APOLIPOPROTEIN - A1 (APO-A1),Heart,Lipid Profile
+APOAK,ALLERGY OAK (BY PHADIA),Immune System,Allergy Testing
+APOAT,ALLERGY OAT (BY PHADIA),Immune System,Allergy Testing
+APOB,APOLIPOPROTEIN - B (APO-B),Heart,Lipid Profile
+APOL2,ALLERGY OLIVE (BY PHADIA),Immune System,Allergy Testing
+APOLI,ALLERGY OLIVE ( BY PHADIA),Immune System,Allergy Testing
+APONI,ALLERGY ONION ( BY PHADIA),Immune System,Allergy Testing
+APORA,ALLERGY ORANGE ( BY PHADIA),Immune System,Allergy Testing
+APPA2,ALLERGY PAPRIKA- SWEET PEPPER (BY PHADIA),Immune System,Allergy Testing
+APPAP,ALLERGY PAPAYA ( BY PHADIA),Immune System,Allergy Testing
+APPAR,ALLERGY PARROT FEATHERS ( BY PHADIA),Immune System,Allergy Testing
+APPEA,ALLERGY PEA (BY PHADIA),Immune System,Allergy Testing
+APPEC,ALLERGY PECAN NUT (BY PHADIA),Immune System,Allergy Testing
+APPEG,ALLERGY PENICILLOYL G ( BY PHADIA),Immune System,Allergy Testing
+APPEN,ALLERGY PEANUT ( BY PHADIA),Immune System,Allergy Testing
+APPER,ALLERGY PEAR (BY PHADIA),Immune System,Allergy Testing
+APPEV,ALLERGY PENICILLOYL V ( BY PHADIA),Immune System,Allergy Testing
+APPH2,ALLERGY PHADIATOP PEDIATRIC,Immune System,Allergy Testing
+APPHA,ALLERGY PHADIATOP ADULT,Immune System,Allergy Testing
+APPHO,ALLERGY PHOLCODINE (BY PHADIA),Immune System,Allergy Testing
+APPIG,ALLERGY PIGEON FEATHERS ( BY PHADIA),Immune System,Allergy Testing
+APPIN,ALLERGY PINEAPPLE ( BY PHADIA),Immune System,Allergy Testing
+APPIS,ALLERGY PISTACHIO (BY PHADIA),Immune System,Allergy Testing
+APPL2,ALLERGY PLAICE (BY PHADIA),Immune System,Allergy Testing
+APPLA,ALLERGY PLANTAIN- RIBWORT ( BY PHADIA),Immune System,Allergy Testing
+APPOR,ALLERGY PORK (BY PHADIA),Immune System,Allergy Testing
+APPOT,ALLERGY POTATO (BY PHADIA),Immune System,Allergy Testing
+APRAB,ALLERGY RABBIT EPITHELIUM (BY PHADIA),Immune System,Allergy Testing
+APRAG,ALLERGY RAGWEED (BY PHADIA),Immune System,Allergy Testing
+APRAP,ALLERGY RAPE SEED (BY PHADIA),Immune System,Allergy Testing
+APREK,ALLERGY RED KIDNEY BEAN (BY PHADIA),Immune System,Allergy Testing
+APRIC,ALLERGY RICE ( BY PHADIA),Immune System,Allergy Testing
+APRYE,ALLERGY RYE GRASS ( BY PHADIA),Immune System,Allergy Testing
+APSA2,ALLERGY SALMON (BY PHADIA),Immune System,Allergy Testing
+APSAL,ALLERGY SALTWORT ( BY PHADIA),Immune System,Allergy Testing
+APSES,ALLERGY SESAME SEED (BY PHADIA),Immune System,Allergy Testing
+APSHR,ALLERGY SHRIMP ( BY PHADIA),Immune System,Allergy Testing
+APSOY,ALLERGY SOYBEAN ( BY PHADIA),Immune System,Allergy Testing
+APSPI,ALLERGY SPINACH (BY PHADIA),Immune System,Allergy Testing
+APSTR,ALLERGY STRAWBERRY (BY PHADIA),Immune System,Allergy Testing
+APSUX,ALLERGY SUXAMETHONIUM (BY PHADIA),Immune System,Allergy Testing
+APSWE,ALLERGY SWEET VERNAL GRASS (BY PHADIA),Immune System,Allergy Testing
+APTIM,ALLERGY TIMOTHY GRASS ( BY PHADIA),Immune System,Allergy Testing
+APTOM,ALLERGY TOMATO ( BY PHADIA),Immune System,Allergy Testing
+APTT,ACTIVATED PARTIAL THROMBOPLASTIN TIME (APTT),Blood,Coagulation & Clotting
+APTUN,ALLERGY TUNA (BY PHADIA),Immune System,Allergy Testing
+APTUR,ALLERGY TURKEY MEAT (BY PHADIA),Immune System,Allergy Testing
+APVEL,ALLERGY VELVET GRASS (BY PHADIA),Immune System,Allergy Testing
+APWAL,ALLERGY WALNUT (BY PHADIA),Immune System,Allergy Testing
+APWH2,ALLERGY WHITE BEAN (BY PHADIA),Immune System,Allergy Testing
+APWHE,ALLERGY WHEAT ( BY PHADIA),Immune System,Allergy Testing
+APWHP,ALLERGY WHITE PINE ( BY PHADIA),Immune System,Allergy Testing
+APWIL,ALLERGY WILLOW ( BY PHADIA),Immune System,Allergy Testing
+APYEA,ALLERGY YEAST ( BY PHADIA),Immune System,Allergy Testing
+ARCT3,TRIIODOTHYRONINE (T3),Thyroid,Thyroid Function
+ARCT4,THYROXINE (T4),Thyroid,Thyroid Function
+ASAB,ANTI SPERM ANTIBODY (ASAB),Reproductive System,Reproductive Hormones
+ASCA,ANTI SACCHAROMYCES CEREVISIAE IGA ANTIBODIES,Digestive System,Autoimmune Markers
+ASCG,ANTI SACCHAROMYCES CEREVISIAE IGG ANTIBODIES,Digestive System,Autoimmune Markers
+ASO,ANTI STREPTOLYSIN - O (ASO),Immune System,Infection & Serology
+ATG,ANTI THYROGLOBULIN ANTIBODY (ATG),Thyroid,Thyroid Function
+AVB12,ACTIVE VITAMIN B12 (HOLOTRANSCOBALAMIN),Nutrition,Vitamins
+B/CR,BUN / SR.CREATININE RATIO,Kidney,Kidney Function
+B2G1G,BETA 2 GLYCOPROTEIN 1 - IGG,Blood,Autoimmune Markers
+B2G1M,BETA 2 GLYCOPROTEIN 1 - IGM,Blood,Autoimmune Markers
+B2MIC,BETA2 MICROGLOBULIN,Kidney,Special Proteins
+BARBI,BARBITURATE,Toxicology,Drug Testing & Monitoring
+BASO,BASOPHILS,Blood,Complete Blood Count
+BENZO,BENZODIAZEPINES,Toxicology,Drug Testing & Monitoring
+BICAR,BICARBONATE,Kidney,Electrolytes
+BILD,BILIRUBIN -DIRECT,Liver,Liver Function
+BILI,BILIRUBIN (INDIRECT),Liver,Liver Function
+BILT,BILIRUBIN - TOTAL,Liver,Liver Function
+BKETO,BLOOD KETONE (D3HB),Pancreas,Blood Glucose & Diabetes
+BP,BLOOD PRESSURE,Heart,Cardiac Markers
+BS,BLOOD SUGAR,Pancreas,Blood Glucose & Diabetes
+BT,BLEEDING TIME,Blood,Coagulation & Clotting
+BTEAG,SILVER,Toxicology,Heavy Metal Toxicology
+BTEAL,ALUMINIUM,Toxicology,Heavy Metal Toxicology
+BTEAS,ARSENIC,Toxicology,Heavy Metal Toxicology
+BTEBA,BARIUM,Toxicology,Heavy Metal Toxicology
+BTEBE,BERYLLIUM,Toxicology,Heavy Metal Toxicology
+BTEBI,BISMUTH,Toxicology,Heavy Metal Toxicology
+BTECD,CADMIUM,Toxicology,Heavy Metal Toxicology
+BTECO,COBALT,Toxicology,Heavy Metal Toxicology
+BTECR,CHROMIUM,Toxicology,Heavy Metal Toxicology
+BTECS,CAESIUM,Toxicology,Heavy Metal Toxicology
+BTECU,COPPER,Toxicology,Heavy Metal Toxicology
+BTEHG,MERCURY,Toxicology,Heavy Metal Toxicology
+BTELI,LITHIUM,Toxicology,Heavy Metal Toxicology
+BTEMN,MANGANESE,Toxicology,Heavy Metal Toxicology
+BTEMO,MOLYBDENUM,Toxicology,Heavy Metal Toxicology
+BTENI,NICKEL,Toxicology,Heavy Metal Toxicology
+BTEPB,LEAD,Toxicology,Heavy Metal Toxicology
+BTESB,ANTIMONY,Toxicology,Heavy Metal Toxicology
+BTESE,SELENIUM,Toxicology,Heavy Metal Toxicology
+BTESN,TIN,Toxicology,Heavy Metal Toxicology
+BTESR,STRONTIUM,Toxicology,Heavy Metal Toxicology
+BTETL,THALLIUM,Toxicology,Heavy Metal Toxicology
+BTEU,URANIUM,Toxicology,Heavy Metal Toxicology
+BTEV,VANADIUM,Toxicology,Heavy Metal Toxicology
+BTEZN,ZINC,Toxicology,Heavy Metal Toxicology
+BUN,BLOOD UREA NITROGEN (BUN),Kidney,Kidney Function
+C125,CA-125,Reproductive System,Cancer Markers
+C153,CA 15.3,Breast,Cancer Markers
+C199,CA 19.9,Digestive System,Cancer Markers
+C3,COMPLEMENT 3 (C3),Immune System,Immunoglobulins
+C4,COMPLEMENT 4 (C4),Immune System,Immunoglobulins
+CABQ,COVID ANTIBODY IGG (QUANTITATIVE),Immune System,COVID-19
+CAGCA,COVID ANTIBODY IGG - C.M.I.A,Immune System,COVID-19
+CAGCS,COVID ANTIBODY IGG - C.L.I.A,Immune System,COVID-19
+CAGE,COVID ANTIBODY IGG - ELISA,Immune System,COVID-19
+CALC,CALCIUM,Nutrition,Minerals
+CALCT,CALCITONIN,Thyroid,Thyroid Function
+CAME,COVID ANTIBODY IGM - ELISA,Immune System,COVID-19
+CANC,PR3 - ANCA ( C-ANCA ),Kidney,Autoimmune Markers
+CANNA,CANNABINOIDS,Toxicology,Drug Testing & Monitoring
+CARB,CARBAMAZEPINE / TEGRETOL,Nervous System,Therapeutic Drug Monitoring
+CATC,COVID ANTIBODIES-TOTAL (CLIA),Immune System,COVID-19
+CATE,COVID ANTIBODY TOTAL- ELISA,Immune System,COVID-19
+CCM_G,CYTOMEGALO VIRUS (CMV) - IgG,Immune System,Viral Serology
+CCM_M,CYTOMEGALO VIRUS (CMV) - IgM,Immune System,Viral Serology
+CD19%,CD19% (B-CELL),Immune System,Lymphocyte Subsets
+CD19A,ABSOLUTE CD19 (B-CELL),Immune System,Lymphocyte Subsets
+CD3,% CD3+ / CD45 (T–CELLS),Immune System,Lymphocyte Subsets
+CD3%,CD3% (T-CELL),Immune System,Lymphocyte Subsets
+CD3A,ABSOLUTE CD3 (T-CELL ),Immune System,Lymphocyte Subsets
+CD4,% CD3+/CD4+ (T-HELPER CELLS),Immune System,Lymphocyte Subsets
+CD8,% CD3+/CD8+ (T-SUPPRESSOR CELLS),Immune System,Lymphocyte Subsets
+CEA,CARCINO EMBRYONIC ANTIGEN (CEA),Digestive System,Cancer Markers
+CERU,CERULOPLASMIN,Liver,Special Proteins
+CHI_M,CHIKUNGUNYA-IGM,Immune System,Viral Serology
+CHL,CHLORIDE,Kidney,Electrolytes
+CHL_G,ANTI CHLAMYDIA ANTIBODY IGG,Immune System,Viral Serology
+CHL_M,ANTI CHLAMYDIA ANTIBODY IGM,Immune System,Viral Serology
+CHOL,TOTAL CHOLESTEROL,Heart,Lipid Profile
+CHOLI,CHOLINESTERASE,Liver,Liver Function
+CHS1G,HERPES SIMPLEX VIRUS I (HSV)-IGG,Immune System,Viral Serology
+CHS1M,HERPES SIMPLEX VIRUS I (HSV)-IGM,Immune System,Viral Serology
+CHS2G,HERPES SIMPLEX VIRUS II (HSV)-IGG,Immune System,Viral Serology
+CHS2M,HERPES SIMPLEX VIRUS II (HSV)-IGM,Immune System,Viral Serology
+CM_G,CYTOMEGALO VIRUS (CMV) - IGG,Immune System,Viral Serology
+CM_M,CYTOMEGALO VIRUS (CMV) - IGM,Immune System,Viral Serology
+COCAI,COCAINE METABOLITES,Toxicology,Drug Testing & Monitoring
+CONAB,COVID NEUTRALIZING ANTIBODY,Immune System,COVID-19
+CORT,CORTISOL,Adrenal Gland,Adrenal & Stress Hormones
+CORTE,CORTISOL  SERUM (EVENING SAMPLE 4pm -8pm),Adrenal Gland,Adrenal & Stress Hormones
+CORTM,CORTISOL  SERUM (MORNING SAMPLE 6am -10am),Adrenal Gland,Adrenal & Stress Hormones
+CPEP,C-PEPTIDE,Pancreas,Blood Glucose & Diabetes
+CPK,CREATININE PHOSPHOKINASE,Heart,Cardiac Markers
+CPKMB,CREATININE PHOSPHOKINASE (MUSCLE/BRAIN),Heart,Cardiac Markers
+CRB_G,RUBELLA - IgG,Immune System,Viral Serology
+CRB_M,RUBELLA - IgM,Immune System,Viral Serology
+CRP,C-REACTIVE PROTEIN (CRP),Immune System,Inflammation Markers
+CRT,CLOT RETRACTION TIME,Blood,Coagulation & Clotting
+CT,CLOTTING TIME,Blood,Coagulation & Clotting
+CTX_G,TOXO GONDII - IgG,Immune System,Viral Serology
+CTX_M,TOXO GONDII - IgM,Immune System,Viral Serology
+CYST,CYSTATIN C,Kidney,Kidney Function
+DBALA,ALANINE,Metabolism,Amino Acid Profile
+DBARG,ARGININE,Metabolism,Amino Acid Profile
+DBASA,ARGININOSUCCINIC ACID,Metabolism,Amino Acid Profile
+DBCIT,CITRULLINE,Metabolism,Amino Acid Profile
+DBGLY,GLYCINE,Metabolism,Amino Acid Profile
+DBLEU,LEUCINE,Metabolism,Amino Acid Profile
+DBMET,METHIONINE,Metabolism,Amino Acid Profile
+DBORN,ORNITHINE,Metabolism,Amino Acid Profile
+DBPHE,PHENYLALANINE,Metabolism,Amino Acid Profile
+DBTYR,TYROSINE,Metabolism,Amino Acid Profile
+DBVAL,VALINE,Metabolism,Amino Acid Profile
+DCAR,DECANOYL-CARNITINE (C10),Metabolism,Acylcarnitine Profile
+DECAR,DECENOYL-CARNITINE (C10:1),Metabolism,Acylcarnitine Profile
+DG_G,DENGUE-IGG - ELISA,Immune System,Viral Serology
+DG_M,DENGUE-IGM - ELISA,Immune System,Viral Serology
+DGP-A,ANTI DEAMIDATED GLIADIN PEPTIDE - IGA,Digestive System,Autoimmune Markers
+DGP-G,ANTI DEAMIDATED GLIADIN PEPTIDE - IGG,Digestive System,Autoimmune Markers
+DHEA,DHEA - SULPHATE (DHEAS),Adrenal Gland,Adrenal & Stress Hormones
+DHT,DIHYDROTESTOSTERONE (DHT),Reproductive System,Reproductive Hormones
+DIGOX,DIGOXIN,Heart,Therapeutic Drug Monitoring
+DIMER,D-DIMER,Blood,Coagulation & Clotting
+DNA,ANTI - DSDNA,Immune System,Autoimmune Markers
+DOCAR,DODECANOYL-CARNITINE (C12),Metabolism,Acylcarnitine Profile
+DREN,DIRECT RENIN,Adrenal Gland,Adrenal & Stress Hormones
+E2,ESTRADIOL/OESTROGEN (E2),Reproductive System,Reproductive Hormones
+EAG,HEPATITIS B ENVELOPE ANTIGEN (HBEAG),Liver,Hepatitis & Liver Infections
+EBVCG,EPSTEIN BARR VIRAL CAPSID ANTIGEN - IGG,Immune System,Viral Serology
+EBVCM,EPSTEIN BARR VIRAL CAPSID ANTIGEN - IgM,Immune System,Viral Serology
+EBVNG,EPSTEIN BARR VIRAL NUCLEAR ANTIGEN - IgG,Immune System,Viral Serology
+ECH_G,ECHINOCOCCUS - IGG,Immune System,Infection & Serology
+EGFR,EST. GLOMERULAR FILTRATION RATE (eGFR),Kidney,Kidney Function
+EOS,EOSINOPHILS,Blood,Complete Blood Count
+ERYP,ERYTHROPOIETIN,Blood,Erythropoiesis
+ESR,ERYTHROCYTE SEDIMENTATION RATE (ESR),Blood,Complete Blood Count
+ETHAN,ETHANOL,Toxicology,Drug Testing & Monitoring
+ETHYL,ETHYL ALCOHOL,Toxicology,Drug Testing & Monitoring
+FAIN,FREE ANDROGEN INDEX,Reproductive System,Reproductive Hormones
+FBS,FASTING BLOOD SUGAR(GLUCOSE),Pancreas,Blood Glucose & Diabetes
+FCAR,FREE CARNITINE (C0),Metabolism,Acylcarnitine Profile
+FERR,FERRITIN,Blood,Iron Studies
+FIB-4,FIB-4,Liver,Liver Function
+FIBRI,FIBRINOGEN,Blood,Coagulation & Clotting
+FOLI,FOLATE,Nutrition,Vitamins
+FPSA,FREE PSA,Prostate,Cancer Markers
+FRUCT,FRUCTOSAMINE,Pancreas,Blood Glucose & Diabetes
+FSH,FOLLICLE STIMULATING HORMONE (FSH),Reproductive System,Reproductive Hormones
+FT3,FREE TRIIODOTHYRONINE (FT3),Thyroid,Thyroid Function
+FT4,FREE THYROXINE (FT4),Thyroid,Thyroid Function
+FTES,FREE TESTOSTERONE,Reproductive System,Reproductive Hormones
+G6PD,GLUCOSE-6-PHOSPHATE DEHYDROGENASE,Blood,Complete Blood Count
+GASTR,GASTRIN,Adrenal Gland,Adrenal & Stress Hormones
+GBMG,ANTI GLOMERULAR BASEMENT MEMBRANE PROTEIN - IgG,Kidney,Autoimmune Markers
+GCAR,GLUTARYL-CARNITINE (C5DC),Metabolism,Acylcarnitine Profile
+GENTA,GENTAMICIN,Kidney,Therapeutic Drug Monitoring
+GGT,GAMMA GLUTAMYL TRANSFERASE (GGT),Liver,Liver Function
+GPHBA,HBA1C,Pancreas,Blood Glucose & Diabetes
+GRAN,GRANULOCYTES,Blood,Complete Blood Count
+HAVM,ANTI HEPATITIS A VIRUS (ANTI HAV) - IGM,Liver,Hepatitis & Liver Infections
+HAVT,ANTI HEPATITIS A VIRUS (HAV) - TOTAL,Liver,Hepatitis & Liver Infections
+HB,HEMOGLOBIN,Blood,Complete Blood Count
+HBA,HbA1c,Pancreas,Blood Glucose & Diabetes
+HBA2,HEMOGLOBIN A2,Blood,Complete Blood Count
+HBCM,ANTI HEPATITIS B CORE ANTIGEN (AHBC) - IGM,Liver,Hepatitis & Liver Infections
+HBCT,ANTI HEPATITIS B CORE ANTIGEN (AHBC) - TOTAL,Liver,Hepatitis & Liver Infections
+HBF,HEMOGLOBIN F,Blood,Complete Blood Count
+HBST,HEPATITIS B SURFACE ANTIBODY (ANTI-HBs),Liver,Hepatitis & Liver Infections
+HC_G,HERPES SIMPLEX VIRUS (HSV)-IgG,Immune System,Viral Serology
+HC_M,HERPES SIMPLEX VIRUS (HSV)-IgM,Immune System,Viral Serology
+HCAR,HEXANOYL-CARNITINE (C6),Metabolism,Acylcarnitine Profile
+HCHO,HDL CHOLESTEROL - DIRECT,Heart,Lipid Profile
+HCVG,HEPATITIS C VIRUS - IGG,Liver,Hepatitis & Liver Infections
+HCVM,HEPATITIS C VIRUS - IGM,Liver,Hepatitis & Liver Infections
+HD/LD,HDL / LDL RATIO,Heart,Lipid Profile
+HDECA,3-HYDROXYHEXADECANOYL-CARNITINE (C16OH),Metabolism,Acylcarnitine Profile
+HDECE,3-HYDROXYHEXADECENOYL-CARNITINE (C16:1-OH),Metabolism,Acylcarnitine Profile
+HEAL,ALUMINIUM,Toxicology,Heavy Metal Toxicology
+HEAS,ARSENIC,Toxicology,Heavy Metal Toxicology
+HEBA,BARIUM,Toxicology,Heavy Metal Toxicology
+HEBI,BISMUTH,Toxicology,Heavy Metal Toxicology
+HECA,CALCIUM,Nutrition,Minerals
+HECD,CADMIUM,Toxicology,Heavy Metal Toxicology
+HECO,COBALT,Toxicology,Heavy Metal Toxicology
+HECR,CHROMIUM,Toxicology,Heavy Metal Toxicology
+HECS,CESIUM,Toxicology,Heavy Metal Toxicology
+HECU,COPPER,Nutrition,Minerals
+HEFE,IRON,Blood,Iron Studies
+HEHG,MERCURY,Toxicology,Heavy Metal Toxicology
+HEK,POTASSIUM,Nutrition,Minerals
+HELI,LITHIUM,Toxicology,Heavy Metal Toxicology
+HEMB,MOLYBDENUM,Nutrition,Minerals
+HEMG,MAGNESIUM,Nutrition,Minerals
+HEMGN,HEMOGLOBIN,Blood,Complete Blood Count
+HEMN,MANGANESE,Toxicology,Heavy Metal Toxicology
+HENA,SODIUM,Nutrition,Minerals
+HENI,NICKEL,Toxicology,Heavy Metal Toxicology
+HEPB,LEAD,Toxicology,Heavy Metal Toxicology
+HESB,ANTIMONY,Toxicology,Heavy Metal Toxicology
+HESE,SELENIUM,Nutrition,Minerals
+HESN,TIN,Toxicology,Heavy Metal Toxicology
+HEU,URANIUM,Toxicology,Heavy Metal Toxicology
+HEVG,HEPATITIS E VIRUS IGG,Liver,Hepatitis & Liver Infections
+HEVM,ANTI HEPATITIS E VIRUS (Anti HEV) - IgM,Liver,Hepatitis & Liver Infections
+HEZN,ZINC,Toxicology,Heavy Metal Toxicology
+HGH,HUMAN GROWTH HORMONE (HGH),Pituitary Gland,Growth & Pituitary Hormones
+HGLOB,HAPTOGLOBIN,Blood,Special Proteins
+HIVE,HIV I and II,Immune System,Infection & Serology
+HIVE2,HIV - 1 & II Value 2,Immune System,Infection & Serology
+HOCAR,3-HYDROXYOCTADECENOYL-CARNITINE (C18:1OH),Metabolism,Acylcarnitine Profile
+HOMIR,HOMA INSULIN RESISTANCE INDEX,Pancreas,Blood Glucose & Diabetes
+HOMO,HOMOCYSTEINE,Heart,Lipid Profile
+HPCAR,HEXADECANOYL-(PALMITOYL)-CARNITINE (C16),Metabolism,Acylcarnitine Profile
+HPYA,HELICOBACTER PYLORI - IgA,Digestive System,Infection & Serology
+HPYG,HELICOBACTER PYLORI - IGG,Digestive System,Infection & Serology
+HPYM,HELICOBACTER PYLORI - IGM,Digestive System,Infection & Serology
+HS1G,HERPES SIMPLEX VIRUS I (HSV)-IGG,Immune System,Viral Serology
+HS1M,HERPES SIMPLEX VIRUS I (HSV)-IGM,Immune System,Viral Serology
+HS2G,HERPES SIMPLEX VIRUS II (HSV)-IGG,Immune System,Viral Serology
+HS2M,HERPES SIMPLEX VIRUS II (HSV)-IGM,Immune System,Viral Serology
+HSCRP,HIGH SENSITIVITY C-REACTIVE PROTEIN (HS-CRP),Immune System,Inflammation Markers
+HSTNI,HIGH SENSITIVITY TROPONIN I,Heart,Cardiac Markers
+IBCAR,ISOBUTYRYL- BUTYRYL-CARNITINE (C4),Metabolism,Acylcarnitine Profile
+ICAL,IONIC CALCIUM,Nutrition,Minerals
+IG,IMMATURE GRANULOCYTES(IG),Blood,Complete Blood Count
+IG%,IMMATURE GRANULOCYTE PERCENTAGE(IG%),Blood,Complete Blood Count
+IGA,IMMUNOGLOBULIN A (IGA),Immune System,Immunoglobulins
+IGE,IMMUNOGLOBULIN E (IGE),Immune System,Immunoglobulins
+IGG,IMMUNOGLOBULIN G (IGG),Immune System,Immunoglobulins
+IGGU,URINE IMMUNOGLOBULIN G (IGG),Kidney,Urine Analysis
+IGM,IMMUNOGLOBULIN M (IGM),Immune System,Immunoglobulins
+IGMLC,IGM LOW CONCENTRATION,Kidney,Urine Analysis
+IMCAR,ISOVALERYL-/2-METHYLBUTYRYL-CARNITINE (C5),Metabolism,Acylcarnitine Profile
+INR,INTERNATIONAL NORMALIZED RATIO,Blood,Coagulation & Clotting
+INSAB,INSULIN ANTIBODIES,Pancreas,Blood Glucose & Diabetes
+INSFA,INSULIN - FASTING,Pancreas,Blood Glucose & Diabetes
+INSPP,INSULIN - PP,Pancreas,Blood Glucose & Diabetes
+INT01,INTOLERANCE - COW MILK,Digestive System,Food Intolerance
+INT02,INTOLERANCE - CURD,Digestive System,Food Intolerance
+INT03,INTOLERANCE - YOGURT,Digestive System,Food Intolerance
+INT04,INTOLERANCE - MOZZARELLA CHEESE,Digestive System,Food Intolerance
+INT05,INTOLERANCE - BUFFALO MILK,Digestive System,Food Intolerance
+IRON,IRON,Blood,Iron Studies
+ITRL6,INTERLEUKIN-6,Immune System,Immunoglobulins
+KAPLC,KAPPA LIGHT CHAIN,Immune System,Immunoglobulins
+KAPLR,KAPPA AND LAMBDA RATIO,Immune System,Immunoglobulins
+LACTA,LACTATE,Liver,Liver Function
+LAMLC,LAMBDA LIGHT CHAIN,Immune System,Immunoglobulins
+LASE,LIPASE,Pancreas,Pancreatic Function
+LCVDT,VITAMIN D TOTAL,Nutrition,Vitamins
+LDH,LACTATE DEHYDROGENASE (LDH),Liver,Liver Function
+LDL,LDL CHOLESTEROL - DIRECT,Heart,Lipid Profile
+LDL/,LDL / HDL RATIO,Heart,Lipid Profile
+LDLC,LDL CHOLESTEROL,Heart,Lipid Profile
+LEUC,TOTAL LEUCOCYTES COUNT (WBC),Blood,Complete Blood Count
+LH,LUTEINISING HORMONE (LH),Reproductive System,Reproductive Hormones
+LITHI,LITHIUM,Nervous System,Therapeutic Drug Monitoring
+LKM1,LIVER KIDNEY MICROSOMES,Liver,Autoimmune Markers
+LP_M,LEPTOSPIRA-IgM,Immune System,Infection & Serology
+LPA,LIPOPROTEIN (A) [LP(A)],Heart,Lipid Profile
+LYMPH,LYMPHOCYTE,Blood,Complete Blood Count
+MCH,MEAN CORPUSCULAR HEMOGLOBIN(MCH),Blood,Complete Blood Count
+MCHC,MEAN CORP.HEMO.CONC(MCHC),Blood,Complete Blood Count
+MCV,MEAN CORPUSCULAR VOLUME(MCV),Blood,Complete Blood Count
+MECAR,METHYLGLUTARYL CARNITINE (C6DC),Metabolism,Acylcarnitine Profile
+MESLG,MEASLES ANTIBODY - IGG,Immune System,Viral Serology
+MESLM,MEASLES ANTIBODY - IGM,Immune System,Viral Serology
+METHA,METHADONE,Toxicology,Drug Testing & Monitoring
+MG,MAGNESIUM,Nutrition,Minerals
+MI,MENTZER INDEX,Blood,Complete Blood Count
+MID,MID POPULATION,Blood,Complete Blood Count
+MONO,MONOCYTES,Blood,Complete Blood Count
+MPV,MEAN PLATELET VOLUME(MPV),Blood,Complete Blood Count
+MT,MANTOUX TEST,Lungs,Infection & Serology
+MUMPG,MUMPS ANTIBODY - IGG,Immune System,Viral Serology
+MUMPM,MUMPS ANTIBODY - IGM,Immune System,Viral Serology
+MXD,MIXED PERCENTAGE,Blood,Complete Blood Count
+MYOGL,MYOGLOBIN,Heart,Cardiac Markers
+NABDG,N ACETYL BETA D GLUCOSAMINIDASE,Kidney,Kidney Function
+NBIO,NEONATAL BIOTINIDASE,Neonatal,Neonatal Screening
+NEUT,NEUTROPHILS,Blood,Complete Blood Count
+NG6P,NEONATAL G6PD,Neonatal,Neonatal Screening
+NHDL,NON-HDL CHOLESTEROL,Heart,Lipid Profile
+NIME,NICOTINE METABOLITES,Toxicology,Drug Testing & Monitoring
+NIRT,NEONATAL IMMUNOREACTIVE TRYPSIN,Neonatal,Neonatal Screening
+NKC%,NATURAL KILLER CELL% (CD16+CD56),Immune System,Lymphocyte Subsets
+NKCA,ABSOLUTE NATURAL KILLER CELL (CD16 CD56),Immune System,Lymphocyte Subsets
+NOHP,NEONATAL 17 ALPHA-HYDROXYPROGESTERONE,Neonatal,Neonatal Screening
+NPBNP,NT-PROBNP,Heart,Cardiac Markers
+NPKU,NEONATAL PHENYLKETONURIA,Neonatal,Neonatal Screening
+NRBC,NUCLEATED RED BLOOD CELLS,Blood,Complete Blood Count
+NRBC%,NUCLEATED RED BLOOD CELLS %,Blood,Complete Blood Count
+NS1,DENGUE NS1 ANTIGEN - ELISA,Immune System,Viral Serology
+NTGA,NEONATAL TOTAL GALACTOSE,Neonatal,Neonatal Screening
+NTHY,THYROID STIMULATING HORMONE,Neonatal,Neonatal Screening
+OCAD,OCTADECADIENOYL-CARNITINE (C18:2),Metabolism,Acylcarnitine Profile
+OCAR,OCTANOYL-CARNITINE (C8),Metabolism,Acylcarnitine Profile
+OCTC,OCTADECENOYL-CARNITINE (C18:1),Metabolism,Acylcarnitine Profile
+ODCAR,OCTADECANOYL-(STEARYL)-CARNITINE (C18),Metabolism,Acylcarnitine Profile
+OPIAT,OPIATES,Toxicology,Drug Testing & Monitoring
+OT/PT,SGOT / SGPT RATIO,Liver,Liver Function
+PALB,PREALBUMIN,Nutrition,Special Proteins
+PANC,MPO - ANCA ( P - ANCA ),Kidney,Autoimmune Markers
+PAPPA,PREGNANCY ASSOCIATED PLASMA PROTEIN A,Reproductive System,Reproductive Hormones
+PCAR,PROPIONYL CARNITINE (C3),Metabolism,Acylcarnitine Profile
+PCT,PLATELETCRIT(PCT),Blood,Complete Blood Count
+PCV,HEMATOCRIT(PCV),Blood,Complete Blood Count
+PDW,PLATELET DISTRIBUTION WIDTH(PDW),Blood,Complete Blood Count
+PHBAR,PHENOBARBITAL,Nervous System,Therapeutic Drug Monitoring
+PHEBA,PHENOBARBITAL/GARDENAL SERUM,Nervous System,Therapeutic Drug Monitoring
+PHEN,PHENYTOIN / DILANTIN / EPTOIN,Nervous System,Therapeutic Drug Monitoring
+PHENC,PHENCYCLIDINE,Toxicology,Drug Testing & Monitoring
+PHOS,PHOSPHOROUS,Bone,Bone & Parathyroid
+PLA2,LP-PLA2,Heart,Lipid Profile
+PLCR,PLATELET TO LARGE CELL RATIO(PLCR),Blood,Complete Blood Count
+PLT,PLATELET COUNT,Blood,Complete Blood Count
+PLTCT,PLATELET COUNT,Blood,Complete Blood Count
+PNL01,ALLERGY ANIMAL PANEL - SCREENING,Immune System,Allergy Testing
+PNL01A,CAT DANDER EPITHELIUM,Immune System,Allergy Testing
+PNL01B,HORSE DANDER,Immune System,Allergy Testing
+PNL01C,COW DANDER,Immune System,Allergy Testing
+PNL01D,DOG DANDER,Immune System,Allergy Testing
+PNL02,ALLERGY FOOD PANEL 1 - SCREENING,Immune System,Allergy Testing
+PNL02A,EGG WHITE,Immune System,Allergy Testing
+PNL02B,MILK,Immune System,Allergy Testing
+PNL02C,WHEAT,Immune System,Allergy Testing
+PNL02D,RICE,Immune System,Allergy Testing
+PNL02E,PEANUT,Immune System,Allergy Testing
+PNL02F,SOYBEAN,Immune System,Allergy Testing
+PNL03,ALLERGY GRASS PANEL - SCREENING,Immune System,Allergy Testing
+PNL03A,BERMUDA GRASS,Immune System,Allergy Testing
+PNL03B,PERENNIAL RYE GRASS,Immune System,Allergy Testing
+PNL03C,TIMOTHY GRASS,Immune System,Allergy Testing
+PNL03D,JUNE GRASS,Immune System,Allergy Testing
+PNL03E,JOHNSON GRASS,Immune System,Allergy Testing
+PNL03F,BAHIA GRASS,Immune System,Allergy Testing
+PNL04,ALLERGY MOLD PANEL - SCREENING,Immune System,Allergy Testing
+PNL04A,PENICILLIUM NOTATUM,Immune System,Allergy Testing
+PNL04B,CLADOSPERIUM HERBA,Immune System,Allergy Testing
+PNL04C,ASPERGILLUS FUMAGITUS,Immune System,Allergy Testing
+PNL04D,CANDIDA ALBICANS,Immune System,Allergy Testing
+PNL04E,ALTERNARIA TENUIS,Immune System,Allergy Testing
+PNL05,ALLERGY TREE PANEL 1 - SCREENING,Immune System,Allergy Testing
+PNL05A,MAPLE,Immune System,Allergy Testing
+PNL05B,BIRCH,Immune System,Allergy Testing
+PNL05C,OAK,Immune System,Allergy Testing
+PNL05D,ELM,Immune System,Allergy Testing
+PNL05E,WALNUT,Immune System,Allergy Testing
+PNL06,ALLERGY TREE PANEL 2 - SCREENING,Immune System,Allergy Testing
+PNL06A,OLIVE,Immune System,Allergy Testing
+PNL06B,WILLOW,Immune System,Allergy Testing
+PNL06C,WHITE PINE,Immune System,Allergy Testing
+PNL06D,EUCALYPTUS,Immune System,Allergy Testing
+PNL06E,ACACIA,Immune System,Allergy Testing
+PNL06F,MELALEUCA,Immune System,Allergy Testing
+PNL07,ALLERGY FOOD PANEL 2 - SCREENING,Immune System,Allergy Testing
+PNL07A,WHEAT,Immune System,Allergy Testing
+PNL07B,OAT,Immune System,Allergy Testing
+PNL07C,CORN,Immune System,Allergy Testing
+PNL07D,SESAME SEED,Immune System,Allergy Testing
+PNL07E,BUCKWHEAT,Immune System,Allergy Testing
+PNL08A,GREEN PEA,Immune System,Allergy Testing
+PNL08B,WHITE BEAN,Immune System,Allergy Testing
+PNL08C,CARROT,Immune System,Allergy Testing
+PNL08D,POTATO,Immune System,Allergy Testing
+PNL09,ALLERGY WEED PANEL - SCREENING,Immune System,Allergy Testing
+PNL09A,COMMON RAGWEED,Immune System,Allergy Testing
+PNL09B,MUGWORT,Immune System,Allergy Testing
+PNL09C,ENGLISH PLANTA,Immune System,Allergy Testing
+PNL09D,LAMBS QUARTERS,Immune System,Allergy Testing
+PNL09E,RUSSIAN THISTLE,Immune System,Allergy Testing
+POT,POTASSIUM,Kidney,Electrolytes
+PPBS,POSTPRANDIAL BLOOD SUGAR(GLUCOSE),Pancreas,Blood Glucose & Diabetes
+PRCAL,PROCALCITONIN,Immune System,Infection & Serology
+PRFB,PROPERDIN FACTOR B,Immune System,Immunoglobulins
+PRL,PROLACTIN (PRL),Reproductive System,Reproductive Hormones
+PROG,PROGESTERONE,Reproductive System,Reproductive Hormones
+PROT,PROTEIN - TOTAL,Liver,Liver Function
+PSA,PROSTATE SPECIFIC ANTIGEN (PSA),Prostate,Cancer Markers
+PT,PROTHROMBIN TIME,Blood,Coagulation & Clotting
+PTH,INTACT PARATHYROID HORMONE (PTH),Bone,Bone & Parathyroid
+PYRUV,PYRUVATE,Liver,Liver Function
+QUICKI,QUANTITATIVE INSULIN SENSITIVITY INDEX,Pancreas,Blood Glucose & Diabetes
+RB_G,RUBELLA - IGG,Immune System,Viral Serology
+RB_M,RUBELLA - IGM,Immune System,Viral Serology
+RBC,TOTAL RBC,Blood,Complete Blood Count
+RBS,RANDOM BLOOD SUGAR(GLUCOSE),Pancreas,Blood Glucose & Diabetes
+RCD48,RATIO CD4 / CD8,Immune System,Lymphocyte Subsets
+RDCV,RED CELL DISTRIBUTION WIDTH (RDW-CV),Blood,Complete Blood Count
+RDWI,RED CELL DISTRIBUTION WIDTH INDEX (RDWI),Blood,Complete Blood Count
+RDWSD,RED CELL DISTRIBUTION WIDTH - SD(RDW-SD),Blood,Complete Blood Count
+RETIC,RETICULOCYTE COUNT (%),Blood,Complete Blood Count
+RFAC,RHEUMATOID FACTOR (RF),Joints,Autoimmune Markers
+SAAP,SERUM AMYLOID A PROTEIN,Immune System,Inflammation Markers
+SAG,HEPATITIS B SURFACE ANTIGEN (HBSAG),Liver,Hepatitis & Liver Infections
+SALB,ALBUMIN - SERUM,Liver,Liver Function
+SALIC,SALICYLATE,Toxicology,Drug Testing & Monitoring
+SCL70,ANTI SCL - 70 ANTIBODY,Immune System,Autoimmune Markers
+SCRE,CREATININE - SERUM,Kidney,Kidney Function
+SDLDL,SMALL DENSE LDL,Heart,Lipid Profile
+SECU,SERUM COPPER,Nutrition,Minerals
+SEGB,SERUM GLOBULIN,Liver,Liver Function
+SEZN,SERUM ZINC,Nutrition,Minerals
+SGOT,ASPARTATE AMINOTRANSFERASE (SGOT ),Liver,Liver Function
+SGPT,ALANINE TRANSAMINASE (SGPT),Liver,Liver Function
+SHBG,SEX HORMONE BINDING GLOBULIN (SHBG),Reproductive System,Reproductive Hormones
+SIALA,SIALIC ACID,Immune System,Special Proteins
+SOD,SODIUM,Kidney,Electrolytes
+SPGR,SPECIFIC GRAVITY,Kidney,Urine Analysis
+STESE,SERUM SELENIUM,Nutrition,Minerals
+STFR,SOLUBLE TRANSFERRIN RECEPTOR,Blood,Iron Studies
+T3,TOTAL TRIIODOTHYRONINE (T3),Thyroid,Thyroid Function
+T4,TOTAL THYROXINE (T4),Thyroid,Thyroid Function
+TB_A,ANTI TUBERCULOSIS (TB) - IgA,Lungs,Infection & Serology
+TB_G,ANTI TUBERCULOSIS (TB) - IgG,Lungs,Infection & Serology
+TB_M,ANTI TUBERCULOSIS (TB) - IgM,Lungs,Infection & Serology
+TBILA,TOTAL BILE ACID,Liver,Liver Function
+TC/H,TC/ HDL CHOLESTEROL RATIO,Heart,Lipid Profile
+TCAR,TETRADECENOYL-CARNITINE (C14:1),Metabolism,Acylcarnitine Profile
+TEST,TESTOSTERONE,Reproductive System,Reproductive Hormones
+TG,THYROGLOBULIN (TG),Thyroid,Thyroid Function
+TGCAR,TIGLYL-CARNITINE (C5:1),Metabolism,Acylcarnitine Profile
+THEOP,THEOPHYLINE,Lungs,Therapeutic Drug Monitoring
+TIBC,TOTAL IRON BINDING CAPACITY (TIBC),Blood,Iron Studies
+TIGE,TOTAL IGE,Immune System,Immunoglobulins
+TLEUC,TOTAL LEUCOCYTES COUNT,Blood,Complete Blood Count
+TMCAR,TETRADECANOYL-(MYRISTOYL)-CARNITINE (C14),Metabolism,Acylcarnitine Profile
+TORBC,TOTAL RBC,Blood,Complete Blood Count
+TPAB,TREPONEMA PALLIDUM ANTIBODY (TPAB),Immune System,Infection & Serology
+TPHA,TREPONEMA PALLIDUM HAEMAGGLUTINATION,Immune System,Infection & Serology
+TRAB,TSH RECEPTOR ANTIBODIES,Thyroid,Thyroid Function
+TRANS,TRANSFERRIN SERUM,Blood,Iron Studies
+TRANU,TRANSFERRIN URINE,Blood,Iron Studies
+TRI/H,TRIG / HDL RATIO,Heart,Lipid Profile
+TRIG,TRIGLYCERIDES,Heart,Lipid Profile
+TSH,THYROID STIMULATING HORMONE (TSH),Thyroid,Thyroid Function
+TT,THROMBIN TIME,Blood,Coagulation & Clotting
+TTGA,TISSUE TRANSGLUTAMINASE - IGA (TTG),Digestive System,Autoimmune Markers
+TX_G,TOXO GONDII - IGG,Immune System,Viral Serology
+TX_M,TOXO GONDII - IGM,Immune System,Viral Serology
+UA/C,URI. ALBUMIN/CREATININE RATIO (UA/C),Kidney,Kidney Function
+UALB,URINARY MICROALBUMIN,Kidney,Kidney Function
+UBIL,URINARY BILIRUBIN,Kidney,Urine Analysis
+UBLD,URINE BLOOD,Kidney,Urine Analysis
+UBNGN,UROBILINOGEN,Kidney,Urine Analysis
+UCHL,URINARY CHLORIDE,Kidney,Urine Analysis
+UCORT,URINARY CORTISOL (24 Hours urine),Adrenal Gland,Adrenal & Stress Hormones
+UCRA,CREATININE - URINE,Kidney,Urine Analysis
+UEPIT,EPITHELIAL CELLS,Kidney,Urine Analysis
+UGLU,URINARY GLUCOSE,Kidney,Urine Analysis
+UI_BC,UNSAT.IRON-BINDING CAPACITY(UIBC),Blood,Iron Studies
+UKET,URINE KETONE,Kidney,Urine Analysis
+ULEST,LEUCOCYTE ESTERASE,Kidney,Urine Analysis
+ULEUC,URINARY LEUCOCYTES (PUS CELLS),Kidney,Urine Analysis
+UPCR,URINE PROTEIN CREATININE RATIO,Kidney,Urine Analysis
+UPH,PH,Kidney,Urine Analysis
+UPOT,URINARY POTASSIUM,Kidney,Urine Analysis
+UPRO,PROTEIN - URINE,Kidney,Urine Analysis
+UPROT,URINARY PROTEIN,Kidney,Urine Analysis
+UR/CR,UREA / SR.CREATININE RATIO,Kidney,Kidney Function
+URBC,RED BLOOD CELLS,Kidney,Urine Analysis
+UREA,BLOOD UREA,Kidney,Kidney Function
+UREAC,UREA (CALCULATED),Kidney,Kidney Function
+URIC,URIC ACID,Kidney,Kidney Function
+URPB,URINE LEAD,Kidney,Urine Analysis
+USOD,URINARY SODIUM,Kidney,Urine Analysis
+USTSH,TSH - ULTRASENSITIVE,Thyroid,Thyroid Function
+UTEAS,ARSENIC,Toxicology,Heavy Metal Toxicology
+UTEBA,BARIUM,Toxicology,Heavy Metal Toxicology
+UTECD,CADMIUM,Toxicology,Heavy Metal Toxicology
+UTECO,COBALT,Toxicology,Heavy Metal Toxicology
+UTECR,CHROMIUM,Toxicology,Heavy Metal Toxicology
+UTECS,CAESIUM,Toxicology,Heavy Metal Toxicology
+UTEHG,MERCURY,Toxicology,Heavy Metal Toxicology
+UTELI,LITHIUM,Toxicology,Heavy Metal Toxicology
+UTEPB,LEAD,Toxicology,Heavy Metal Toxicology
+VALP,VALPROIC ACID,Nervous System,Therapeutic Drug Monitoring
+VAZVG,VARICELLA ZOSTER VIRUS ANTIBODY - IGG,Immune System,Viral Serology
+VAZVM,VARICELLA ZOSTER VIRUS ANTIBODY - IGM,Immune System,Viral Serology
+VD125,"VITAMIN D 1,25 - DIHYDROXY",Nutrition,Vitamins
+VITA,VITAMIN A,Nutrition,Vitamins
+VITB,VITAMIN B-12,Nutrition,Vitamins
+VITB1,VITAMIN B1/THIAMIN,Nutrition,Vitamins
+VITB2,VITAMIN B2/RIBOFLAVIN,Nutrition,Vitamins
+VITB3,VITAMIN B3/NICOTINIC ACID,Nutrition,Vitamins
+VITB5,VITAMIN B5/PANTOTHENIC,Nutrition,Vitamins
+VITB6,VITAMIN B6/P5P,Nutrition,Vitamins
+VITB7,VITAMIN B7/BIOTIN,Nutrition,Vitamins
+VITB9,VITAMIN B9/FOLIC ACID,Nutrition,Vitamins
+VITD3,VITAMIN D3,Nutrition,Vitamins
+VITDC,25-OH VITAMIN D (TOTAL),Nutrition,Vitamins
+VITE,VITAMIN E,Nutrition,Vitamins
+VITK,VITAMIN K,Nutrition,Vitamins
+VLDL,VLDL CHOLESTEROL,Heart,Lipid Profile

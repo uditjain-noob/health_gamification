@@ -99,7 +99,7 @@ def register(mcp, get_store, get_mapper):
             Ring(value=score, max=100)
             if latest:
                 Metric(label="Current Value", value=f"{latest['value']} {match['unit']}")
-            Badge(status.upper(), variant=status_variant[status])
+            Badge(status.upper(), variant=status_variant.get(status, "default"))
             Muted(f"Normal range: {ref_min} – {ref_max} {match['unit']}")
             if len(readings) > 1:
                 Heading("Trend", level=5)

@@ -35,7 +35,10 @@ def register(mcp, get_store, get_mapper, get_client):
             f"{[p['name'] for p in flagged]}. Be encouraging, not alarming. No diagnosis."
         )
         if flagged:
-            summary = client.complete(system="You are a wellness assistant.", user=summary_prompt)
+            try:
+                summary = client.complete(system="You are a wellness assistant.", user=summary_prompt)
+            except Exception:
+                summary = f"Some {organ} markers need attention. Review the table below for details."
         else:
             summary = f"All {organ} markers are within normal range. Keep it up!"
 
@@ -58,7 +61,10 @@ def register(mcp, get_store, get_mapper, get_client):
 
         # Get recommendations
         from apps.recommendations import fetch_recommendations
-        recs = fetch_recommendations(client, organ, flagged)
+        try:
+            recs = fetch_recommendations(client, organ, flagged, patient_id)
+        except Exception:
+            recs = {"diet": [], "exercise": [], "supplements": []}
 
         emoji = mapper.get_organ_emoji(organ)
         rank_variant = {"Optimal": "success", "Good": "default", "At Risk": "warning", "Critical": "destructive"}

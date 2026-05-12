@@ -17,8 +17,8 @@ Max 3 items per category. Be specific and practical.
 Note: These are general wellness suggestions, not medical advice."""
 
 
-def fetch_recommendations(client, organ: str, flagged_params: list[dict]) -> dict:
-    cache_key = (organ, tuple(sorted(p["name"] for p in flagged_params)))
+def fetch_recommendations(client, organ: str, flagged_params: list[dict], patient_id: str = "") -> dict:
+    cache_key = (patient_id, organ, tuple(sorted(p["name"] for p in flagged_params)))
     if cache_key in _cache:
         return _cache[cache_key]
 
@@ -50,5 +50,5 @@ def register(mcp, get_store, get_client):
         client = get_client()
         params = store.get_parameters_for_organ(patient_id, organ)
         flagged = [p for p in params if p["readings"] and p["readings"][0]["status"] != "normal"]
-        recs = fetch_recommendations(client, organ, flagged)
+        recs = fetch_recommendations(client, organ, flagged, patient_id)
         return json.dumps(recs, indent=2)

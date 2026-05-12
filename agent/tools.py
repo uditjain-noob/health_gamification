@@ -129,14 +129,14 @@ def make_agent_tools(store: Store, mapper: OrganMapper, client, patient_id: str)
                     for category in ["diet", "exercise", "supplements"]:
                         recs = recommendations.get(category, [])
                         if recs:
-                            Heading(category.title(), level=5)
+                            Heading(category.title(), level=4)
                             for rec in recs:
                                 Text(f"• {rec['title']}: {rec['description']}", css_class="mb-1")
                     disclaimer = recommendations.get("disclaimer", "")
                     if disclaimer:
                         Muted(disclaimer)
 
-        return {"organ": organ, "priority_rank": priority_rank, "component": section}
+        return {"organ": organ, "priority_rank": priority_rank, "organ_score": organ_score, "component": section}
 
     def finish_dashboard(sections_complete: int, overall_summary: str) -> dict:
         return {"status": "done", "sections": sections_complete, "summary": overall_summary}

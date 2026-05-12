@@ -6,8 +6,8 @@ def run_agent_loop(
     system: str,
     user: str,
     agent_tools: list[AgentTool],
-) -> list[dict]:
-    """Runs the Gemini tool-use loop. Returns list of UIBlock dicts from build_organ_ui_section calls."""
+) -> tuple[list[dict], str]:
+    """Returns (ui_blocks, overall_summary)."""
     tool_calls: list[ToolCall] = client.tool_loop(
         system=system,
         user=user,
@@ -18,4 +18,10 @@ def run_agent_loop(
         for call in tool_calls
         if call.name == "build_organ_ui_section" and isinstance(call.output, dict)
     ]
-    return ui_blocks
+    finish_call = next(
+        (call for call in tool_calls if call.name == "finish_dashboard"), None
+    )
+    overall_summary = ""
+    if finish_call and isinstance(finish_call.output, dict):
+        overall_summary = finish_call.output.get("summary", "")
+    return ui_blocks, overall_summary

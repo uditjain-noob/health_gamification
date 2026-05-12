@@ -52,6 +52,6 @@ def register(mcp, get_store, get_mapper, get_client):
         user_prompt = build_user_prompt(organ_summaries, context)
         agent_tools = make_agent_tools(store, mapper, client, patient_id)
 
-        ui_blocks = run_agent_loop(client, system_prompt, user_prompt, agent_tools)
+        ui_blocks, overall_summary = run_agent_loop(client, system_prompt, user_prompt, agent_tools)
 
-        return assemble_dashboard(ui_blocks, patient_id, store, mapper)
+        return assemble_dashboard(ui_blocks, patient_id, store, mapper, overall_summary=overall_summary)

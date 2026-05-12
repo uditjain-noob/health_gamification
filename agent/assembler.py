@@ -44,7 +44,7 @@ def assemble_dashboard(
         for block in ui_blocks:
             component = block.get("component")
             if component is not None:
-                component
+                layout.children.append(component)
 
         Separator()
         Muted(

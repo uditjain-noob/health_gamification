@@ -67,3 +67,50 @@ def test_scrape_harvard_documents_meta_schema():
         assert "organ" in doc.meta
         assert "category" in doc.meta
         assert isinstance(doc.meta["parameters"], list)
+
+
+def test_chunk_harvard_documents_inherits_meta():
+    from scripts.excercise_diet_reco.build_corpus import chunk_harvard_documents
+    from haystack import Document
+
+    docs = [Document(
+        content=(
+            "Eating fiber reduces cholesterol. "
+            "Soluble fiber binds bile acids. "
+            "This lowers LDL levels significantly. "
+            "Oats and beans are excellent sources. "
+            "Aim for 25 grams daily. "
+            "Insoluble fiber aids digestion. "
+            "Both types improve metabolic health."
+        ),
+        meta={
+            "source": "harvard",
+            "organ": "heart",
+            "category": "diet",
+            "condition": "high LDL",
+            "parameters": ["LDL"],
+            "url": "http://example.com",
+        },
+    )]
+    chunks = chunk_harvard_documents(docs)
+    assert len(chunks) >= 1
+    assert all(c.meta["organ"] == "heart" for c in chunks)
+    assert all(c.meta["source"] == "harvard" for c in chunks)
+
+
+def test_build_dry_run_prints_counts(capsys):
+    from scripts.excercise_diet_reco.build_corpus import build
+    from haystack import Document
+
+    dummy_doc = Document(
+        content="Sentence one. Sentence two. Sentence three. Sentence four. Sentence five. Sentence six.",
+        meta={"source": "harvard", "organ": "heart", "category": "diet",
+              "condition": "", "parameters": [], "url": "http://x.com"},
+    )
+
+    with patch("scripts.excercise_diet_reco.build_corpus.scrape_harvard_documents", return_value=[dummy_doc]):
+        with patch("scripts.excercise_diet_reco.build_corpus.extract_nsca_documents", return_value=[]):
+            build(dry_run=True, pdf_path="scripts/excercise_diet_reco/biomarkers_excercise/biomarkers.pdf")
+
+    captured = capsys.readouterr()
+    assert "chunk" in captured.out.lower() or "total" in captured.out.lower()

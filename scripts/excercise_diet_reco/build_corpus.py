@@ -167,3 +167,70 @@ def scrape_harvard_documents() -> list[Document]:
         ))
         time.sleep(1.5)
     return docs
+
+
+def chunk_harvard_documents(docs: list[Document]) -> list[Document]:
+    """Split Harvard documents into sentence-window chunks, inheriting parent metadata."""
+    from haystack.components.preprocessors import DocumentSplitter
+    splitter = DocumentSplitter(split_by="sentence", split_length=5, split_overlap=2)
+    result = splitter.run(documents=docs)
+    return result["documents"]
+
+
+def build(
+    force: bool = False,
+    dry_run: bool = False,
+    pdf_path: str = "scripts/excercise_diet_reco/biomarkers_excercise/biomarkers.pdf",
+    out_path: str = "scripts/excercise_diet_reco/corpus/store.json",
+) -> None:
+    """Scrape Harvard pages + extract NSCA PDF → embed → serialize InMemoryDocumentStore.
+
+    --dry-run: scrape + chunk only, skip embed/serialize, print chunk count
+    --force: overwrite existing store.json
+    """
+    if not Path(pdf_path).exists():
+        raise FileNotFoundError(f"NSCA PDF not found: {pdf_path}")
+
+    out = Path(out_path)
+    if out.exists() and not force and not dry_run:
+        print(f"Store already exists at {out}. Use --force to rebuild.")
+        return
+
+    print("Scraping Harvard pages...")
+    harvard_docs = scrape_harvard_documents()
+    harvard_chunks = chunk_harvard_documents(harvard_docs)
+    print(f"  {len(harvard_docs)} pages → {len(harvard_chunks)} chunks")
+
+    print("Extracting NSCA sections...")
+    nsca_docs = extract_nsca_documents(pdf_path)
+    print(f"  {len(nsca_docs)} sections")
+
+    all_docs = harvard_chunks + nsca_docs
+    print(f"Total: {len(all_docs)} documents")
+
+    if dry_run:
+        print("Dry run complete — skipping embed and serialize.")
+        return
+
+    print("Embedding (first run downloads ~130MB model)...")
+    from haystack.components.embedders import SentenceTransformersDocumentEmbedder
+    from haystack.document_stores.in_memory import InMemoryDocumentStore
+
+    embedder = SentenceTransformersDocumentEmbedder(model="BAAI/bge-small-en-v1.5")
+    embedder.warm_up()
+    embedded_docs = embedder.run(documents=all_docs)["documents"]
+
+    store = InMemoryDocumentStore()
+    store.write_documents(embedded_docs)
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(store.to_dict()))
+    print(f"Store saved → {out} ({store.count_documents()} documents)")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Build HealthQuest RAG corpus")
+    parser.add_argument("--force", action="store_true", help="Overwrite existing store.json")
+    parser.add_argument("--dry-run", action="store_true", help="Scrape + chunk only, skip embed")
+    args = parser.parse_args()
+    build(force=args.force, dry_run=args.dry_run)

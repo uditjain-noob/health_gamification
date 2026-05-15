@@ -30,7 +30,16 @@ def load_store(path: str = _DEFAULT_STORE_PATH) -> None:
         from haystack.components.embedders import SentenceTransformersTextEmbedder
 
         data = json.loads(p.read_text())
-        _store = InMemoryDocumentStore.from_dict(data)
+        # Support both old format (bare store config) and new format
+        # ({"store_config": ..., "documents": [...]}) where document data
+        # including embeddings is stored explicitly.
+        if "documents" in data:
+            from haystack import Document as HaystackDocument
+            _store = InMemoryDocumentStore.from_dict(data["store_config"])
+            docs = [HaystackDocument.from_dict(d) for d in data["documents"]]
+            _store.write_documents(docs)
+        else:
+            _store = InMemoryDocumentStore.from_dict(data)
         _retriever = InMemoryEmbeddingRetriever(document_store=_store)
         _text_embedder = SentenceTransformersTextEmbedder(model="BAAI/bge-small-en-v1.5")
         _text_embedder.warm_up()

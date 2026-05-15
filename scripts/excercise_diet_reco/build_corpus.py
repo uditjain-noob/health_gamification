@@ -128,26 +128,76 @@ def extract_nsca_documents(pdf_path: str) -> list[Document]:
     return results
 
 
+_HARVARD_PAGES_DIR = Path(__file__).parent / "harvard_nutrition" / "pages"
+
+# Browser-like headers to reduce likelihood of 403 blocks
+_SCRAPE_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+}
+
+
+def _slug(path: str) -> str:
+    return path.strip("/").replace("/", "__")
+
+
+def _load_cached_page(path: str) -> str | None:
+    """Load a pre-scraped page from the local pages/ directory, if available."""
+    cached = _HARVARD_PAGES_DIR / f"{_slug(path)}.txt"
+    if cached.exists():
+        text = cached.read_text(encoding="utf-8")
+        if len(text) >= 200:
+            return text
+    return None
+
+
+def _save_cached_page(path: str, text: str) -> None:
+    """Save a successfully scraped page to the local pages/ directory."""
+    _HARVARD_PAGES_DIR.mkdir(parents=True, exist_ok=True)
+    (_HARVARD_PAGES_DIR / f"{_slug(path)}.txt").write_text(text, encoding="utf-8")
+
+
 def scrape_harvard_documents() -> list[Document]:
     """Scrape Harvard Nutrition Source pages and return Haystack Documents.
 
-    Skips pages that fail HTTP requests or produce < 200 chars of text.
-    Sleeps 1.5s between requests to avoid rate limiting.
+    Falls back to pre-cached pages in harvard_nutrition/pages/ when the live
+    site returns 4xx (e.g. 403 rate-limit).  Successfully scraped pages are
+    cached there for future runs.  Skips pages that fail everywhere and produce
+    < 200 chars of text.
+    Sleeps 1.5s between live requests to avoid rate limiting.
     """
-    headers = {"User-Agent": "HealthQuest RAG Builder/1.0 (educational use)"}
     docs: list[Document] = []
     for path in PAGES:
         url = _HARVARD_BASE + path
-        try:
-            r = httpx.get(url, headers=headers, timeout=15, follow_redirects=True)
-            r.raise_for_status()
-        except Exception as e:
-            print(f"  ERROR {path}: {e}")
-            continue
+        text: str | None = None
 
-        text = extract_text(r.text)
-        if len(text) < 200:
-            print(f"  WARN too short ({len(text)} chars): {path}")
+        # 1. Try the local cache first (fast, always works offline)
+        cached = _load_cached_page(path)
+        if cached:
+            text = cached
+
+        # 2. Fall back to live HTTP request
+        if text is None:
+            try:
+                r = httpx.get(url, headers=_SCRAPE_HEADERS, timeout=15, follow_redirects=True)
+                r.raise_for_status()
+                text = extract_text(r.text)
+                if len(text) >= 200:
+                    _save_cached_page(path, text)
+                time.sleep(1.5)
+            except Exception as e:
+                print(f"  ERROR {path}: {e}")
+                continue
+
+        if text is None or len(text) < 200:
+            print(f"  WARN too short ({len(text) if text else 0} chars): {path}")
             continue
 
         meta = PAGE_METADATA.get(
@@ -165,7 +215,6 @@ def scrape_harvard_documents() -> list[Document]:
                 "url": url,
             },
         ))
-        time.sleep(1.5)
     return docs
 
 
@@ -224,7 +273,14 @@ def build(
     store.write_documents(embedded_docs)
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(store.to_dict()))
+    # Serialize documents manually — InMemoryDocumentStore.to_dict() only saves
+    # component config (not document data).  We save the full document list so
+    # rag_retriever.py can reconstruct the store with embeddings intact.
+    serialized = {
+        "store_config": store.to_dict(),
+        "documents": [doc.to_dict() for doc in store.filter_documents()],
+    }
+    out.write_text(json.dumps(serialized))
     print(f"Store saved → {out} ({store.count_documents()} documents)")
 
 

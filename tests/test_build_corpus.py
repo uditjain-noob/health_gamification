@@ -32,7 +32,9 @@ def test_scrape_harvard_documents_skips_http_errors():
     def mock_get(url, **kwargs):
         raise httpx.HTTPError("connection refused")
 
-    with patch("httpx.get", side_effect=mock_get):
+    # Patch both cache and HTTP so neither provides content
+    with patch("httpx.get", side_effect=mock_get), \
+         patch("scripts.excercise_diet_reco.build_corpus._load_cached_page", return_value=None):
         docs = scrape_harvard_documents()
     assert docs == []
 
@@ -44,7 +46,9 @@ def test_scrape_harvard_documents_skips_short_content():
     mock_response.raise_for_status.return_value = None
     mock_response.text = "<html><body><article>short</article></body></html>"
 
-    with patch("httpx.get", return_value=mock_response):
+    # Patch both cache (returns None) and HTTP (returns short content)
+    with patch("httpx.get", return_value=mock_response), \
+         patch("scripts.excercise_diet_reco.build_corpus._load_cached_page", return_value=None):
         docs = scrape_harvard_documents()
     assert docs == []
 

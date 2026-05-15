@@ -30,14 +30,7 @@ def _schema_from_dict(d: dict) -> "types.Schema":
 def _to_json_safe(obj: Any) -> Any:
     """Recursively strip non-JSON-serializable values (e.g. Prefab UI components)."""
     if isinstance(obj, dict):
-        safe = {}
-        for k, v in obj.items():
-            try:
-                json.dumps(v)
-                safe[k] = v
-            except (TypeError, ValueError):
-                safe[k] = f"<{type(v).__name__}>"
-        return safe
+        return {k: _to_json_safe(v) for k, v in obj.items()}
     if isinstance(obj, (list, tuple)):
         return [_to_json_safe(i) for i in obj]
     try:
@@ -48,7 +41,7 @@ def _to_json_safe(obj: Any) -> Any:
 
 
 def _execute_tool_calls(fn_calls: list, tool_map: dict) -> list["ToolCall"]:
-    """Execute all fn_calls in parallel. Returns ToolCall results in completion order."""
+    """Execute all fn_calls in parallel. Returns ToolCall results in fn_calls order."""
     def dispatch(part) -> "ToolCall":
         fc = part.function_call
         tool = tool_map.get(fc.name)

@@ -73,3 +73,25 @@ def test_single_tool_call_works():
     }
     results = _execute_tool_calls([_make_part("echo", {"msg": "hi"})], tool_map)
     assert results[0].output == {"echo": "hi"}
+
+
+def test_stop_tool_in_batch_siblings_all_execute():
+    ran = []
+
+    def stop_fn():
+        ran.append("stop")
+        return {"status": "done"}
+
+    def sibling_fn():
+        ran.append("sibling")
+        return {"ok": True}
+
+    tool_map = {
+        "finish": AgentTool(name="finish", description="", parameters={}, fn=stop_fn),
+        "sibling": AgentTool(name="sibling", description="", parameters={}, fn=sibling_fn),
+    }
+    results = _execute_tool_calls(
+        [_make_part("sibling", {}), _make_part("finish", {})], tool_map
+    )
+    assert set(ran) == {"stop", "sibling"}
+    assert len(results) == 2

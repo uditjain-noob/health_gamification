@@ -1,3 +1,4 @@
+import json
 import types
 import pytest
 import apps.rag_retriever as rag
@@ -104,3 +105,45 @@ def test_retrieve_respects_top_k():
     result = rag.retrieve("blood iron", organ="blood", top_k=3)
 
     assert len(result) == 3
+
+
+def test_fetch_rag_recommendations_returns_empty_when_no_context():
+    from apps.recommendations import fetch_rag_recommendations
+    mock_client = MagicMock()
+    result = fetch_rag_recommendations(mock_client, organ="liver", query="elevated SGPT", context_chunks=[])
+    assert result == {"diet": [], "exercise": [], "supplements": []}
+    mock_client.complete.assert_not_called()
+
+
+def test_fetch_rag_recommendations_calls_gemini_with_context():
+    from apps.recommendations import fetch_rag_recommendations
+    mock_client = MagicMock()
+    mock_client.complete.return_value = json.dumps({
+        "diet": [{"title": "Eat greens", "description": "Helps liver", "priority": "high"}],
+        "exercise": [],
+        "supplements": [],
+    })
+    result = fetch_rag_recommendations(
+        mock_client,
+        organ="liver",
+        query="elevated SGPT liver",
+        context_chunks=["Leafy greens reduce liver inflammation according to studies."],
+    )
+    assert result["diet"][0]["title"] == "Eat greens"
+    mock_client.complete.assert_called_once()
+    call_kwargs = mock_client.complete.call_args
+    assert "Leafy greens" in call_kwargs.kwargs.get("user", "") or \
+           "Leafy greens" in str(call_kwargs)
+
+
+def test_fetch_rag_recommendations_raises_on_bad_json():
+    from apps.recommendations import fetch_rag_recommendations
+    mock_client = MagicMock()
+    mock_client.complete.return_value = "not valid json"
+    with pytest.raises(ValueError, match="invalid JSON"):
+        fetch_rag_recommendations(
+            mock_client,
+            organ="liver",
+            query="elevated SGPT",
+            context_chunks=["some context here"],
+        )

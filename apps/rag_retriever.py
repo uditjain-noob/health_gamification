@@ -15,6 +15,10 @@ _DEFAULT_STORE_PATH = "scripts/excercise_diet_reco/corpus/store.json"
 
 
 def load_store(path: str = _DEFAULT_STORE_PATH) -> None:
+    """Load serialized InMemoryDocumentStore into module singletons. Call once at startup.
+
+    Silent no-op if the file is missing (server runs without RAG grounding).
+    """
     global _store, _retriever, _text_embedder
     p = Path(path)
     if not p.exists():
@@ -31,6 +35,16 @@ def load_store(path: str = _DEFAULT_STORE_PATH) -> None:
         _text_embedder = SentenceTransformersTextEmbedder(model="BAAI/bge-small-en-v1.5")
         _text_embedder.warm_up()
         log.info("RAG store loaded: %d documents", _store.count_documents())
+    except json.JSONDecodeError as e:
+        log.error("Failed to parse RAG store JSON: %s", e)
+        _store = None
+        _retriever = None
+        _text_embedder = None
+    except (ImportError, ModuleNotFoundError) as e:
+        log.error("Haystack/sentence-transformers not installed: %s", e)
+        _store = None
+        _retriever = None
+        _text_embedder = None
     except Exception as e:
         log.error("Failed to load RAG store: %s", e)
         _store = None
@@ -39,6 +53,10 @@ def load_store(path: str = _DEFAULT_STORE_PATH) -> None:
 
 
 def retrieve(query: str, organ: str, category: str = "all", top_k: int = 5) -> list[str]:
+    """Embed query, filter by organ/category, return list of chunk content strings.
+
+    Returns [] if store is not loaded.
+    """
     if _store is None or _retriever is None or _text_embedder is None:
         return []
 

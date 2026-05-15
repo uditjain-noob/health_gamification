@@ -88,6 +88,11 @@ NSCA_URL = (
 
 
 def extract_nsca_documents(pdf_path: str) -> list[Document]:
+    """Extract NSCA_CHUNKS from the PDF as Haystack Documents.
+
+    Raises FileNotFoundError (via fitz) if pdf_path is missing.
+    Chunks shorter than 100 chars are skipped with a printed warning — check NSCA_CHUNKS page ranges.
+    """
     fitz_doc = fitz.open(pdf_path)
     results: list[Document] = []
     for chunk in NSCA_CHUNKS:

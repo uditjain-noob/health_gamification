@@ -20,6 +20,13 @@ import httpx
 from bs4 import BeautifulSoup
 from haystack import Document
 
+# ── Harvard scraping ──────────────────────────────────────────────────────────
+_HARVARD_BASE = "https://nutritionsource.hsph.harvard.edu"
+
+# Import page list and metadata from the existing scraping script
+sys.path.insert(0, str(Path(__file__).parent))
+from harvard_nutrition.scraping_script import PAGES, PAGE_METADATA, extract_text  # noqa: E402
+
 # ── NSCA chunk definitions ────────────────────────────────────────────────────
 # Page ranges are 0-indexed and verified against the actual PDF.
 NSCA_CHUNKS = [
@@ -119,3 +126,44 @@ def extract_nsca_documents(pdf_path: str) -> list[Document]:
         ))
     fitz_doc.close()
     return results
+
+
+def scrape_harvard_documents() -> list[Document]:
+    """Scrape Harvard Nutrition Source pages and return Haystack Documents.
+
+    Skips pages that fail HTTP requests or produce < 200 chars of text.
+    Sleeps 1.5s between requests to avoid rate limiting.
+    """
+    headers = {"User-Agent": "HealthQuest RAG Builder/1.0 (educational use)"}
+    docs: list[Document] = []
+    for path in PAGES:
+        url = _HARVARD_BASE + path
+        try:
+            r = httpx.get(url, headers=headers, timeout=15, follow_redirects=True)
+            r.raise_for_status()
+        except Exception as e:
+            print(f"  ERROR {path}: {e}")
+            continue
+
+        text = extract_text(r.text)
+        if len(text) < 200:
+            print(f"  WARN too short ({len(text)} chars): {path}")
+            continue
+
+        meta = PAGE_METADATA.get(
+            path,
+            {"organ": "general", "condition": "", "parameters": [], "category": ""},
+        )
+        docs.append(Document(
+            content=text,
+            meta={
+                "source": "harvard",
+                "organ": meta["organ"],
+                "category": meta["category"],
+                "condition": meta["condition"],
+                "parameters": meta["parameters"],
+                "url": url,
+            },
+        ))
+        time.sleep(1.5)
+    return docs

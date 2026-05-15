@@ -121,7 +121,7 @@ def test_prioritize_organs_includes_priority_rank():
     result = prioritize_organs_fn(
         PrioritizeOrgansInput(context="", organ_summaries=summaries)
     )
-    assert result[0]["priority"] == 1
+    assert result[0]["priority_rank"] == 1
 
 
 # --- finish_dashboard ---

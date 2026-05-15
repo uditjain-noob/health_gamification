@@ -132,7 +132,8 @@ def get_recommendations_for_case_fn(
         )
         result = json.loads(raw)
     except Exception:
-        result = {"diet": [], "exercise": [], "supplements": [], "quest_titles": [], "disclaimer": ""}
+        log.exception("LLM call failed for organ=%s patient=%s", input.organ, input.patient_id)
+        return {"diet": [], "exercise": [], "supplements": [], "quest_titles": [], "disclaimer": ""}
 
     _CASE_REC_CACHE[cache_key] = result
     return result
@@ -212,7 +213,7 @@ def prioritize_organs_fn(input: PrioritizeOrgansInput) -> list[dict]:
     return [
         {
             "organ": s["organ"],
-            "priority": i,
+            "priority_rank": i,
             "reason": f"{s.get('flagged_count', 0)} flagged parameters",
         }
         for i, s in enumerate(scored[:4], 1)

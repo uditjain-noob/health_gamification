@@ -1,0 +1,27 @@
+CONDITION: Type 2 Diabetes prevention, Prediabetes, Gestational diabetes
+BIOMARKERS: Blood glucose, Impaired fasting glucose, Impaired glucose tolerance
+ORGAN: metabolic
+CATEGORY: diet, exercise, lifestyle
+
+---
+
+MECHANISM:
+Prediabetes is a condition where blood glucose levels are higher than normal but not high enough to be classified as diabetes. This condition significantly increases the risk of developing Type 2 Diabetes and its associated health problems. Lifestyle interventions work by promoting a modest weight loss of 5 to 7 percent of starting body weight, which has been shown to delay or prevent the progression to Type 2 Diabetes.
+
+DIETARY RECOMMENDATIONS:
+- Eat smaller portions to reduce daily calorie intake and facilitate weight loss.
+- Choose foods with less fat as a method to reduce overall calories.
+- Drink water instead of sweetened beverages.
+- For women with a history of gestational diabetes, breastfeeding can help burn calories.
+
+EXERCISE RECOMMENDATIONS:
+- Get at least 30 minutes of physical activity 5 days a week.
+- If you have not been active, start slowly and build up to your goal.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Women who had gestational diabetes should be tested for diabetes 6 to 12 weeks after their baby is born.
+- If blood glucose is still high after pregnancy, it may indicate the presence of Type 2 Diabetes.
+- Even if the post-pregnancy test is normal, re-testing for diabetes should occur every 3 years for those with a history of gestational diabetes.

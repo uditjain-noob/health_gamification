@@ -1,0 +1,30 @@
+CONDITION: Zinc deficiency
+BIOMARKERS: N/A
+ORGAN: all
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Zinc is a trace element found in cells throughout the body, second only to iron in its concentration. It is essential for the immune system to function properly and plays a key role in cell division, cell growth, wound healing, and the breakdown of carbohydrates. Zinc is also required for the senses of smell and taste and enhances the action of insulin.
+
+DIETARY RECOMMENDATIONS:
+- Eat animal proteins such as beef, pork, and lamb which are good sources of zinc.
+- When eating chicken, choose dark meat over light meat for higher zinc content.
+- Other sources of zinc include nuts, whole grains, legumes, and yeast.
+- Be aware that the zinc in plant-based foods is less available for use by the body, so vegetarian and low-protein diets tend to be low in zinc.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+- Recommended Dietary Allowance (RDA) for adults: Males (14+) require 11 mg/day; Females (19+) require 8 mg/day.
+- RDA for pregnant females (19+) is 11 mg/day; lactating females (19+) require 12 mg/day.
+- Common forms in supplements include zinc gluconate, zinc sulfate, or zinc acetate; it is not known if one form is better than others.
+- Starting zinc supplements within 24 hours of cold symptom onset may reduce the duration and severity of symptoms.
+
+WARNINGS:
+- Symptoms of zinc deficiency include frequent infections, hair loss, poor appetite, problems with taste or smell, skin sores, slow wound healing, or trouble seeing in the dark.
+- Taking large amounts of zinc supplements can cause diarrhea, abdominal cramps, and vomiting within 3 to 10 hours of ingestion.
+- Long-term excess intake of zinc can lead to a deficiency in copper, iron, or magnesium.
+- Using nasal sprays and gels that contain zinc may lead to a loss of the sense of smell.

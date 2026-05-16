@@ -1,0 +1,28 @@
+CONDITION: Iron-deficiency anemia, low hemoglobin, low iron, low ferritin
+BIOMARKERS: Complete blood count (CBC), Hemoglobin, Iron, Ferritin
+ORGAN: blood
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Iron-deficiency anemia occurs when the body lacks sufficient iron to produce healthy red blood cells. Iron is a critical component of hemoglobin, the protein in red blood cells that carries oxygen. This deficiency can result from blood loss, poor iron absorption due to gastrointestinal conditions, or increased iron needs during pregnancy or childhood development.
+
+DIETARY RECOMMENDATIONS:
+- Eat iron-rich foods such as beans, dried fruits, eggs, lean red meat, salmon, iron-fortified breads and cereals, peas, tofu, and dark green leafy vegetables.
+- Consume vitamin C-rich foods like oranges, strawberries, and tomatoes alongside iron sources to improve absorption.
+- Reduce black tea consumption, as it can decrease iron absorption.
+- Ensure toddlers transitioning to whole foods, typically between 9 and 12 months, consume enough iron-rich solid foods.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+- Oral iron supplements (iron pills) are the most common treatment, typically taken for three to six months to restore iron levels.
+- To manage side effects like upset stomach, constipation, or a metallic taste, supplements can be taken with food or at a lower dose.
+- Intravenous (IV) iron may be used for serious iron-deficiency or in those with chronic conditions that impair absorption.
+
+WARNINGS:
+- Seek medical attention for symptoms of serious anemia, such as chest pain, significant shortness of breath, dizziness, or lightheadedness.
+- Untreated iron-deficiency can lead to severe complications including heart problems and pregnancy complications.
+- In children, untreated iron deficiency can cause developmental delays.

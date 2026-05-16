@@ -1,0 +1,28 @@
+CONDITION: Overweight, Obesity
+BIOMARKERS: Body Mass Index (BMI)
+ORGAN: metabolic
+CATEGORY: diet, exercise, lifestyle
+
+---
+
+MECHANISM:
+Weight gain occurs when more calories are consumed from food and beverages than are used by the body for physical activity and daily living, resulting in a calorie surplus. This imbalance can be influenced by genetics, environment, insufficient sleep, emotions, certain medications (e.g., steroids, antidepressants), and underlying health conditions like Cushing's syndrome or polycystic ovary syndrome (PCOS). Weight loss is achieved by creating a calorie deficit.
+
+DIETARY RECOMMENDATIONS:
+- Reduce foods and beverages high in calories, salt, sugar, and fat.
+- Limit alcohol consumption.
+- Use healthier cooking methods such as baking or grilling instead of frying.
+- Increase consumption of nutrient-rich foods that are high in vitamins, minerals, and fiber.
+
+EXERCISE RECOMMENDATIONS:
+- Adults should get at least 150 minutes of physical activity per week.
+- Include aerobic (cardio) activity that engages large muscle groups like the chest, legs, and back.
+- Include muscle-strengthening (strength training) activity.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Excess weight increases the risk for developing serious health conditions, including type 2 diabetes, heart disease, and kidney disease.
+- Unexplained weight gain may be a sign of an underlying medical condition, such as Cushing's syndrome or polycystic ovary syndrome (PCOS), which requires medical diagnosis.
+- Certain prescription medicines, including steroids and some antidepressants, can cause weight gain.

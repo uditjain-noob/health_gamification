@@ -1,0 +1,24 @@
+CONDITION: Low dietary fiber intake, constipation
+BIOMARKERS: N/A
+ORGAN: metabolic
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Dietary fiber is a type of plant-based carbohydrate that adds bulk to your diet. This bulk helps you feel full faster, which can aid in weight control. It also assists in digestion and helps prevent constipation by promoting regular bowel movements.
+
+DIETARY RECOMMENDATIONS:
+- Increase intake of whole grains.
+- Increase intake of nuts and seeds.
+- Increase intake of fruits and vegetables.
+- Add dietary fiber to your diet slowly to avoid side effects.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Increasing dietary fiber too quickly can lead to gas, bloating, and cramps.

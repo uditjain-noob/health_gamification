@@ -1,0 +1,24 @@
+CONDITION: High cholesterol, prevention of heart disease
+BIOMARKERS: Cholesterol, Triglycerides
+ORGAN: heart
+CATEGORY: diet
+
+---
+
+MECHANISM:
+Dietary fat is a nutrient that provides energy and helps the body absorb vitamins. Different types of fats have varying effects on cholesterol levels; saturated and trans fats can negatively impact cholesterol, while certain oils are healthier alternatives. Fat is calorie-dense, containing twice as many calories as protein or carbohydrates, so excessive intake can contribute to weight gain.
+
+DIETARY RECOMMENDATIONS:
+- Avoid saturated fats such as butter, solid shortening, and lard.
+- Avoid trans fats found in vegetable shortenings, some margarines, crackers, cookies, snack foods, and foods made or fried with partially hydrogenated oils (PHOs).
+- Replace saturated and trans fats with oils such as canola, olive, safflower, sesame, or sunflower.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Diets high in saturated and trans fats can negatively impact cholesterol levels.
+- Excessive consumption of total fat can lead to weight gain, as fat has twice as many calories as proteins or carbohydrates.

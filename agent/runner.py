@@ -1,5 +1,5 @@
 from typing import Literal
-from agent.tools import make_agent_tools, PHASE1_ORGANS
+from agent.tools import make_agent_tools
 from agent.prompts import build_system_prompt, build_user_prompt
 from agent.loop import run_agent_loop
 from agent.assembler import assemble_dashboard
@@ -10,7 +10,8 @@ from db.store import Store
 
 def _build_organ_summaries_for_agent(store: Store, mapper: OrganMapper, patient_id: str) -> list[dict]:
     summaries = []
-    for organ in PHASE1_ORGANS:
+    for row in store.get_organ_summaries(patient_id):
+        organ = row["organ"]
         params = store.get_parameters_for_organ(patient_id, organ)
         if not params:
             continue
@@ -28,14 +29,30 @@ def _build_organ_summaries_for_agent(store: Store, mapper: OrganMapper, patient_
 
 
 def register(mcp, get_store, get_mapper, get_client):
-    @mcp.tool(app=True)
+    @mcp.tool(app=True, timeout=300)
     def run_health_agent(
         patient_id: str,
         context: str = "",
         style: Literal["progressive", "batch"] = "progressive",
         report_ids: list[str] | None = None,
     ):
-        """Run the autonomous health analysis agent to build a personalized dashboard."""
+        """
+        Run the autonomous health analysis agent to produce a full personalized health dashboard.
+
+        The agent iterates over all organ systems, scores each one, identifies flagged parameters,
+        generates AI recommendations, and assembles the results into a Prefab UI dashboard with
+        organ cards, trend highlights, and prioritized action items.
+
+        Use this for a hands-off end-to-end analysis — it orchestrates multiple tools internally.
+        Prefer this over calling show_health_dashboard + show_organ_panel individually when you want
+        a single comprehensive response. For targeted questions about one organ, use show_organ_panel.
+
+        Parameters:
+        - patient_id: the patient's ID
+        - context: optional free-text context to guide the agent (e.g. "focus on cardiovascular risk")
+        - style: "progressive" streams organ cards as they're built; "batch" returns all at once
+        - report_ids: optional list of specific report IDs to scope the analysis (omit for all data)
+        """
         store = get_store()
         mapper = get_mapper()
         client = get_client()

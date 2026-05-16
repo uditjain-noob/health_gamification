@@ -1,0 +1,29 @@
+CONDITION: Magnesium deficiency, hypomagnesemia
+BIOMARKERS: Magnesium, Calcium, Potassium
+ORGAN: metabolic
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Magnesium is an essential mineral needed for more than 300 biochemical reactions in the body. It helps maintain normal nerve and muscle function, supports a healthy immune system, keeps the heartbeat steady, helps bones remain strong, and aids in adjusting blood glucose levels. Diets high in protein, calcium, or vitamin D will increase the body's need for magnesium.
+
+DIETARY RECOMMENDATIONS:
+- Dark green, leafy vegetables
+- Fruits such as bananas, dried apricots, and avocados
+- Nuts such as almonds and cashews
+- Peas, beans (legumes), and seeds
+- Soy products such as soy flour and tofu
+- Whole grains such as brown rice and millet
+- Milk
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Symptoms of moderate deficiency include numbness, tingling, muscle contractions, cramps, seizures, personality changes, and abnormal heart rhythms.
+- Severe deficiency can cause low blood calcium level (hypocalcemia) and low blood potassium level (hypokalemia).
+- Magnesium excess, most often from supplements or laxatives, can occur in people with significantly reduced kidney function.

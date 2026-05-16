@@ -1,0 +1,23 @@
+CONDITION: High blood glucose (hyperglycemia), Low blood glucose (hypoglycemia), Diabetes
+BIOMARKERS: Blood glucose, A1C
+ORGAN: metabolic
+CATEGORY: diet, exercise, lifestyle
+
+---
+
+MECHANISM:
+Blood glucose is the body's primary energy source, derived from food. When blood glucose rises after eating, the pancreas releases insulin, a hormone that helps glucose enter cells to be used for energy. In diabetes, the body either doesn't produce enough insulin or can't use it effectively, causing glucose to accumulate in the blood to unsafe levels. Typical blood glucose targets for people with diabetes are 80 to 130 mg/dL before a meal and less than 180 mg/dL two hours after a meal.
+
+DIETARY RECOMMENDATIONS:
+N/A
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Symptoms of high blood glucose (hyperglycemia) include feeling very thirsty or tired, headaches, frequent urination, and blurred vision.
+- Symptoms of low blood glucose (hypoglycemia), often a reading below 70 mg/dL, can appear quickly and include shaking, sweating, anxiety, irritability, confusion, dizziness, and hunger.
+- Low blood glucose can be dangerous and should be treated as soon as possible.

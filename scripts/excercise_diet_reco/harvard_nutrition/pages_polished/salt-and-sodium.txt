@@ -1,0 +1,24 @@
+CONDITION: High dietary sodium intake, risk of high blood pressure
+BIOMARKERS: Sodium (blood), Sodium (urine)
+ORGAN: metabolic
+CATEGORY: diet
+
+---
+
+MECHANISM:
+The body requires sodium for nerve and muscle function and to maintain fluid balance. The kidneys regulate sodium levels, but if intake is too high for the kidneys to excrete, it builds up in the blood. This excess sodium can lead to high blood pressure. The recommended upper limit for most adults is 2.3 grams of sodium per day.
+
+DIETARY RECOMMENDATIONS:
+- Limit total sodium intake to less than 2.3 grams per day, which is equivalent to about 1 teaspoon of table salt.
+- Read food labels to monitor the sodium content in prepared foods.
+- Individuals with high blood pressure, diabetes, or kidney problems, as well as those who are African American or over age 50, may need to consume less sodium.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Persistently high dietary sodium can lead to high blood pressure, a risk factor for other health problems.
+- Low blood sodium (hyponatremia) is also a potential health concern, particularly for older adults.

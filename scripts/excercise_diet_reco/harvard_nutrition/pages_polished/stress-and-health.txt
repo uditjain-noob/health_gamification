@@ -1,0 +1,23 @@
+CONDITION: Chronic psychological stress
+BIOMARKERS: Blood pressure, Heart rate, Blood glucose
+ORGAN: all
+CATEGORY: diet, exercise, lifestyle
+
+---
+
+MECHANISM:
+Stress is the body's response to a challenge, which involves the release of hormones that make you alert and ready to act. This "fight or flight" response raises blood pressure, heart rate, and blood glucose levels. When stress is long-term (chronic), the body acts as if it is always under threat, which can weaken the immune system and may contribute to developing serious health problems like heart disease, high blood pressure, and diabetes.
+
+DIETARY RECOMMENDATIONS:
+- Avoid too much caffeine.
+
+EXERCISE RECOMMENDATIONS:
+- A 30-minute daily walk can help you feel better and keep your immune system strong.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Seek medical help if you have severe symptoms for 2 weeks or more, such as trouble sleeping, unwanted changes in weight, difficulty focusing, or losing interest in things you usually enjoy.
+- Get help right away if stress is causing you to have thoughts of suicide or to feel you can't cope.
+- Get immediate help if stress leads you to use drugs or alcohol more often than usual.

@@ -1,0 +1,29 @@
+CONDITION: Vitamin C deficiency, Scurvy
+BIOMARKERS: Ascorbic acid, Hemoglobin
+ORGAN: all
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Vitamin C is a water-soluble antioxidant that the body cannot produce or store, making regular dietary intake essential. It is required for the growth and repair of all body tissues by forming collagen, a protein used to make skin, tendons, ligaments, and blood vessels. This function also aids in healing wounds, repairing cartilage, and maintaining bones and teeth, and it improves the absorption of iron.
+
+DIETARY RECOMMENDATIONS:
+- The best food sources are uncooked or raw fruits and vegetables, as cooking, steaming, microwaving, or long-term storage can reduce vitamin C content.
+- Fruits high in vitamin C include: cantaloupe, citrus fruits (orange, grapefruit), kiwi fruit, mango, papaya, pineapple, strawberries, raspberries, blueberries, and cranberries.
+- Vegetables high in vitamin C include: broccoli, Brussels sprouts, cauliflower, green and red peppers, spinach, cabbage, turnip greens, sweet and white potatoes, and tomatoes.
+- Smokers or those exposed to secondhand smoke should increase their daily intake by an additional 35 mg per day.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+- The Recommended Dietary Allowance (RDA) for adults is 90 mg/day for men and 75 mg/day for women.
+- Pregnant women require 85 mg/day, and breastfeeding women require 120 mg/day.
+- Daily intake above 2,000 mg is not recommended.
+- Taking a supplement after a cold starts does not appear to be helpful.
+
+WARNINGS:
+- Signs of deficiency include anemia, bleeding gums, easy bruising, nosebleeds, swollen and painful joints, and decreased wound-healing rate.
+- Doses greater than 2,000 mg/day can cause stomach upset, diarrhea, and in rare cases, kidney stones.
+- Large doses of vitamin C supplements during pregnancy are not recommended as they can lead to a shortage of vitamin C in the baby after delivery.

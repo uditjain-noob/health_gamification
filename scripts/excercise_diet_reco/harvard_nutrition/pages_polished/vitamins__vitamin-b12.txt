@@ -1,0 +1,28 @@
+CONDITION: Vitamin B12 deficiency
+BIOMARKERS: Vitamin B12, MCV
+ORGAN: vitamins
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Vitamin B12 is a water-soluble vitamin essential for protein metabolism, the formation of red blood cells, and the maintenance of the central nervous system. Deficiency occurs when the body does not get enough B12 from diet or cannot absorb it, which can lead to anemia and neurological problems. The body can store several years' worth of vitamin B12 in the liver.
+
+DIETARY RECOMMENDATIONS:
+- Eat a variety of animal products such as fish, meat, poultry, eggs, milk, and other dairy foods.
+- Specific rich sources include organ meats like beef liver and shellfish like clams.
+- For vegetarians and vegans, consume fortified foods like breakfast cereals or some nutritional yeast products.
+- The Recommended Dietary Allowance (RDA) for adults age 14 and older is 2.4 mcg/day.
+- The RDA for pregnant teens and women is 2.6 mcg/day, and for breastfeeding teens and women is 2.8 mcg/day.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+- Vitamin B12 is available in multivitamins, standalone B12 pills, sublingual (under the tongue) tablets, prescription injections, and prescription nasal gels.
+- B12 is better absorbed when taken with other B vitamins (niacin, riboflavin, vitamin B6) and magnesium.
+
+WARNINGS:
+- Seek medical attention for symptoms of deficiency such as anemia, weakness, or loss of balance.
+- Report any numbness or tingling in the arms and legs to a healthcare provider.
+- Unexplained cognitive changes or dementia-like symptoms can be caused by low B12 levels.

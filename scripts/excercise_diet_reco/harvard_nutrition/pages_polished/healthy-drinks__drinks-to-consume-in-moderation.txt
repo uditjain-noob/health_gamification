@@ -1,0 +1,31 @@
+CONDITION: Excessive alcohol consumption
+BIOMARKERS: Blood Alcohol Concentration (BAC)
+ORGAN: all
+CATEGORY: diet, lifestyle
+
+---
+
+MECHANISM:
+Alcohol is a central nervous system depressant that slows down brain activity. This can impair mood, behavior, self-control, memory, and physical coordination. It can also affect other organs by raising blood pressure and heart rate.
+
+DIETARY RECOMMENDATIONS:
+*   For women, moderate drinking is defined as no more than 1 standard drink per day.
+*   For men, moderate drinking is defined as no more than 2 standard drinks per day.
+*   A standard drink in the U.S. contains about 14 grams of pure alcohol and is equivalent to:
+    *   12 ounces of regular beer (5% alcohol content)
+    *   5 ounces of wine (12% alcohol content)
+    *   1.5 ounces of distilled spirits (40% alcohol content)
+*   Avoid heavy alcohol use, defined for women as more than 4 drinks on any day or more than 8 drinks per week, and for men as more than 5 drinks on any day or more than 15 drinks per week.
+*   Avoid binge drinking, defined as reaching a blood alcohol concentration (BAC) of 0.08% or more. This typically occurs after 4 or more drinks within a few hours for women, and 5 or more drinks for men.
+*   Certain people should not drink any alcohol, including those who are pregnant, under age 21, have an alcohol use disorder, take medications that interact with alcohol, or have medical conditions that can be worsened by alcohol.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+*   Binge drinking significantly increases the risk of injuries, car crashes, and alcohol overdose.
+*   Heavy, long-term alcohol use can cause serious health problems, including liver diseases like cirrhosis and fatty liver disease, heart disease, and an increased risk of certain cancers.
+*   Drinking enough at one time to cause vomiting is a sign of excessive consumption.

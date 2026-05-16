@@ -1,0 +1,19 @@
+CONDITION: N/A
+BIOMARKERS: N/A
+ORGAN: N/A
+CATEGORY: N/A
+
+MECHANISM:
+N/A
+
+DIETARY RECOMMENDATIONS:
+- N/A
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- N/A

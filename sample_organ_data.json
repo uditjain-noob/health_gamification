@@ -1,0 +1,1032 @@
+{
+    "Hormone": [],
+    "Heart": [
+        {
+            "parameter": "HDL / LDL RATIO",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.27"
+                }
+            ]
+        },
+        {
+            "parameter": "TOTAL CHOLESTEROL",
+            "range": "Range 0.0 - 200.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "205.48"
+                }
+            ]
+        },
+        {
+            "parameter": "TC/ HDL CHOLESTEROL RATIO",
+            "range": "Range 3.0 - 5.0 Ratio",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "5.21"
+                }
+            ]
+        },
+        {
+            "parameter": "NON-HDL CHOLESTEROL",
+            "range": "Range 0.0 - 160.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "166.05"
+                }
+            ]
+        },
+        {
+            "parameter": "LDL / HDL RATIO",
+            "range": "Range 1.5 - 3.5 Ratio",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "3.65"
+                }
+            ]
+        },
+        {
+            "parameter": "HDL CHOLESTEROL - DIRECT",
+            "range": "Range 40.0 - 60.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "39.43"
+                }
+            ]
+        },
+        {
+            "parameter": "TRIGLYCERIDES",
+            "range": "Range 0.0 - 150.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "110.06"
+                }
+            ]
+        },
+        {
+            "parameter": "TRIG / HDL RATIO",
+            "range": "Range 0.0 - 3.12 Ratio",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "2.79"
+                }
+            ]
+        },
+        {
+            "parameter": "LDL CHOLESTEROL - DIRECT",
+            "range": "Range 0.0 - 100.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "143.99"
+                },
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "143.99"
+                }
+            ]
+        },
+        {
+            "parameter": "VLDL CHOLESTEROL",
+            "range": "Range 5.0 - 40.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "22.01"
+                }
+            ]
+        }
+    ],
+    "Neonatal": [],
+    "Nutrition": [
+        {
+            "parameter": "VITAMIN B-12",
+            "range": "Range 211.0 - 911.0 pg/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "479.0"
+                }
+            ]
+        },
+        {
+            "parameter": "SODIUM",
+            "range": "Range 136.0 - 145.0 mmol/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "137.62"
+                }
+            ]
+        },
+        {
+            "parameter": "25-OH VITAMIN D (TOTAL)",
+            "range": "Range 30.0 - 100.0 ng/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                },
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                }
+            ]
+        },
+        {
+            "parameter": "CALCIUM",
+            "range": "Range 8.8 - 10.6 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "8.38"
+                }
+            ]
+        }
+    ],
+    "Nervous System": [],
+    "Liver": [
+        {
+            "parameter": "ASPARTATE AMINOTRANSFERASE (SGOT )",
+            "range": "Range 0.0 - 31.0 U/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "27.76"
+                }
+            ]
+        },
+        {
+            "parameter": "SGOT / SGPT RATIO",
+            "range": "Range 0.0 - 2.0 Ratio",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "1.05"
+                }
+            ]
+        },
+        {
+            "parameter": "GAMMA GLUTAMYL TRANSFERASE (GGT)",
+            "range": "Range 0.0 - 38.0 U/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "11.9"
+                }
+            ]
+        },
+        {
+            "parameter": "SERUM GLOBULIN",
+            "range": "Range 2.5 - 3.4 gm/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "2.93"
+                }
+            ]
+        },
+        {
+            "parameter": "PROTEIN - TOTAL",
+            "range": "Range 5.7 - 8.2 gm/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "6.74"
+                }
+            ]
+        },
+        {
+            "parameter": "ALBUMIN - SERUM",
+            "range": "Range 3.2 - 4.8 gm/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "3.81"
+                }
+            ]
+        },
+        {
+            "parameter": "BILIRUBIN - TOTAL",
+            "range": "Range 0.3 - 1.2 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.67"
+                }
+            ]
+        },
+        {
+            "parameter": "BILIRUBIN (INDIRECT)",
+            "range": "Range 0.0 - 0.9 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.54"
+                }
+            ]
+        },
+        {
+            "parameter": "BILIRUBIN -DIRECT",
+            "range": "Range 0.0 - 0.3 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.13"
+                }
+            ]
+        },
+        {
+            "parameter": "ALKALINE PHOSPHATASE",
+            "range": "Range 45.0 - 129.0 U/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "61.4"
+                }
+            ]
+        },
+        {
+            "parameter": "ALANINE TRANSAMINASE (SGPT)",
+            "range": "Range 0.0 - 34.0 U/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "26.36"
+                }
+            ]
+        },
+        {
+            "parameter": "SERUM ALB/GLOBULIN RATIO",
+            "range": "Range 0.9 - 2.0 Ratio",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "1.3"
+                }
+            ]
+        }
+    ],
+    "Metabolism": [],
+    "Kidney": [
+        {
+            "parameter": "CREATININE - SERUM",
+            "range": "Range 0.55 - 1.02 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.65"
+                }
+            ]
+        },
+        {
+            "parameter": "SODIUM",
+            "range": "Range 136.0 - 145.0 mmol/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "137.62"
+                }
+            ]
+        },
+        {
+            "parameter": "URINARY PROTEIN",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "UREA / SR.CREATININE RATIO",
+            "range": "Range 0.0 - 52.0 Ratio",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "22.36"
+                }
+            ]
+        },
+        {
+            "parameter": "SPECIFIC GRAVITY",
+            "range": "Range 1.003 - 1.03 -",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "1.01"
+                }
+            ]
+        },
+        {
+            "parameter": "LEUCOCYTE ESTERASE",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "UROBILINOGEN",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "URINE KETONE",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "URINARY LEUCOCYTES (PUS CELLS)",
+            "range": "Range 0.0 - 5.0 cells/HPF",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "3.0"
+                }
+            ]
+        },
+        {
+            "parameter": "URIC ACID",
+            "range": "Range 3.2 - 6.1 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "6.68"
+                }
+            ]
+        },
+        {
+            "parameter": "EPITHELIAL CELLS",
+            "range": "Range 0.0 - 5.0 cells/HPF",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "3.0"
+                }
+            ]
+        },
+        {
+            "parameter": "URINARY GLUCOSE",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "URINARY BILIRUBIN",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "RED BLOOD CELLS",
+            "range": "Range 0.0 - 5.0 cells/HPF",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "PH",
+            "range": "Range 5.0 - 8.0 -",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "5.5"
+                }
+            ]
+        },
+        {
+            "parameter": "UREA (CALCULATED)",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "14.53"
+                }
+            ]
+        },
+        {
+            "parameter": "BLOOD UREA NITROGEN (BUN)",
+            "range": "Range 7.94 - 20.07 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "6.79"
+                }
+            ]
+        },
+        {
+            "parameter": "EST. GLOMERULAR FILTRATION RATE (eGFR)",
+            "range": "> 90.0",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "113.0"
+                }
+            ]
+        },
+        {
+            "parameter": "URINE BLOOD",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "-1.0"
+                }
+            ]
+        },
+        {
+            "parameter": "CHLORIDE",
+            "range": "Range 98.0 - 107.0 mmol/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "100.85"
+                }
+            ]
+        }
+    ],
+    "Blood": [
+        {
+            "parameter": "RED CELL DISTRIBUTION WIDTH INDEX (RDWI)",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "266.96"
+                }
+            ]
+        },
+        {
+            "parameter": "LYMPHOCYTE",
+            "range": "Range 20.0 - 40.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "30.7"
+                }
+            ]
+        },
+        {
+            "parameter": "EOSINOPHILS",
+            "range": "Range 1.0 - 6.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "1.9"
+                }
+            ]
+        },
+        {
+            "parameter": "NEUTROPHILS",
+            "range": "Range 40.0 - 80.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "61.8"
+                }
+            ]
+        },
+        {
+            "parameter": "MEAN CORPUSCULAR HEMOGLOBIN(MCH)",
+            "range": "Range 27.0 - 32.0 pq",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "28.5"
+                }
+            ]
+        },
+        {
+            "parameter": "MEAN PLATELET VOLUME(MPV)",
+            "range": "Range 6.5 - 12.0 fL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "11.0"
+                }
+            ]
+        },
+        {
+            "parameter": "ERYTHROCYTE SEDIMENTATION RATE (ESR)",
+            "range": "Range 0.0 - 20.0 mm / hr",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "24.0"
+                }
+            ]
+        },
+        {
+            "parameter": "LYMPHOCYTES - ABSOLUTE COUNT",
+            "range": "Range 1.0 - 3.0 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "2.52"
+                }
+            ]
+        },
+        {
+            "parameter": "EOSINOPHILS - ABSOLUTE COUNT",
+            "range": "Range 0.02 - 0.5 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.16"
+                }
+            ]
+        },
+        {
+            "parameter": "% TRANSFERRIN SATURATION",
+            "range": "Range 13.0 - 45.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "31.33"
+                }
+            ]
+        },
+        {
+            "parameter": "TOTAL LEUCOCYTES COUNT (WBC)",
+            "range": "Range 4.0 - 10.0 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "8.22"
+                }
+            ]
+        },
+        {
+            "parameter": "MEAN CORPUSCULAR VOLUME(MCV)",
+            "range": "Range 83.0 - 101.0 fL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "89.4"
+                }
+            ]
+        },
+        {
+            "parameter": "BASOPHILS",
+            "range": "Range 0.0 - 2.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.4"
+                }
+            ]
+        },
+        {
+            "parameter": "IMMATURE GRANULOCYTE PERCENTAGE(IG%)",
+            "range": "Range 0.0 - 0.4 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.3"
+                }
+            ]
+        },
+        {
+            "parameter": "BASOPHILS - ABSOLUTE COUNT",
+            "range": "Range 0.02 - 0.1 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.03"
+                }
+            ]
+        },
+        {
+            "parameter": "RED CELL DISTRIBUTION WIDTH (RDW-CV)",
+            "range": "Range 11.6 - 14.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.9"
+                }
+            ]
+        },
+        {
+            "parameter": "MONOCYTES - ABSOLUTE COUNT",
+            "range": "Range 0.2 - 1.0 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.4"
+                }
+            ]
+        },
+        {
+            "parameter": "NUCLEATED RED BLOOD CELLS",
+            "range": "Range 0.0 - 0.5 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.01"
+                }
+            ]
+        },
+        {
+            "parameter": "NEUTROPHILS - ABSOLUTE COUNT",
+            "range": "Range 2.0 - 7.0 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "5.08"
+                }
+            ]
+        },
+        {
+            "parameter": "HEMATOCRIT(PCV)",
+            "range": "Range 36.0 - 46.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "38.6"
+                }
+            ]
+        },
+        {
+            "parameter": "HEMOGLOBIN",
+            "range": "Range 12.0 - 15.0 g/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.3"
+                }
+            ]
+        },
+        {
+            "parameter": "UNSAT.IRON-BINDING CAPACITY(UIBC)",
+            "range": "Range 162.0 - 368.0 \ufffdg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "189.4"
+                }
+            ]
+        },
+        {
+            "parameter": "RED CELL DISTRIBUTION WIDTH - SD(RDW-SD)",
+            "range": "Range 39.0 - 46.0 fL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "42.0"
+                }
+            ]
+        },
+        {
+            "parameter": "TOTAL IRON BINDING CAPACITY (TIBC)",
+            "range": "Range 215.0 - 535.0 \ufffdg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "275.82"
+                }
+            ]
+        },
+        {
+            "parameter": "MONOCYTES",
+            "range": "Range 2.0 - 10.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "4.9"
+                }
+            ]
+        },
+        {
+            "parameter": "MEAN CORP.HEMO.CONC(MCHC)",
+            "range": "Range 31.5 - 34.5 g/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "31.9"
+                }
+            ]
+        },
+        {
+            "parameter": "IRON",
+            "range": "Range 50.0 - 170.0 \ufffdg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "86.42"
+                }
+            ]
+        },
+        {
+            "parameter": "IMMATURE GRANULOCYTES(IG)",
+            "range": "Range 0.0 - 0.3 X 10^ / \u00b5L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.02"
+                },
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.02"
+                }
+            ]
+        },
+        {
+            "parameter": "PLATELET TO LARGE CELL RATIO(PLCR)",
+            "range": "Range 19.7 - 42.4 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "33.1"
+                }
+            ]
+        },
+        {
+            "parameter": "MENTZER INDEX",
+            "range": "",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "20.69"
+                }
+            ]
+        },
+        {
+            "parameter": "PLATELET DISTRIBUTION WIDTH(PDW)",
+            "range": "Range 9.6 - 15.2 fL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.6"
+                }
+            ]
+        },
+        {
+            "parameter": "TOTAL RBC",
+            "range": "Range 3.8 - 4.8 X 10^6/\ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "4.32"
+                }
+            ]
+        },
+        {
+            "parameter": "NUCLEATED RED BLOOD CELLS %",
+            "range": "Range 0.0 - 5.0 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.01"
+                }
+            ]
+        },
+        {
+            "parameter": "PLATELET COUNT",
+            "range": "Range 150.0 - 410.0 X 10\ufffd / \ufffdL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "282.0"
+                }
+            ]
+        },
+        {
+            "parameter": "PLATELETCRIT(PCT)",
+            "range": "Range 0.19 - 0.39 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "0.31"
+                }
+            ]
+        }
+    ],
+    "Toxicology": [],
+    "Lungs": [],
+    "Immune System": [],
+    "Digestive System": [],
+    "Breast": [],
+    "Bone": [
+        {
+            "parameter": "VITAMIN B-12",
+            "range": "Range 211.0 - 911.0 pg/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "479.0"
+                }
+            ]
+        },
+        {
+            "parameter": "25-OH VITAMIN D (TOTAL)",
+            "range": "Range 30.0 - 100.0 ng/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                },
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                }
+            ]
+        }
+    ],
+    "Pancreas": [
+        {
+            "parameter": "AVERAGE BLOOD GLUCOSE (ABG)",
+            "range": "Range 90.0 - 120.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "116.89"
+                }
+            ]
+        },
+        {
+            "parameter": "HbA1c",
+            "range": "Range 0.0 - 5.7 %",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "5.7"
+                }
+            ]
+        },
+        {
+            "parameter": "FASTING BLOOD SUGAR(GLUCOSE)",
+            "range": "Range 70.0 - 100.0 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "101.81"
+                }
+            ]
+        }
+    ],
+    "Prostate": [],
+    "Joints": [],
+    "Reproductive System": [],
+    "Thyroid": [
+        {
+            "parameter": "TOTAL TRIIODOTHYRONINE (T3)",
+            "range": "Range 60.0 - 200.0 ng/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "111.44"
+                }
+            ]
+        },
+        {
+            "parameter": "TSH - ULTRASENSITIVE",
+            "range": "Range 0.55 - 4.78 \ufffdIU/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "2.94"
+                }
+            ]
+        },
+        {
+            "parameter": "TOTAL THYROXINE (T4)",
+            "range": "Range 4.5 - 12.0 \ufffdg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "10.7"
+                }
+            ]
+        }
+    ],
+    "Food Intolerance": [],
+    "Immunoglobulins": [],
+    "Minerals": [
+        {
+            "parameter": "VITAMIN B-12",
+            "range": "Range 211.0 - 911.0 pg/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "479.0"
+                }
+            ]
+        },
+        {
+            "parameter": "SODIUM",
+            "range": "Range 136.0 - 145.0 mmol/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "137.62"
+                }
+            ]
+        },
+        {
+            "parameter": "25-OH VITAMIN D (TOTAL)",
+            "range": "Range 30.0 - 100.0 ng/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                },
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                }
+            ]
+        },
+        {
+            "parameter": "CALCIUM",
+            "range": "Range 8.8 - 10.6 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "8.38"
+                }
+            ]
+        }
+    ],
+    "Inflammation Markers": [],
+    "Vitamins": [
+        {
+            "parameter": "VITAMIN B-12",
+            "range": "Range 211.0 - 911.0 pg/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "479.0"
+                }
+            ]
+        },
+        {
+            "parameter": "SODIUM",
+            "range": "Range 136.0 - 145.0 mmol/L",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "137.62"
+                }
+            ]
+        },
+        {
+            "parameter": "25-OH VITAMIN D (TOTAL)",
+            "range": "Range 30.0 - 100.0 ng/mL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                },
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "12.32"
+                }
+            ]
+        },
+        {
+            "parameter": "CALCIUM",
+            "range": "Range 8.8 - 10.6 mg/dL",
+            "parameterValues": [
+                {
+                    "resultDate": "2025-10-15T00:09:48Z",
+                    "value": "8.38"
+                }
+            ]
+        }
+    ],
+    "Endocrinology": []
+}

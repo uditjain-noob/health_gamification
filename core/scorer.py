@@ -79,3 +79,37 @@ def get_difficulty(value: float, ref_min: float, ref_max: float) -> str:
 
 def get_xp_for_difficulty(difficulty: str) -> int:
     return {"Easy": 10, "Medium": 20, "Hard": 30}.get(difficulty, 10)
+
+
+def trend_series(readings: list[dict], ref_min: float, ref_max: float, lookback: int = 5) -> list[dict]:
+    """Return chronological list of {date, value, score} for up to `lookback` readings."""
+    window = readings[:lookback]  # readings are newest-first
+    return [
+        {
+            "date": r["result_date"],
+            "value": r["value"],
+            "score": score_parameter(r["value"], ref_min, ref_max),
+        }
+        for r in reversed(window)  # oldest → newest for chart x-axis
+    ]
+
+
+def compute_trend(readings: list[dict], ref_min: float, ref_max: float, lookback: int = 5) -> str | None:
+    """Classify trend direction using linear regression slope over up to `lookback` readings."""
+    window = readings[:lookback]
+    if len(window) < 2:
+        return None
+    scores = [score_parameter(r["value"], ref_min, ref_max) for r in reversed(window)]
+    n = len(scores)
+    x_mean = (n - 1) / 2
+    y_mean = sum(scores) / n
+    numerator = sum((i - x_mean) * (s - y_mean) for i, s in enumerate(scores))
+    denominator = sum((i - x_mean) ** 2 for i in range(n))
+    if denominator == 0:
+        return "stable"
+    slope = numerator / denominator
+    if slope > 1:
+        return "improving"
+    if slope < -1:
+        return "declining"
+    return "stable"

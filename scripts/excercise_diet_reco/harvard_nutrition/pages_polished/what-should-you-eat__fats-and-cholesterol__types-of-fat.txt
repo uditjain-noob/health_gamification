@@ -1,0 +1,23 @@
+CONDITION: Management of dietary fats for healthy cholesterol levels
+BIOMARKERS: Cholesterol
+ORGAN: heart
+CATEGORY: diet
+
+---
+
+MECHANISM:
+Fat is a nutrient that provides the body with energy and helps it absorb vitamins. Different types of dietary fats have varying effects on health, playing a major role in cholesterol levels. Because fat contains twice as many calories as proteins or carbohydrates, excessive intake can lead to weight gain.
+
+DIETARY RECOMMENDATIONS:
+- Reduce or avoid saturated fats, such as butter, solid shortening, and lard.
+- Reduce or avoid trans fats, which are found in vegetable shortenings, some margarines, crackers, cookies, snack foods, and other foods made with or fried in partially hydrogenated oils.
+- Replace unhealthy fats with oils such as canola, olive, safflower, sesame, or sunflower oil.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Consuming too much dietary fat can lead to weight gain.

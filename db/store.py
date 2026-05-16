@@ -1,6 +1,6 @@
 import uuid
+import sqlite3
 from datetime import datetime, timezone
-import libsql_experimental as libsql
 
 
 class Store:
@@ -13,21 +13,14 @@ class Store:
     def _get_conn(self):
         if self._conn is None:
             if self._turso_url:
-                # Embedded replica: local file synced to Turso cloud
-                self._conn = libsql.connect(
-                    self._path,
-                    sync_url=self._turso_url,
-                    auth_token=self._auth_token,
-                )
-                self._conn.sync()
+                from db.turso import TursoConnection
+                self._conn = TursoConnection(self._turso_url, self._auth_token)
             else:
-                # Local-only (dev / tests)
-                self._conn = libsql.connect(self._path)
+                self._conn = sqlite3.connect(self._path, check_same_thread=False)
         return self._conn
 
     def _sync(self):
-        if self._turso_url and self._conn:
-            self._conn.sync()
+        pass  # no-op: Turso HTTP is always up-to-date; sqlite3 needs no sync
 
     def initialize(self):
         conn = self._get_conn()
@@ -76,15 +69,28 @@ class Store:
             (rid, patient_id, source_file, now),
         )
         for p in parameters:
-            param_id = str(uuid.uuid4())
-            conn.execute(
-                """INSERT INTO parameters
-                   (id, report_id, patient_id, name, raw_name, unit, organ, ref_min, ref_max)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (param_id, rid, patient_id,
-                 p["name"], p.get("raw_name", p["name"]), p.get("unit", ""),
-                 p.get("organ", "other"), p.get("ref_min"), p.get("ref_max")),
+            cur = conn.execute(
+                "SELECT id FROM parameters WHERE patient_id = ? AND name = ?",
+                (patient_id, p["name"]),
             )
+            row = cur.fetchone()
+            if row:
+                param_id = row[0]
+                # Update reference range to latest values
+                conn.execute(
+                    "UPDATE parameters SET ref_min = ?, ref_max = ?, organ = ? WHERE id = ?",
+                    (p.get("ref_min"), p.get("ref_max"), p.get("organ", "other"), param_id),
+                )
+            else:
+                param_id = str(uuid.uuid4())
+                conn.execute(
+                    """INSERT INTO parameters
+                       (id, report_id, patient_id, name, raw_name, unit, organ, ref_min, ref_max)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                    (param_id, rid, patient_id,
+                     p["name"], p.get("raw_name", p["name"]), p.get("unit", ""),
+                     p.get("organ", "other"), p.get("ref_min"), p.get("ref_max")),
+                )
             for r in p.get("readings", []):
                 conn.execute(
                     "INSERT INTO readings (id, parameter_id, result_date, value, status) VALUES (?, ?, ?, ?, ?)",
@@ -148,6 +154,33 @@ class Store:
         )
         row = cur.fetchone()
         return int(row[0] or 0)
+
+    def get_parameter_trends(
+        self, patient_id: str, organs: list[str] | None = None, lookback: int = 5
+    ) -> list[dict]:
+        """Return trend data for every parameter across the given organs (all if None)."""
+        from core.scorer import trend_series, compute_trend
+        if organs:
+            organ_list = organs
+        else:
+            organ_list = [r["organ"] for r in self.get_organ_summaries(patient_id)]
+        result = []
+        for organ in organ_list:
+            for p in self.get_parameters_for_organ(patient_id, organ):
+                series = trend_series(p["readings"], p["ref_min"], p["ref_max"], lookback)
+                direction = compute_trend(p["readings"], p["ref_min"], p["ref_max"], lookback)
+                result.append({
+                    "name": p["name"],
+                    "organ": organ,
+                    "unit": p.get("unit", ""),
+                    "ref_min": p["ref_min"],
+                    "ref_max": p["ref_max"],
+                    "direction": direction,
+                    "series": series,
+                    "latest_value": p["readings"][0]["value"] if p["readings"] else None,
+                    "latest_status": p["readings"][0]["status"] if p["readings"] else None,
+                })
+        return result
 
     def get_organ_summaries(self, patient_id: str) -> list[dict]:
         cur = self._get_conn().execute(

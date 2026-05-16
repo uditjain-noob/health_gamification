@@ -39,7 +39,10 @@ class OrganMapper:
         return best if best else "other"
 
     def is_critical(self, name: str) -> bool:
-        return self._normalize(name) in self._critical
+        normalized = self._normalize(name)
+        if normalized in self._critical:
+            return True
+        return any(c in normalized for c in self._critical)
 
     def get_organ_weight(self, organ: str) -> float:
         return self._weights.get(organ, 0.0)

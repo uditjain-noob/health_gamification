@@ -1,0 +1,30 @@
+CONDITION: Vitamin D deficiency
+BIOMARKERS: 25-hydroxy vitamin D
+ORGAN: vitamins
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Vitamin D is a fat-soluble vitamin that the body needs to grow and develop normally. Its primary function is helping the body absorb calcium, which is a main building block of bone, thereby preventing bone diseases like osteoporosis or rickets. It also plays a role in nerve, muscle, and immune system function, helping nerves carry messages and the immune system fight bacteria and viruses.
+
+DIETARY RECOMMENDATIONS:
+- Eat foods naturally containing Vitamin D, including egg yolks, saltwater fish, and liver.
+- Consume foods that are fortified with Vitamin D, such as milk, cereal, and yogurt.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+- Vitamin D (D2 - Ergocalciferol, D3 - Cholecalciferol): D3 may raise blood levels higher and for a longer duration than D2.
+- Birth to 12 months: 400 IU daily.
+- Children 1-13 years: 600 IU daily.
+- Teens 14-18 years: 600 IU daily.
+- Adults 19-70 years: 600 IU daily.
+- Adults 71 years and older: 800 IU daily.
+- Take supplements with a meal or snack that includes some fat to improve absorption.
+
+WARNINGS:
+- People with conditions that limit fat absorption, such as Crohn's disease, celiac disease, and ulcerative colitis, may be at higher risk for deficiency.
+- Individuals with obesity or who have had gastric bypass surgery may require extra vitamin D.
+- Other groups at higher risk for deficiency include older adults, breastfed infants, and people with dark skin.

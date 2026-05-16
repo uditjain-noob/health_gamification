@@ -1,0 +1,26 @@
+CONDITION: General nutritional requirements for protein
+BIOMARKERS: N/A
+ORGAN: all
+CATEGORY: diet
+
+---
+
+MECHANISM:
+Proteins are the body's primary building blocks, composed of amino acids and found in every cell. Dietary protein is broken down into amino acids during digestion, which the body uses to repair existing cells, make new ones, and support growth. The daily recommended intake of protein for healthy adults is 10% to 35% of total calorie needs, with one gram of protein supplying 4 calories.
+
+DIETARY RECOMMENDATIONS:
+- One ounce (30 grams) of most protein-rich foods contains approximately 7 grams of protein. A one-ounce equivalent is 1 oz (30g) of meat/fish/poultry, 1 large egg, ¼ cup (60 ml) tofu, or ½ cup (65 g) cooked beans or lentils.
+- Choose lean animal proteins such as skinless turkey or chicken, bison, fish, shellfish, and lean cuts of beef or pork like round, top sirloin, or tenderloin. Trim away any visible fat.
+- Include plant-based proteins such as beans (pinto, black, kidney, garbanzo), lentils, split peas, tofu, tempeh, and other soy products.
+- Incorporate nuts and seeds like almonds, hazelnuts, peanuts, walnuts, and sunflower seeds, but be mindful of portion sizes as they are high in fat.
+- Select whole grains over refined or "white" products as they contain more protein.
+- Low-fat dairy products are also a good source of protein.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+N/A

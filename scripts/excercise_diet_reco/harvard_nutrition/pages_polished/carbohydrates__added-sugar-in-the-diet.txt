@@ -1,0 +1,30 @@
+CONDITION: High cholesterol, high LDL, low HDL, cardiovascular disease risk
+BIOMARKERS: LDL cholesterol, HDL cholesterol
+ORGAN: heart
+CATEGORY: diet
+
+---
+
+MECHANISM:
+Artificial trans fats are made when liquid oils are turned into solid fats, called partially-hydrogenated oils (PHOs). Consuming these fats raises your LDL (bad) cholesterol and lowers your HDL (good) cholesterol. This combination can cause cholesterol to build up in your arteries, increasing your risk for heart disease and stroke.
+
+DIETARY RECOMMENDATIONS:
+- Avoid or eat as little trans fat as possible.
+- Limit saturated fat to less than 10% of daily calories and total fat to 25% to 30% of daily calories.
+- Avoid foods containing "partially hydrogenated" oils, including: fried and battered foods, shortening, stick margarine, commercially baked cakes, pies, and cookies, and refrigerated dough.
+- Check the nutrition label. If the ingredient list contains "partially hydrogenated" oils, the product contains trans fat, even if the label says 0 grams.
+- Use safflower or olive oil instead of butter, shortening, and other solid fats.
+- Switch from solid stick margarine to soft margarine.
+- Replace red meats with skinless chicken or fish a few days a week.
+- Replace whole-fat dairy with low-fat or nonfat milk, yogurt, and cheese.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- A diet high in trans fat significantly increases the risk of developing heart disease and stroke.
+- High LDL cholesterol levels combined with low HDL cholesterol levels indicate a risk for cholesterol buildup in the arteries.
+- Excess consumption of high-fat foods containing trans fats can lead to unwanted weight gain, which increases the risk for diabetes and heart disease.

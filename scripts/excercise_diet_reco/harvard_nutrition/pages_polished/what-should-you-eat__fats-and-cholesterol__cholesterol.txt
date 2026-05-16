@@ -1,0 +1,24 @@
+CONDITION: High cholesterol, Hypercholesterolemia, Hyperlipidemia
+BIOMARKERS: HDL, LDL, VLDL, Total cholesterol, Triglycerides
+ORGAN: heart
+CATEGORY: diet, exercise, lifestyle
+
+---
+
+MECHANISM:
+Cholesterol is a waxy substance found in all cells. When there is too much low-density lipoprotein (LDL) or "bad" cholesterol in the blood, it combines with other substances to form plaque that sticks to artery walls, a process called atherosclerosis. This buildup can narrow or block arteries, while high-density lipoprotein (HDL) or "good" cholesterol helps remove cholesterol by carrying it back to the liver.
+
+DIETARY RECOMMENDATIONS:
+- Reduce intake of saturated fats, which can raise LDL cholesterol, by limiting foods like red meats, full-fat dairy products, chocolate, some baked goods, and deep-fried or processed foods.
+- Limit alcohol consumption, as drinking too much can raise your total cholesterol level.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- A rupture in arterial plaque can cause a blood clot, blocking blood flow and leading to angina (chest pain) or a heart attack.
+- Plaque buildup in the arteries that supply the brain with blood can lead to a stroke.
+- High cholesterol can also lead to other conditions such as carotid artery disease and peripheral arterial disease.

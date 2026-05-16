@@ -1,0 +1,24 @@
+CONDITION: Liver Diseases
+BIOMARKERS: Liver Function Tests, Gamma-glutamyl Transferase (GGT), Lactate Dehydrogenase (LDH), Total Protein, Albumin/Globulin (A/G) Ratio, Ammonia, Chloride
+ORGAN: liver
+CATEGORY: diet, supplement, lifestyle
+
+---
+
+MECHANISM:
+The liver is the body's largest internal organ, helping to digest food, store energy, and remove poisons. Liver diseases can be caused by viruses (hepatitis), drugs, poisons, or excess alcohol, which can lead to conditions like fatty liver disease and cirrhosis. These diseases impair the liver's ability to perform its essential metabolic and detoxification functions.
+
+DIETARY RECOMMENDATIONS:
+N/A
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+* Milk Thistle (no dose, form, or absorption details provided)
+
+WARNINGS:
+* Swelling of the abdomen and legs.
+* Bruising easily.
+* Changes in the color of your stool and urine.
+* Jaundice, or yellowing of the skin and eyes.

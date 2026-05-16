@@ -1,0 +1,27 @@
+CONDITION: Diabetes mellitus, prevention of complications
+BIOMARKERS: Blood glucose, Blood pressure, Cholesterol
+ORGAN: all
+CATEGORY: diet, exercise, lifestyle
+
+---
+
+MECHANISM:
+Diabetes can damage blood vessels and nerves throughout the body, leading to a range of complications. High blood glucose, blood pressure, and cholesterol contribute to this damage, increasing the risk for heart disease, stroke, kidney disease, and neuropathy. Managing these key biomarkers is the primary strategy for preventing the progression of these long-term health problems.
+
+DIETARY RECOMMENDATIONS:
+- Follow your prescribed meal plan to manage blood glucose levels.
+- Balance food intake with physical activity and medications to prevent low blood glucose (hypoglycemia).
+- Do not smoke, as it contributes to the blood vessel damage that causes heart disease and stroke.
+- Brush teeth twice a day and see a dentist at least once a year to prevent gum disease.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Be aware of the signs of low blood glucose (hypoglycemia), especially when taking certain diabetes medicines.
+- Report any signs of nerve damage (neuropathy), such as in the feet and limbs.
+- Inform your doctor if you feel sad, hopeless, or anxious, as depression is common with chronic illness.
+- Tell your doctor if you are becoming more forgetful, as dementia can make it difficult to manage diabetes.

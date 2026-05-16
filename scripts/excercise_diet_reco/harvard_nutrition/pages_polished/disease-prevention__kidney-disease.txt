@@ -1,0 +1,23 @@
+CONDITION: Kidney diseases, Renal diseases
+BIOMARKERS: Creatinine, Urinalysis
+ORGAN: kidney
+CATEGORY: diet
+
+---
+
+MECHANISM:
+The kidneys contain about a million tiny filtering structures called nephrons that remove wastes and extra water from the blood, which become urine. Most kidney diseases damage the nephrons, leaving the kidneys unable to properly remove wastes. This damage can be caused by genetic problems, injuries, or certain medicines.
+
+DIETARY RECOMMENDATIONS:
+- N/A
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- You have a higher risk of kidney disease if you have diabetes, high blood pressure, or a close family member with kidney disease.
+- Complete kidney failure is a potential outcome of progressive disease, requiring dialysis or a kidney transplant.
+- Damage to the nephrons can be caused by injuries or medicines.

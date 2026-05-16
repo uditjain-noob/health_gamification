@@ -1,0 +1,24 @@
+CONDITION: Electrolyte imbalance (e.g., hyponatremia, hyperkalemia, hypocalcemia, hypercalcemia)
+BIOMARKERS: Sodium, Potassium, Chloride, Bicarbonate, Calcium, Magnesium, Phosphate, Anion gap
+ORGAN: all
+CATEGORY: diet, supplement, lifestyle
+
+---
+
+MECHANISM:
+Electrolytes are minerals with an electric charge that are essential for balancing the amount of water in the body, maintaining the body's acid/base (pH) level, and supporting nerve and muscle function. An electrolyte imbalance occurs when the level of one or more electrolytes is too low or too high. This is often caused by a change in the body's total water content, leading to dehydration or overhydration.
+
+DIETARY RECOMMENDATIONS:
+- Ensure fluid intake matches fluid loss, especially during intense exercise or in very hot weather.
+- Avoid drinking excessive amounts of water, which can cause overhydration.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Seek medical attention for severe or persistent vomiting and/or diarrhea, as this can cause a significant imbalance.
+- Heavy, prolonged sweating can deplete electrolytes and requires careful fluid management.
+- Underlying heart, liver, or kidney problems are common causes of electrolyte imbalance and require medical diagnosis and treatment.

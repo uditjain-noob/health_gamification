@@ -1,7 +1,8 @@
 import pytest
 from core.scorer import (
     score_parameter, score_organ, score_overall,
-    get_rank, get_level, get_difficulty, get_xp_for_difficulty
+    get_rank, get_level, get_difficulty, get_xp_for_difficulty,
+    compute_trend, trend_series,
 )
 
 
@@ -76,3 +77,80 @@ def test_get_xp_for_difficulty():
     assert get_xp_for_difficulty("Easy") == 10
     assert get_xp_for_difficulty("Medium") == 20
     assert get_xp_for_difficulty("Hard") == 30
+
+
+# --- compute_trend ---
+
+def _readings(values_oldest_first):
+    """Build readings list (newest first) from a chronological list of values."""
+    dates = [f"2025-{i+1:02d}-01" for i in range(len(values_oldest_first))]
+    return [
+        {"result_date": d, "value": v}
+        for d, v in zip(reversed(dates), reversed(values_oldest_first))
+    ]
+
+
+def test_compute_trend_none_with_single_reading():
+    r = _readings([20.0])
+    assert compute_trend(r, ref_min=0.0, ref_max=31.0) is None
+
+
+def test_compute_trend_improving():
+    # Values moving from near edge toward midpoint: 27 → 15.5 (midpoint)
+    r = _readings([27.0, 15.5])
+    assert compute_trend(r, ref_min=0.0, ref_max=31.0) == "improving"
+
+
+def test_compute_trend_declining():
+    # Values moving from midpoint toward edge: 15.5 → 27 → out of range
+    r = _readings([5.0, 27.0, 40.0])
+    assert compute_trend(r, ref_min=0.0, ref_max=31.0) == "declining"
+
+
+def test_compute_trend_stable():
+    # Values barely changing inside range
+    r = _readings([20.0, 20.5, 20.2, 20.1])
+    result = compute_trend(r, ref_min=0.0, ref_max=31.0)
+    assert result == "stable"
+
+
+def test_compute_trend_lookback_limits_window():
+    # First 2 readings are declining, last 2 are sharply improving
+    # With lookback=2 we should see improving (the recent window)
+    r = _readings([5.0, 5.0, 5.0, 5.0, 30.0, 15.5])
+    assert compute_trend(r, ref_min=0.0, ref_max=31.0, lookback=2) == "improving"
+
+
+def test_compute_trend_uses_full_window_by_default():
+    # lookback=5 default: 6 readings but only 5 used
+    r = _readings([30.0, 28.0, 25.0, 20.0, 15.0, 10.0])
+    assert compute_trend(r, ref_min=0.0, ref_max=31.0) == "improving"
+
+
+# --- trend_series ---
+
+def test_trend_series_chronological_order():
+    r = _readings([27.0, 14.0])
+    series = trend_series(r, ref_min=0.0, ref_max=31.0)
+    assert series[0]["date"] < series[1]["date"]
+
+
+def test_trend_series_contains_score():
+    r = _readings([15.5])
+    series = trend_series(r, ref_min=0.0, ref_max=31.0)
+    assert series[0]["score"] == 100
+
+
+def test_trend_series_lookback_limits_output():
+    r = _readings([10.0, 15.0, 20.0, 25.0, 27.0, 28.0])
+    series = trend_series(r, ref_min=0.0, ref_max=31.0, lookback=3)
+    assert len(series) == 3
+
+
+def test_trend_series_includes_value_and_date():
+    r = _readings([20.0, 10.0])
+    series = trend_series(r, ref_min=0.0, ref_max=31.0)
+    for point in series:
+        assert "date" in point
+        assert "value" in point
+        assert "score" in point

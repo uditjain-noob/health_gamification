@@ -1,0 +1,29 @@
+CONDITION: General health promotion and chronic disease prevention
+BIOMARKERS: N/A
+ORGAN: all
+CATEGORY: exercise, lifestyle
+
+---
+
+MECHANISM:
+Regular physical activity improves overall health and fitness while reducing the risk for many chronic diseases. Aerobic exercises increase breathing and heart rate, which keeps the heart, lungs, and circulatory system healthy. Strength training builds stronger muscles, while balance and flexibility exercises improve stability, coordination, joint mobility, and posture to help prevent falls and injuries.
+
+DIETARY RECOMMENDATIONS:
+N/A
+
+EXERCISE RECOMMENDATIONS:
+*   Incorporate a combination of different exercise types into your routine.
+*   **Aerobic (Cardio):** Engage in activities like walking, running, or swimming to increase your heart and breathing rate.
+*   **Strength training:** Use weights, resistance bands, or your own body weight to build muscle.
+*   **Balance exercises:** Practice activities such as tai chi or standing on one leg to improve stability.
+*   **Flexibility exercises:** Include stretching or yoga to improve joint movement and posture.
+*   Focus on strengthening core muscles (abdomen, back, hips) to improve balance and reduce the risk of back injuries.
+*   Start slowly and gradually build up your activity level and intensity.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+*   Stop exercising immediately and seek medical help if you experience pain, extreme shortness of breath, or dizziness.
+*   Consult a healthcare provider before starting if you have trouble moving, balancing, or have other concerns about exercise safety.
+*   Use proper equipment and listen to your body to prevent injuries; do not overdo it.

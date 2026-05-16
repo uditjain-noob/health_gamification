@@ -1,0 +1,31 @@
+CONDITION: Calcium deficiency, Osteoporosis, Rickets, Osteomalacia
+BIOMARKERS: Calcium blood test, Calcium in Urine Test
+ORGAN: vitamins
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Calcium is the most abundant mineral in the human body, with almost all of it stored in bones and teeth to provide strength. It is essential for building and maintaining strong bones, muscle movement, nerve signal transmission, and hormone release. Inadequate calcium intake leads to the body drawing calcium from the bones, causing conditions like osteoporosis (weak, breakable bones), rickets (soft bones in children), and osteomalacia (soft bones in adults).
+
+DIETARY RECOMMENDATIONS:
+- Eat dairy products such as milk, cheese, and yogurt.
+- Consume leafy, green vegetables such as kale, broccoli, and Chinese cabbage (bok choi).
+- Include fish with soft, edible bones, such as canned sardines and salmon.
+- Look for calcium-enriched foods like breakfast cereals, fruit juices, soy and rice drinks, and tofu.
+- Adults (19-50 years) should aim for 1,000 mg per day.
+- Adult women (51-70 years) should aim for 1,200 mg per day.
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+- Calcium carbonate: best absorbed when taken with food. Found in some antacids like Tums and Rolaids.
+- Calcium citrate: absorbed well on an empty or full stomach. More easily absorbed by people with low stomach acid.
+- For best absorption, take 500 mg or less at one time. Split larger daily doses into smaller doses taken twice a day.
+- Potential side effects include gas, bloating, and constipation. Spreading the dose throughout the day or taking it with meals may help.
+
+WARNINGS:
+- Not getting enough calcium can lead to osteoporosis, a disease which makes bones weaker and more likely to break.
+- In children, calcium deficiency can cause rickets, a disease resulting in soft, weak bones.
+- A related condition called osteomalacia causes soft bones in both children and adults.

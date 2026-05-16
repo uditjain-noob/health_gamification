@@ -1,0 +1,24 @@
+CONDITION: Frequent infections (cold, flu)
+BIOMARKERS: Antibodies, White blood cells (WBCs)
+ORGAN: all
+CATEGORY: exercise, lifestyle
+
+---
+
+MECHANISM:
+The exact mechanism is unproven, but theories suggest exercise supports immunity by flushing bacteria from the lungs and airways. Exercise causes antibodies and white blood cells to circulate more rapidly, potentially detecting illness sooner. A brief rise in body temperature during exercise may inhibit bacterial growth, and lower stress hormones can also protect against illness.
+
+DIETARY RECOMMENDATIONS:
+N/A
+
+EXERCISE RECOMMENDATIONS:
+- Take daily walks for 20 to 30 minutes.
+- Go bicycling a few times a week.
+- Go to the gym every other day.
+- Play golf regularly.
+
+SUPPLEMENT RECOMMENDATIONS:
+N/A
+
+WARNINGS:
+- Do not overdo exercise; heavy, long-term exercise such as marathon running or intense gym training could be harmful.

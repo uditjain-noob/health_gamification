@@ -129,6 +129,7 @@ def extract_nsca_documents(pdf_path: str) -> list[Document]:
 
 
 _HARVARD_PAGES_DIR = Path(__file__).parent / "harvard_nutrition" / "pages"
+_HARVARD_PAGES_POLISHED_DIR = Path(__file__).parent / "harvard_nutrition" / "pages_polished"
 
 # Browser-like headers to reduce likelihood of 403 blocks
 _SCRAPE_HEADERS = {
@@ -149,12 +150,14 @@ def _slug(path: str) -> str:
 
 
 def _load_cached_page(path: str) -> str | None:
-    """Load a pre-scraped page from the local pages/ directory, if available."""
-    cached = _HARVARD_PAGES_DIR / f"{_slug(path)}.txt"
-    if cached.exists():
-        text = cached.read_text(encoding="utf-8")
-        if len(text) >= 200:
-            return text
+    """Load a page from local cache, preferring polished over raw."""
+    slug = _slug(path)
+    for directory in (_HARVARD_PAGES_POLISHED_DIR, _HARVARD_PAGES_DIR):
+        candidate = directory / f"{slug}.txt"
+        if candidate.exists():
+            text = candidate.read_text(encoding="utf-8")
+            if len(text) >= 200:
+                return text
     return None
 
 

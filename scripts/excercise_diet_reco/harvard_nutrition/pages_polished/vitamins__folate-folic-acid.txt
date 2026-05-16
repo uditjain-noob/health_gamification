@@ -1,0 +1,25 @@
+CONDITION: Folic acid deficiency, Folate-deficiency anemia
+BIOMARKERS: Folic acid, Folate, Homocysteine, Vitamin B
+ORGAN: vitamins
+CATEGORY: diet, supplement
+
+---
+
+MECHANISM:
+Folic acid is a B vitamin that helps the body make healthy new cells. It is especially important for women who may get pregnant. Getting enough folic acid before and during pregnancy can prevent major birth defects of the baby's brain or spine.
+
+DIETARY RECOMMENDATIONS:
+- Leafy green vegetables
+- Fruits
+- Dried beans, peas, and nuts
+- Enriched breads, cereals and other grain products
+
+EXERCISE RECOMMENDATIONS:
+General moderate exercise (150 min/week aerobic + 2x strength training) is recommended for overall metabolic health.
+
+SUPPLEMENT RECOMMENDATIONS:
+- Folic acid is available as a dietary supplement.
+
+WARNINGS:
+- Folic acid deficiency before and during pregnancy can cause major birth defects of a baby's brain or spine.
+- Insufficient folate can lead to folate-deficiency anemia.

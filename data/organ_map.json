@@ -6,9 +6,11 @@
       "critical": [],
       "parameters": [
         "SGOT", "SGPT", "GGT", "ALKALINE PHOSPHATASE",
-        "BILIRUBIN TOTAL", "BILIRUBIN DIRECT", "BILIRUBIN INDIRECT",
-        "ALBUMIN", "PROTEIN TOTAL", "GLOBULIN", "AG RATIO", "SGOT SGPT RATIO",
-        "ALB GLOBULIN RATIO"
+        "BILIRUBIN",
+        "ALBUMIN", "GLOBULIN", "SGOT SGPT RATIO", "ALB/GLOBULIN",
+        "PROTEIN - TOTAL", "PROTEIN TOTAL",
+        "ALANINE TRANSAMINASE", "ASPARTATE AMINOTRANSFERASE",
+        "GAMMA GLUTAMYL TRANSFERASE"
       ]
     },
     "kidney": {
@@ -17,7 +19,9 @@
       "critical": ["CREATININE", "EGFR"],
       "parameters": [
         "CREATININE", "BUN", "EGFR", "URIC ACID",
-        "SODIUM", "POTASSIUM", "CHLORIDE", "BLOOD UREA NITROGEN"
+        "SODIUM", "POTASSIUM", "CHLORIDE", "BLOOD UREA NITROGEN",
+        "UREA", "SPECIFIC GRAVITY", "EPITHELIAL CELLS", "PH",
+        "URINARY LEUCOCYTES", "GLOMERULAR FILTRATION"
       ]
     },
     "blood": {
@@ -26,9 +30,13 @@
       "critical": ["HEMOGLOBIN"],
       "parameters": [
         "HEMOGLOBIN", "HEMATOCRIT", "WBC", "RBC", "PLATELETS",
-        "MCV", "MCH", "MCHC", "NEUTROPHILS", "LYMPHOCYTES",
+        "MCV", "MCH", "MCHC", "NEUTROPHILS", "LYMPHOCYTE",
         "EOSINOPHILS", "MONOCYTES", "BASOPHILS", "PCV",
-        "WHITE BLOOD CELL", "RED BLOOD CELL", "PLATELET COUNT"
+        "WHITE BLOOD CELL", "RED BLOOD CELL", "PLATELET COUNT",
+        "ESR", "ERYTHROCYTE SEDIMENTATION", "IRON", "FERRITIN",
+        "TRANSFERRIN", "TIBC", "UIBC", "RDW", "MPV", "PDW",
+        "IMMATURE GRANULOCYTE", "PLATELET TO LARGE CELL RATIO",
+        "PLATELETCRIT", "LEUCOCYTE", "NUCLEATED RED BLOOD"
       ]
     },
     "metabolic": {
@@ -37,7 +45,61 @@
       "critical": ["HBA1C", "GLUCOSE"],
       "parameters": [
         "GLUCOSE", "HBA1C", "FASTING GLUCOSE", "INSULIN",
-        "HOMA-IR", "BLOOD GLUCOSE", "GLYCATED HEMOGLOBIN"
+        "HOMA-IR", "BLOOD GLUCOSE", "GLYCATED HEMOGLOBIN",
+        "AVERAGE BLOOD GLUCOSE", "ABG", "FASTING BLOOD SUGAR",
+        "HBAIC"
+      ]
+    },
+    "heart": {
+      "weight": 0.20,
+      "emoji": "❤️",
+      "critical": ["LDL CHOLESTEROL", "TOTAL CHOLESTEROL"],
+      "parameters": [
+        "HDL CHOLESTEROL", "LDL CHOLESTEROL", "TOTAL CHOLESTEROL",
+        "TRIGLYCERIDES", "VLDL CHOLESTEROL", "NON-HDL CHOLESTEROL",
+        "TC HDL CHOLESTEROL", "TC/ HDL CHOLESTEROL",
+        "TRIG / HDL", "TRIG HDL",
+        "LDL / HDL", "LDL HDL",
+        "HDL / LDL", "HDL LDL",
+        "APOLIPOPROTEIN", "LIPOPROTEIN"
+      ]
+    },
+    "thyroid": {
+      "weight": 0.10,
+      "emoji": "🦋",
+      "critical": ["TSH"],
+      "parameters": [
+        "TSH", "TRIIODOTHYRONINE", "THYROXINE",
+        "FREE T3", "FREE T4", "THYROID PEROXIDASE"
+      ]
+    },
+    "vitamins": {
+      "weight": 0.05,
+      "emoji": "💊",
+      "critical": [],
+      "parameters": [
+        "VITAMIN D", "VITAMIN B", "VITAMIN C", "VITAMIN A",
+        "VITAMIN E", "CALCIUM", "FOLATE", "FOLIC ACID"
+      ]
+    },
+    "bone": {
+      "weight": 0.05,
+      "emoji": "🦴",
+      "critical": ["25-OH VITAMIN D"],
+      "parameters": [
+        "25-OH VITAMIN D",
+        "VITAMIN B-12",
+        "PHOSPHORUS", "MAGNESIUM", "PARATHYROID",
+        "BONE MINERAL", "BONE DENSITY", "OSTEOCALCIN", "DEOXYPYRIDINOLINE"
+      ]
+    },
+    "hormones": {
+      "weight": 0.05,
+      "emoji": "⚗️",
+      "critical": [],
+      "parameters": [
+        "TESTOSTERONE", "ESTROGEN", "ESTRADIOL", "CORTISOL",
+        "PROLACTIN", "FSH", "LH", "PROGESTERONE", "DHEA"
       ]
     }
   },
@@ -49,6 +111,7 @@
     "heart": 0.20,
     "thyroid": 0.10,
     "vitamins": 0.05,
+    "bone": 0.05,
     "hormones": 0.05
   }
 }

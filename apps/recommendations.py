@@ -94,11 +94,6 @@ def fetch_rag_recommendations(client, organ: str, query: str, context_chunks: li
         raise ValueError(f"LLM returned invalid JSON for RAG recommendations: {e}") from e
 
 
-class GetRecommendationsInput(BaseModel):
-    patient_id: str
-    organ: str
-
-
 class GetRagRecommendationsInput(BaseModel):
     query: str
     organ: str
@@ -106,31 +101,6 @@ class GetRagRecommendationsInput(BaseModel):
 
 
 def register(mcp, get_store, get_client):
-    @mcp.tool()
-    def get_recommendations(input: GetRecommendationsInput) -> str:
-        """
-        Get AI-generated, evidence-based recommendations for improving an organ's flagged parameters.
-
-        Returns a JSON string with three categories — diet, exercise, supplements — each containing
-        up to 3 actionable items with title, description, and priority (high/medium/low).
-        Only generates recommendations for out-of-range parameters; returns empty lists if all are normal.
-        Results are cached per (patient_id, organ) so repeat calls are free.
-        Use this when a user asks "what should I do about my liver?" or "how can I improve my cholesterol?".
-        For a visual version with the same content embedded in a panel, use show_organ_panel instead.
-
-        Parameters:
-        - patient_id: the patient's ID
-        - organ: organ name (e.g. "liver", "heart") — case-insensitive
-        """
-        patient_id = input.patient_id
-        organ = input.organ
-        store = get_store()
-        client = get_client()
-        params = store.get_parameters_for_organ(patient_id, organ)
-        flagged = [p for p in params if p["readings"] and p["readings"][0]["status"] != "normal"]
-        recs = fetch_recommendations(client, organ, flagged, patient_id)
-        return json.dumps(recs, indent=2)
-
     @mcp.tool()
     def get_rag_recommendations(input: GetRagRecommendationsInput) -> str:
         """

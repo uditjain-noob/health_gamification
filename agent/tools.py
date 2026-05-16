@@ -4,20 +4,25 @@ from db.store import Store
 from agent.mcp_tools import (
     GetParamsByOrganInput,
     GetParamsByOrganAgentInput,
-    GetRecommendationsForCaseInput,
-    GetRecommendationsForCaseAgentInput,
     BuildOrganUISectionInput,
     PrioritizeOrgansInput,
     FinishDashboardInput,
     get_params_by_organ_fn,
-    get_recommendations_for_case_fn,
     build_organ_ui_section_fn,
     prioritize_organs_fn,
     finish_dashboard_fn,
 )
+from apps.recommendations import GetRagRecommendationsInput, fetch_rag_recommendations
+from apps.rag_retriever import retrieve as rag_retrieve
 
 
 def make_agent_tools(store: Store, mapper: OrganMapper, client, patient_id: str) -> list[AgentTool]:
+
+    def rag_recs_fn(**kwargs):
+        inp = GetRagRecommendationsInput(**kwargs)
+        chunks = rag_retrieve(inp.query, inp.organ, inp.category, top_k=5)
+        return fetch_rag_recommendations(client, inp.organ, inp.query, chunks)
+
     return [
         AgentTool(
             name="prioritize_organs",
@@ -35,13 +40,10 @@ def make_agent_tools(store: Store, mapper: OrganMapper, client, patient_id: str)
             ),
         ),
         AgentTool(
-            name="get_recommendations_for_case",
-            description="Get goal-aware AI recommendations for flagged parameters in an organ.",
-            parameters=GetRecommendationsForCaseAgentInput.model_json_schema(),
-            fn=lambda **kwargs: get_recommendations_for_case_fn(
-                GetRecommendationsForCaseInput(patient_id=patient_id, **kwargs),
-                store, client,
-            ),
+            name="get_rag_recommendations",
+            description="Get RAG-grounded diet/exercise/supplement recommendations backed by medical literature. Compose query from the organ's flagged parameter names and patient context.",
+            parameters=GetRagRecommendationsInput.model_json_schema(),
+            fn=rag_recs_fn,
         ),
         AgentTool(
             name="build_organ_ui_section",

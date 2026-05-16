@@ -8,7 +8,6 @@ from agent.mcp_tools import (
     prioritize_organs_fn,
     FinishDashboardInput,
     finish_dashboard_fn,
-    GetRecommendationsForCaseInput,
 )
 
 
@@ -147,77 +146,9 @@ def test_finish_dashboard_preserves_summary():
     assert result["summary"] == "Focus on liver"
 
 
-# --- get_recommendations_for_case (mocked client) ---
-
-def test_get_recommendations_returns_empty_when_no_flagged_params(store, patient_id):
-    from agent.mcp_tools import get_recommendations_for_case_fn, GetRecommendationsForCaseInput
-    from unittest.mock import MagicMock
-
-    client = MagicMock()  # should not be called — no flagged params in list
-    result = get_recommendations_for_case_fn(
-        GetRecommendationsForCaseInput(
-            patient_id=patient_id,
-            organ="liver",
-            use_case="weight loss",
-            flagged_parameter_names=[],  # empty → no LLM call
-            severity="low",
-        ),
-        store,
-        client,
-    )
-    assert result["diet"] == []
-    assert result["exercise"] == []
-    client.complete.assert_not_called()
-
-
-def test_get_recommendations_calls_llm_for_flagged_params(store, patient_id):
-    from agent.mcp_tools import get_recommendations_for_case_fn, GetRecommendationsForCaseInput, _CASE_REC_CACHE
-    from unittest.mock import MagicMock
-    import json
-
-    _CASE_REC_CACHE.clear()  # ensure no cached result
-    mock_response = json.dumps({
-        "diet": [{"title": "Eat less fat", "description": "Reduce saturated fat", "priority": "high"}],
-        "exercise": [],
-        "supplements": [],
-        "quest_titles": [],
-        "disclaimer": "Not medical advice.",
-    })
-    client = MagicMock()
-    client.complete.return_value = mock_response
-
-    result = get_recommendations_for_case_fn(
-        GetRecommendationsForCaseInput(
-            patient_id=patient_id,
-            organ="liver",
-            use_case="weight loss",
-            flagged_parameter_names=["SGPT"],
-            severity="medium",
-        ),
-        store,
-        client,
-    )
-
-    client.complete.assert_called_once()
-    assert result["diet"][0]["title"] == "Eat less fat"
-    assert result["disclaimer"] == "Not medical advice."
-
-
 # --- Pydantic validation ---
 
 def test_get_params_by_organ_input_requires_patient_id():
     from pydantic import ValidationError
     with pytest.raises(ValidationError):
         GetParamsByOrganInput(organ="liver")  # missing patient_id
-
-
-def test_get_recommendations_input_validates_severity():
-    from pydantic import ValidationError
-    with pytest.raises(ValidationError):
-        GetRecommendationsForCaseInput(
-            patient_id="abc",
-            organ="liver",
-            use_case="weight loss",
-            flagged_parameter_names=["SGPT"],
-            severity="invalid_value",
-        )

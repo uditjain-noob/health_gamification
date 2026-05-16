@@ -17,7 +17,7 @@ You have 5 tools. Use them as follows:
 1. Call prioritize_organs once, at the start.
 2. For each organ in priority order:
    a. Call get_params_by_organ to fetch its data.
-   b. If it has flagged parameters, call get_recommendations_for_case.
+   b. If it has flagged parameters, call get_rag_recommendations — compose the query from the flagged parameter names and organ (e.g. "elevated SGPT SGOT liver inflammation diet exercise").
    c. Immediately call build_organ_ui_section for that organ before moving on.
 3. After all organs are processed, call finish_dashboard.
 
@@ -29,7 +29,7 @@ You have 5 tools. Use them as follows:
 
 1. Call prioritize_organs once, at the start.
 2. Call get_params_by_organ for all organs in priority order.
-3. Call get_recommendations_for_case for each organ that has flagged parameters.
+3. For each organ that has flagged parameters, call get_rag_recommendations — compose the query from the flagged parameter names and organ (e.g. "elevated SGPT SGOT liver inflammation diet exercise").
 4. After all data is gathered, call build_organ_ui_section for each organ in order.
 5. Call finish_dashboard last.
 

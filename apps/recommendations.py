@@ -1,4 +1,5 @@
 import json
+from pydantic import BaseModel
 
 from apps.rag_retriever import load_store, retrieve as rag_retrieve
 
@@ -88,9 +89,14 @@ def fetch_rag_recommendations(client, organ: str, query: str, context_chunks: li
         raise ValueError(f"LLM returned invalid JSON for RAG recommendations: {e}") from e
 
 
+class GetRecommendationsInput(BaseModel):
+    patient_id: str
+    organ: str
+
+
 def register(mcp, get_store, get_client):
     @mcp.tool()
-    def get_recommendations(patient_id: str, organ: str) -> str:
+    def get_recommendations(input: GetRecommendationsInput) -> str:
         """
         Get AI-generated, evidence-based recommendations for improving an organ's flagged parameters.
 
@@ -105,6 +111,8 @@ def register(mcp, get_store, get_client):
         - patient_id: the patient's ID
         - organ: organ name (e.g. "liver", "heart") — case-insensitive
         """
+        patient_id = input.patient_id
+        organ = input.organ
         store = get_store()
         client = get_client()
         params = store.get_parameters_for_organ(patient_id, organ)

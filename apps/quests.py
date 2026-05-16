@@ -1,14 +1,29 @@
+from pydantic import BaseModel
 from core.scorer import get_difficulty, get_xp_for_difficulty
 from core.organs import OrganMapper
 from db.store import Store
 
-PHASE1_ORGANS = ["liver", "kidney", "blood", "metabolic"]
+
+class ShowActiveQuestsInput(BaseModel):
+    patient_id: str
 
 
 def register(mcp, get_store, get_mapper):
     @mcp.tool(app=True)
-    def show_active_quests(patient_id: str):
-        """Show active health quests — one per out-of-range parameter."""
+    def show_active_quests(input: ShowActiveQuestsInput):
+        """
+        Show the gamified quest board — one active quest per out-of-range parameter.
+
+        Renders a progress bar (parameters in healthy range / total), then a list of quest cards
+        sorted by difficulty (Hard → Medium → Easy). Each card shows the goal ("Lower Your LDL"),
+        organ, current value vs target range, difficulty badge, and XP reward.
+        Use this when a user asks "what should I focus on?", "what are my health goals?", or wants
+        a motivating to-do list rather than a clinical breakdown.
+        If all parameters are normal, shows a congratulations screen instead.
+
+        Requires: patient_id
+        """
+        patient_id = input.patient_id
         from prefab_ui import PrefabApp
         from prefab_ui.components import (
             Column, Row, Card, CardContent, Heading,
@@ -20,7 +35,8 @@ def register(mcp, get_store, get_mapper):
 
         quests = []
         total_params = 0
-        for organ in PHASE1_ORGANS:
+        for row in store.get_organ_summaries(patient_id):
+            organ = row["organ"]
             params = store.get_parameters_for_organ(patient_id, organ)
             total_params += len(params)
             for p in params:

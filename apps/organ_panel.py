@@ -1,12 +1,34 @@
+from pydantic import BaseModel
 from core.scorer import score_parameter, score_organ, get_difficulty
 from core.organs import OrganMapper
 from db.store import Store
 
 
+class ShowOrganPanelInput(BaseModel):
+    patient_id: str
+    organ: str
+
+
 def register(mcp, get_store, get_mapper, get_client):
     @mcp.tool(app=True)
-    def show_organ_panel(patient_id: str, organ: str):
-        """Show a detailed panel for one organ system."""
+    def show_organ_panel(input: ShowOrganPanelInput):
+        """
+        Show a detailed panel for a single organ system with scores, parameter table, and AI recommendations.
+
+        Renders: organ score badge, AI-generated 1-2 sentence summary, full parameter data table
+        (value, normal range, status, delta from midpoint), Ring gauges for flagged parameters,
+        and tabbed diet / exercise / supplement recommendations.
+
+        Use this when a user asks about a specific organ ("how is my liver?", "what's wrong with my heart?")
+        or after show_health_dashboard to drill into a low-scoring organ.
+        Organ name is case-insensitive. Call list_organs first to see available organ names.
+
+        Parameters:
+        - patient_id: the patient's ID
+        - organ: organ name (e.g. "liver", "heart", "kidney") — case-insensitive
+        """
+        patient_id = input.patient_id
+        organ = input.organ
         from prefab_ui import PrefabApp
         from prefab_ui.components import (
             Column, Row, Card, CardContent, CardHeader, CardTitle,
@@ -81,7 +103,7 @@ def register(mcp, get_store, get_mapper, get_client):
                     Muted(summary, css_class="mt-2")
 
             DataTable(
-                data=table_data,
+                rows=table_data,
                 columns=[
                     DataTableColumn(key="parameter", header="Parameter"),
                     DataTableColumn(key="value", header="Value"),

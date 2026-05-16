@@ -5,6 +5,7 @@ from agent.mcp_tools import (
     GetParamsByOrganInput,
     GetParamsByOrganAgentInput,
     BuildOrganUISectionInput,
+    BuildOrganUISectionAgentInput,
     PrioritizeOrgansInput,
     FinishDashboardInput,
     get_params_by_organ_fn,
@@ -47,10 +48,10 @@ def make_agent_tools(store: Store, mapper: OrganMapper, client, patient_id: str)
         ),
         AgentTool(
             name="build_organ_ui_section",
-            description="Build the Prefab UI section card for one organ using fetched data and recommendations.",
-            parameters=BuildOrganUISectionInput.model_json_schema(),
+            description="Build the Prefab UI section card for one organ — fetches its own parameter data from the database.",
+            parameters=BuildOrganUISectionAgentInput.model_json_schema(),
             fn=lambda **kwargs: build_organ_ui_section_fn(
-                BuildOrganUISectionInput(**kwargs), mapper
+                BuildOrganUISectionInput(patient_id=patient_id, **kwargs), store, mapper
             ),
         ),
         AgentTool(

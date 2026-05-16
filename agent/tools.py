@@ -29,8 +29,8 @@ def make_agent_tools(store: Store, mapper: OrganMapper, client, patient_id: str)
             name="get_params_by_organ",
             description="Fetch all parameter values, reference ranges, and readings for an organ system.",
             parameters=GetParamsByOrganAgentInput.model_json_schema(),
-            fn=lambda organ: get_params_by_organ_fn(
-                GetParamsByOrganInput(patient_id=patient_id, organ=organ),
+            fn=lambda **kwargs: get_params_by_organ_fn(
+                GetParamsByOrganInput(patient_id=patient_id, **kwargs),
                 store, mapper,
             ),
         ),
@@ -38,14 +38,8 @@ def make_agent_tools(store: Store, mapper: OrganMapper, client, patient_id: str)
             name="get_recommendations_for_case",
             description="Get goal-aware AI recommendations for flagged parameters in an organ.",
             parameters=GetRecommendationsForCaseAgentInput.model_json_schema(),
-            fn=lambda organ, use_case, flagged_parameter_names, severity: get_recommendations_for_case_fn(
-                GetRecommendationsForCaseInput(
-                    patient_id=patient_id,
-                    organ=organ,
-                    use_case=use_case,
-                    flagged_parameter_names=flagged_parameter_names,
-                    severity=severity,
-                ),
+            fn=lambda **kwargs: get_recommendations_for_case_fn(
+                GetRecommendationsForCaseInput(patient_id=patient_id, **kwargs),
                 store, client,
             ),
         ),

@@ -1,8 +1,8 @@
+from pydantic import BaseModel
 from core.scorer import score_parameter, score_organ, score_overall, get_rank, get_level
 from core.organs import OrganMapper
 from db.store import Store
 
-PHASE1_ORGANS = ["liver", "kidney", "blood", "metabolic"]
 ORGAN_RANK_MAP = {
     (90, 101): "Optimal", (70, 90): "Good", (50, 70): "At Risk", (0, 50): "Critical"
 }
@@ -15,7 +15,8 @@ def _organ_rank(score: int) -> str:
 
 def _build_organ_summaries(store: Store, mapper: OrganMapper, patient_id: str) -> list[dict]:
     summaries = []
-    for organ in PHASE1_ORGANS:
+    for row in store.get_organ_summaries(patient_id):
+        organ = row["organ"]
         params = store.get_parameters_for_organ(patient_id, organ)
         if not params:
             continue
@@ -37,10 +38,24 @@ def _build_organ_summaries(store: Store, mapper: OrganMapper, patient_id: str) -
     return summaries
 
 
+class ShowHealthDashboardInput(BaseModel):
+    patient_id: str
+
+
 def register(mcp, get_store, get_mapper):
     @mcp.tool(app=True)
-    def show_health_dashboard(patient_id: str):
-        """Show the gamified health dashboard for a patient."""
+    def show_health_dashboard(input: ShowHealthDashboardInput):
+        """
+        Show the top-level gamified health dashboard for a patient.
+
+        Renders a visual overview of all organ systems with scores (0–100), rank badges,
+        XP total, health level, and a grid of organ cards sorted by score.
+        Use this as the entry point when a user asks "how am I doing?" or wants a health overview.
+        Drill into a specific organ with show_organ_panel; see raw scores with get_patient_summary.
+
+        Requires: patient_id (use list_organs to see what organs have data).
+        """
+        patient_id = input.patient_id
         from prefab_ui import PrefabApp
         from prefab_ui.components import (
             Column, Row, Card, CardContent, CardHeader, CardTitle,

@@ -35,9 +35,10 @@ def load_store(path: str = _DEFAULT_STORE_PATH) -> None:
         # including embeddings is stored explicitly.
         if "documents" in data:
             from haystack import Document as HaystackDocument
-            _store = InMemoryDocumentStore.from_dict(data["store_config"])
+            from haystack.document_stores.types import DuplicatePolicy
+            _store = InMemoryDocumentStore()
             docs = [HaystackDocument.from_dict(d) for d in data["documents"]]
-            _store.write_documents(docs)
+            _store.write_documents(docs, policy=DuplicatePolicy.OVERWRITE)
         else:
             _store = InMemoryDocumentStore.from_dict(data)
         _retriever = InMemoryEmbeddingRetriever(document_store=_store)
@@ -61,28 +62,19 @@ def load_store(path: str = _DEFAULT_STORE_PATH) -> None:
         _text_embedder = None
 
 
-def retrieve(query: str, organ: str, category: str = "all", top_k: int = 5) -> list[str]:
-    """Embed query, filter by organ/category, return list of chunk content strings.
+def retrieve(query: str, organ: str = "", category: str = "all", top_k: int = 5) -> list[str]:
+    """Embed query and return top-k chunks by cosine similarity across the full store.
 
     Returns [] if store is not loaded.
     """
     if _store is None or _retriever is None or _text_embedder is None:
         return []
 
-    filters: dict = {
-        "operator": "OR",
-        "conditions": [
-            {"field": "meta.organ", "operator": "==", "value": organ},
-            {"field": "meta.organ", "operator": "==", "value": "all"},
-        ],
-    }
-
     result = _text_embedder.run(text=query)
     query_embedding = result["embedding"]
 
     docs = _retriever.run(
         query_embedding=query_embedding,
-        filters=filters,
         top_k=top_k * 2,  # over-fetch before optional category post-filter
     )["documents"]
 

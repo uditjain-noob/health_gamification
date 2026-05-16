@@ -106,7 +106,7 @@ def get_recommendations_for_case_fn(
     store: Store,
     client: Any,
 ) -> dict:
-    cache_key = (input.patient_id, input.organ, tuple(sorted(input.flagged_parameter_names)))
+    cache_key = (input.patient_id, input.organ, tuple(sorted(input.flagged_parameter_names)), input.use_case, input.severity)
     if cache_key in _CASE_REC_CACHE:
         return _CASE_REC_CACHE[cache_key]
 

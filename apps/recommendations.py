@@ -83,8 +83,13 @@ def fetch_rag_recommendations(client, organ: str, query: str, context_chunks: li
         system=_RAG_SYSTEM,
         user=_RAG_PROMPT.format(context=context, organ=organ, query=query),
     )
+    # Strip markdown code fences Gemini sometimes wraps around JSON
+    stripped = raw.strip()
+    if stripped.startswith("```"):
+        stripped = stripped.split("\n", 1)[-1]
+        stripped = stripped.rsplit("```", 1)[0].strip()
     try:
-        return json.loads(raw)
+        return json.loads(stripped)
     except json.JSONDecodeError as e:
         raise ValueError(f"LLM returned invalid JSON for RAG recommendations: {e}") from e
 
@@ -92,6 +97,12 @@ def fetch_rag_recommendations(client, organ: str, query: str, context_chunks: li
 class GetRecommendationsInput(BaseModel):
     patient_id: str
     organ: str
+
+
+class GetRagRecommendationsInput(BaseModel):
+    query: str
+    organ: str
+    category: str = "all"
 
 
 def register(mcp, get_store, get_client):
@@ -121,7 +132,7 @@ def register(mcp, get_store, get_client):
         return json.dumps(recs, indent=2)
 
     @mcp.tool()
-    def get_rag_recommendations(query: str, organ: str, category: str = "all") -> str:
+    def get_rag_recommendations(input: GetRagRecommendationsInput) -> str:
         """
         Get RAG-grounded diet/exercise/supplement recommendations backed by medical literature.
 
@@ -138,6 +149,6 @@ def register(mcp, get_store, get_client):
         Max 3 items per category.
         """
         client = get_client()
-        context_chunks = rag_retrieve(query, organ, category, top_k=5)
-        recs = fetch_rag_recommendations(client, organ, query, context_chunks)
+        context_chunks = rag_retrieve(input.query, input.organ, input.category, top_k=5)
+        recs = fetch_rag_recommendations(client, input.organ, input.query, context_chunks)
         return json.dumps(recs, indent=2)

@@ -56,8 +56,9 @@ def register(mcp, get_store, get_mapper):
         Fetch all parameters for one organ as structured JSON — no charts, pure data.
 
         Returns organ score, flagged_count, and a parameters list where each entry contains:
-        name, unit, ref_min, ref_max, latest_value, latest_date, score (0–100),
-        status (normal/high/low), trend (improving/stable/declining/null), is_critical, reading_count.
+        name, unit, ref_min, ref_max, score (0–100), status (normal/high/low),
+        trend (improving/stable/declining/null), is_critical, and a readings list of
+        {date, value} objects ordered newest-first.
         Trend is null if only one reading exists. is_critical flags parameters with higher clinical weight.
 
         Use this when you need to reason over data programmatically — e.g. to decide which parameters
@@ -103,13 +104,14 @@ def register(mcp, get_store, get_mapper):
                 "unit": p["unit"],
                 "ref_min": p["ref_min"],
                 "ref_max": p["ref_max"],
-                "latest_value": latest["value"] if latest else None,
-                "latest_date": latest["result_date"] if latest else None,
                 "score": score,
                 "status": status,
                 "trend": trend,
                 "is_critical": mapper.is_critical(p["name"]),
-                "reading_count": len(readings),
+                "readings": [
+                    {"date": r["result_date"], "value": r["value"]}
+                    for r in readings
+                ],
             })
 
         critical = {p["name"].upper() for p in params if mapper.is_critical(p["name"])}

@@ -38,6 +38,49 @@ def _build_organ_summaries(store: Store, mapper: OrganMapper, patient_id: str) -
     return summaries
 
 
+def get_dashboard_json(store: Store, mapper: OrganMapper, patient_id: str) -> dict:
+    """Return dashboard summary as plain JSON (overall score, rank, level, XP, organ list)."""
+    summaries = _build_organ_summaries(store, mapper, patient_id)
+    if not summaries:
+        xp_total = store.get_xp_total(patient_id)
+        return {
+            "overall": 0, "rank": "Bronze", "rank_emoji": "🟤",
+            "level": 1, "xp_total": xp_total, "xp_to_next": 50,
+            "organs": [], "total_params": 0, "total_flagged": 0,
+        }
+    organ_scores = {s["organ"]: s["score"] for s in summaries}
+    organ_weights = {s["organ"]: s["weight"] for s in summaries}
+    overall = score_overall(organ_scores, organ_weights)
+    rank = get_rank(overall)
+    level = get_level(overall)
+    xp_total = store.get_xp_total(patient_id)
+    xp_to_next = max(0, (level + 1) * 50 - xp_total)
+    rank_emoji = {"Bronze": "🟤", "Silver": "⚪", "Gold": "🟡", "Platinum": "🔵", "Diamond": "💎"}.get(rank, "🟤")
+    total_params = sum(s["parameter_count"] for s in summaries)
+    total_flagged = sum(s["flagged_count"] for s in summaries)
+    return {
+        "overall": overall,
+        "rank": rank,
+        "rank_emoji": rank_emoji,
+        "level": level,
+        "xp_total": xp_total,
+        "xp_to_next": xp_to_next,
+        "organs": [
+            {
+                "organ": s["organ"],
+                "emoji": s["emoji"],
+                "score": s["score"],
+                "rank": s["rank"],
+                "flagged_count": s["flagged_count"],
+                "parameter_count": s["parameter_count"],
+            }
+            for s in summaries
+        ],
+        "total_params": total_params,
+        "total_flagged": total_flagged,
+    }
+
+
 class ShowHealthDashboardInput(BaseModel):
     patient_id: str
 
@@ -113,3 +156,11 @@ def register(mcp, get_store, get_mapper):
                 Muted(f"✅ {total_params - total_flagged} in range")
 
         return PrefabApp(view=view)
+
+    class GetDashboardDataInput(BaseModel):
+        patient_id: str
+
+    @mcp.tool()
+    def get_dashboard_data(input: GetDashboardDataInput) -> dict:
+        """Return dashboard summary as plain JSON (overall score, rank, level, XP, organ list)."""
+        return get_dashboard_json(get_store(), get_mapper(), input.patient_id)

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HealthQuest — Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f8fafc; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+    /* Nav */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .75rem 1.25rem; background: #fff;
+      border-bottom: 1px solid #e2e8f0; flex-shrink: 0;
+    }
+    nav .logo { font-weight: 700; font-size: 1.1rem; }
+    nav .patient-badge {
+      background: #eff6ff; color: #1d4ed8;
+      border: 1px solid #bfdbfe; border-radius: 20px;
+      padding: .2rem .75rem; font-size: .85rem;
+    }
+    nav .nav-links a {
+      color: #475569; text-decoration: none; margin-left: 1rem;
+      font-size: .9rem;
+    }
+    nav .nav-links a:hover { color: #3b82f6; }
+
+    /* Layout */
+    .layout { display: flex; flex: 1; overflow: hidden; }
+
+    /* Left column */
+    .left {
+      width: 340px; flex-shrink: 0;
+      overflow-y: auto; padding: 1rem;
+      border-right: 1px solid #e2e8f0; background: #fff;
+    }
+    .score-card {
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border: 1px solid #bfdbfe; border-radius: 10px;
+      padding: 1rem; margin-bottom: 1rem;
+    }
+    .score-card .rank-row { display: flex; justify-content: space-between; align-items: center; }
+    .score-card .rank-name { font-weight: 700; font-size: 1rem; }
+    .score-card .level-badge {
+      background: #3b82f6; color: #fff;
+      border-radius: 20px; padding: .15rem .6rem; font-size: .8rem;
+    }
+    .score-card .overall { font-size: 1.6rem; font-weight: 800; margin: .3rem 0; }
+    .xp-bar { height: 6px; background: #dbeafe; border-radius: 3px; margin: .5rem 0 .25rem; }
+    .xp-bar .fill { height: 100%; background: #3b82f6; border-radius: 3px; transition: width .4s; }
+    .xp-hint { font-size: .78rem; color: #64748b; }
+
+    .section-label { font-size: .8rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: .05em; margin: .75rem 0 .5rem; }
+    .organ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+    .organ-card {
+      border: 1px solid #e2e8f0; border-radius: 8px; padding: .75rem;
+      cursor: pointer; transition: border-color .15s, box-shadow .15s;
+      background: #fff;
+    }
+    .organ-card:hover { border-color: #93c5fd; box-shadow: 0 1px 6px rgba(59,130,246,.12); }
+    .organ-card.selected { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,.2); }
+    .organ-card .row { display: flex; justify-content: space-between; align-items: center; margin-bottom: .3rem; }
+    .organ-card .name { font-size: .82rem; font-weight: 600; }
+    .organ-card .score { font-size: 1.1rem; font-weight: 700; }
+    .organ-card .meta { font-size: .72rem; color: #94a3b8; }
+    .badge {
+      font-size: .7rem; padding: .1rem .45rem; border-radius: 20px; font-weight: 500;
+    }
+    .badge-optimal  { background: #dcfce7; color: #166534; }
+    .badge-good     { background: #f1f5f9; color: #475569; }
+    .badge-at-risk  { background: #fef9c3; color: #854d0e; }
+    .badge-critical { background: #fee2e2; color: #991b1b; }
+
+    /* Bottom stats */
+    .stats-bar {
+      display: flex; gap: 1.5rem; padding: .6rem 1.25rem;
+      border-top: 1px solid #e2e8f0; background: #fff;
+      font-size: .8rem; color: #64748b; flex-shrink: 0;
+    }
+
+    /* Right column */
+    .right { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #f8fafc; }
+    .right-header {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .75rem 1.25rem; border-bottom: 1px solid #e2e8f0;
+      background: #fff; flex-shrink: 0; font-weight: 600;
+    }
+    .right-header .loading { font-size: .8rem; color: #94a3b8; font-weight: normal; }
+    .organ-iframe { flex: 1; border: none; width: 100%; }
+    .placeholder {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      color: #94a3b8; font-size: 1rem;
+    }
+    #loading-spinner { display: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="logo">⚕️ HealthQuest</span>
+    <span class="patient-badge" id="patient-label">—</span>
+    <div class="nav-links">
+      <a id="nav-agent" href="#">🤖 Agent Dashboard</a>
+      <a id="nav-goals" href="#">🎯 Goals</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <div class="left" id="left-col">
+      <div class="score-card" id="score-card">
+        <div class="rank-row">
+          <span class="rank-name" id="rank-name">Loading…</span>
+          <span class="level-badge" id="level-badge">—</span>
+        </div>
+        <div class="overall" id="overall-score">—</div>
+        <div class="xp-bar"><div class="fill" id="xp-fill" style="width:0%"></div></div>
+        <div class="xp-hint" id="xp-hint"></div>
+      </div>
+      <div class="section-label">Organ Systems</div>
+      <div class="organ-grid" id="organ-grid">
+        <div style="grid-column:1/-1;color:#94a3b8;font-size:.85rem;padding:.5rem 0">Loading…</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="right-header" id="right-header">
+        <span id="panel-title">Select an organ</span>
+        <span class="loading" id="panel-loading" style="display:none">loading…</span>
+      </div>
+      <div class="placeholder" id="placeholder">← Select an organ to drill in</div>
+      <iframe class="organ-iframe" id="organ-iframe" style="display:none"></iframe>
+    </div>
+  </div>
+
+  <div class="stats-bar" id="stats-bar">
+    <span id="stat-total">—</span>
+    <span id="stat-flagged">—</span>
+    <span id="stat-ok">—</span>
+  </div>
+
+  <script type="module">
+    import { getUrlParam, loadIntoIframe, fetchDashboardData } from "./mcp-client.js";
+
+    const patientId = getUrlParam("patient");
+    if (!patientId) { window.location.href = "index.html"; }
+
+    document.getElementById("patient-label").textContent = "Patient: " + patientId;
+    document.getElementById("nav-agent").href = "agent.html?patient=" + encodeURIComponent(patientId);
+    document.getElementById("nav-goals").href  = "goals.html?patient="  + encodeURIComponent(patientId);
+
+    const RANK_BADGE = {
+      "Optimal": "badge-optimal",
+      "Good": "badge-good",
+      "At Risk": "badge-at-risk",
+      "Critical": "badge-critical",
+    };
+
+    let selectedOrgan = null;
+
+    function selectOrgan(organ, iframeEl) {
+      selectedOrgan = organ;
+      document.querySelectorAll(".organ-card").forEach(c => c.classList.remove("selected"));
+      document.querySelector(`[data-organ="${organ}"]`)?.classList.add("selected");
+
+      document.getElementById("panel-title").textContent = organ.charAt(0).toUpperCase() + organ.slice(1);
+      document.getElementById("panel-loading").style.display = "inline";
+      document.getElementById("placeholder").style.display = "none";
+      iframeEl.style.display = "block";
+
+      loadIntoIframe(iframeEl, "show_organ_panel", { patient_id: patientId, organ });
+
+      iframeEl.onload = () => {
+        document.getElementById("panel-loading").style.display = "none";
+      };
+    }
+
+    async function init() {
+      let data;
+      try {
+        data = await fetchDashboardData(patientId);
+      } catch (e) {
+        document.getElementById("organ-grid").innerHTML =
+          `<div style="grid-column:1/-1;color:#ef4444">Error loading data: ${e.message}</div>`;
+        return;
+      }
+
+      // Score card
+      document.getElementById("rank-name").textContent = data.rank_emoji + " " + data.rank + " Health Champion";
+      document.getElementById("level-badge").textContent = "Level " + data.level;
+      document.getElementById("overall-score").textContent = "Overall Score: " + data.overall + "/1000";
+      const xpPct = data.xp_total > 0 ? Math.min(100, ((data.xp_total % 50) / 50) * 100) : 0;
+      document.getElementById("xp-fill").style.width = xpPct + "%";
+      document.getElementById("xp-hint").textContent = data.xp_to_next + " XP to next level";
+
+      // Stats bar
+      document.getElementById("stat-total").textContent   = "📊 " + data.total_params   + " parameters";
+      document.getElementById("stat-flagged").textContent = "🚩 " + data.total_flagged   + " flagged";
+      document.getElementById("stat-ok").textContent      = "✅ " + (data.total_params - data.total_flagged) + " in range";
+
+      // Organ grid
+      const grid = document.getElementById("organ-grid");
+      const iframe = document.getElementById("organ-iframe");
+      grid.innerHTML = "";
+      if (data.organs.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1;color:#94a3b8">No organ data found.</div>';
+        return;
+      }
+      for (const s of data.organs) {
+        const card = document.createElement("div");
+        card.className = "organ-card";
+        card.dataset.organ = s.organ;
+        const badgeCls = RANK_BADGE[s.rank] ?? "badge-good";
+        card.innerHTML = `
+          <div class="row">
+            <span class="name">${s.emoji} ${s.organ.charAt(0).toUpperCase() + s.organ.slice(1)}</span>
+            <span class="badge ${badgeCls}">${s.rank}</span>
+          </div>
+          <div class="score">${s.score}/100</div>
+          <div class="meta">${s.flagged_count} flagged / ${s.parameter_count} total</div>`;
+        card.addEventListener("click", () => selectOrgan(s.organ, iframe));
+        grid.appendChild(card);
+      }
+
+      // Restore organ from URL hash
+      const hash = new URLSearchParams(window.location.hash.slice(1));
+      const savedOrgan = hash.get("organ");
+      if (savedOrgan && data.organs.find(s => s.organ === savedOrgan)) {
+        selectOrgan(savedOrgan, iframe);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

@@ -47,6 +47,8 @@ agent_mcp_app.register(mcp, get_store, get_mapper, get_client)
 
 if __name__ == "__main__":
     import json
+    import threading
+    import time
     import webbrowser
     import uvicorn
     from starlette.staticfiles import StaticFiles
@@ -73,7 +75,10 @@ if __name__ == "__main__":
         uri = request.query_params.get("uri", "")
         if not uri:
             return Response("Missing uri", status_code=400)
-        html = await _read_mcp_resource("http://127.0.0.1:8000/mcp", uri)
+        try:
+            html = await _read_mcp_resource("http://127.0.0.1:8000/mcp", uri)
+        except Exception:
+            return Response("Resource fetch error", status_code=502)
         if html is None:
             return Response("Resource not found", status_code=502)
         return HTMLResponse(html)
@@ -96,10 +101,13 @@ if __name__ == "__main__":
 
     async def api_dashboard(request: Request) -> Response:
         patient_id = request.path_params["patient_id"]
-        store = get_store()
-        mapper = get_mapper()
-        data = get_dashboard_json(store, mapper, patient_id)
-        return JSONResponse(data)
+        try:
+            store = get_store()
+            mapper = get_mapper()
+            data = get_dashboard_json(store, mapper, patient_id)
+            return JSONResponse(data)
+        except Exception as exc:
+            return JSONResponse({"error": str(exc)}, status_code=500)
 
     app = mcp.http_app()
     app.add_route("/js/app-bridge.js", serve_bridge)
@@ -108,5 +116,11 @@ if __name__ == "__main__":
     app.add_route("/api/dashboard/{patient_id}", api_dashboard)
     app.mount("/ui", StaticFiles(directory="ui", html=True))
 
+    def _run_server():
+        uvicorn.run(app, host="127.0.0.1", port=8000)
+
+    t = threading.Thread(target=_run_server, daemon=False)
+    t.start()
+    time.sleep(1.5)
     webbrowser.open("http://127.0.0.1:8000/ui/")
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    t.join()

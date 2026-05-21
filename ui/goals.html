@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HealthQuest — Goals</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f8fafc; display: flex; flex-direction: column; min-height: 100vh; }
+
+    nav {
+      display: flex; align-items: center; gap: 1rem;
+      padding: .75rem 1.25rem; background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    nav a { color: #475569; text-decoration: none; font-size: .9rem; }
+    nav a:hover { color: #3b82f6; }
+    nav .title { font-weight: 700; font-size: 1.05rem; flex: 1; text-align: center; }
+    nav .patient-badge {
+      background: #eff6ff; color: #1d4ed8;
+      border: 1px solid #bfdbfe; border-radius: 20px;
+      padding: .2rem .75rem; font-size: .85rem;
+    }
+
+    .goal-bar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: .75rem; align-items: center;
+      padding: .75rem 1.25rem; background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .goal-bar input {
+      flex: 1; padding: .55rem .9rem;
+      border: 1px solid #cbd5e1; border-radius: 6px;
+      font-size: .95rem; outline: none;
+    }
+    .goal-bar input:focus { border-color: #3b82f6; }
+    .goal-bar button {
+      padding: .55rem 1.2rem; background: #3b82f6; color: #fff;
+      border: none; border-radius: 6px; cursor: pointer; font-weight: 500; white-space: nowrap;
+    }
+    .goal-bar button:disabled { background: #93c5fd; cursor: not-allowed; }
+    .goal-bar button:not(:disabled):hover { background: #2563eb; }
+
+    .content { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.25rem; width: 100%; }
+
+    .section { margin-bottom: 1.5rem; }
+    .section-title {
+      font-size: .9rem; font-weight: 600; color: #475569;
+      text-transform: uppercase; letter-spacing: .05em;
+      margin-bottom: .75rem;
+    }
+    iframe {
+      width: 100%; border: 1px solid #e2e8f0; border-radius: 8px;
+      min-height: 320px; display: block;
+    }
+
+    #plan-trigger { display: none; margin-top: .5rem; }
+    #plan-trigger button {
+      padding: .55rem 1.4rem; background: #059669; color: #fff;
+      border: none; border-radius: 6px; cursor: pointer; font-weight: 500;
+    }
+    #plan-trigger button:hover { background: #047857; }
+    #plan-section { display: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a id="back-link" href="#">← Dashboard</a>
+    <span class="title">🎯 Goals</span>
+    <span class="patient-badge" id="patient-label">—</span>
+  </nav>
+
+  <div class="goal-bar">
+    <input id="goal-input" type="text" placeholder="e.g. Run a marathon in 6 months">
+    <button id="analyse-btn">Analyse Goal</button>
+  </div>
+
+  <div class="content">
+    <div class="section" id="readiness-section" style="display:none">
+      <div class="section-title">Goal Readiness</div>
+      <iframe id="readiness-iframe" title="Goal readiness"></iframe>
+    </div>
+
+    <div id="plan-trigger">
+      <button id="plan-btn">📋 Build Training Plan</button>
+    </div>
+
+    <div class="section" id="plan-section">
+      <div class="section-title">Training Plan</div>
+      <iframe id="plan-iframe" title="Training plan"></iframe>
+    </div>
+  </div>
+
+  <script type="module">
+    import { getUrlParam, loadIntoIframe } from "./mcp-client.js";
+
+    const patientId = getUrlParam("patient");
+    if (!patientId) { window.location.href = "index.html"; }
+
+    document.getElementById("patient-label").textContent = "Patient: " + patientId;
+    document.getElementById("back-link").href = "dashboard.html?patient=" + encodeURIComponent(patientId);
+
+    const analyseBtn       = document.getElementById("analyse-btn");
+    const readinessSection = document.getElementById("readiness-section");
+    const readinessIframe  = document.getElementById("readiness-iframe");
+    const planTrigger      = document.getElementById("plan-trigger");
+    const planSection      = document.getElementById("plan-section");
+    const planIframe       = document.getElementById("plan-iframe");
+
+    analyseBtn.addEventListener("click", () => {
+      const goal = document.getElementById("goal-input").value.trim();
+      if (!goal) return;
+
+      analyseBtn.disabled = true;
+      planTrigger.style.display  = "none";
+      planSection.style.display  = "none";
+      readinessSection.style.display = "block";
+
+      loadIntoIframe(readinessIframe, "show_goal_view", { patient_id: patientId, goal });
+
+      readinessIframe.onload = () => {
+        analyseBtn.disabled = false;
+        planTrigger.style.display = "block";
+      };
+    });
+
+    document.getElementById("plan-btn").addEventListener("click", () => {
+      const goal = document.getElementById("goal-input").value.trim();
+      if (!goal) return;
+      planSection.style.display = "block";
+      loadIntoIframe(planIframe, "build_goal_plan", { patient_id: patientId, goal });
+    });
+  </script>
+</body>
+</html>

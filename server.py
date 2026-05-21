@@ -51,6 +51,7 @@ if __name__ == "__main__":
     import time
     import webbrowser
     import uvicorn
+    from pathlib import Path
     from starlette.staticfiles import StaticFiles
     from starlette.requests import Request
     from starlette.responses import HTMLResponse, JSONResponse, Response
@@ -84,20 +85,22 @@ if __name__ == "__main__":
         return HTMLResponse(html)
 
     async def render_tool(request: Request) -> Response:
+        import html as html_mod
         tool_name = request.query_params.get("tool", "")
         args_json = request.query_params.get("args", "{}")
         try:
             tool_args = json.loads(args_json)
         except json.JSONDecodeError:
             tool_args = {}
-        html = _HOST_HTML_TEMPLATE.format(
-            tool_name=tool_name,
+        tool_name_safe = html_mod.escape(tool_name)
+        html_content = _HOST_HTML_TEMPLATE.format(
+            tool_name=tool_name_safe,
             import_map_tag=import_map_tag,
             tool_name_json=json.dumps(tool_name),
             tool_args_json=json.dumps(tool_args),
             mcp_sdk_version=_MCP_SDK_VERSION,
         )
-        return HTMLResponse(html)
+        return HTMLResponse(html_content)
 
     async def api_dashboard(request: Request) -> Response:
         patient_id = request.path_params["patient_id"]
@@ -114,7 +117,7 @@ if __name__ == "__main__":
     app.add_route("/ui-resource", serve_ui_resource)   # must come before /ui mount
     app.add_route("/render", render_tool)
     app.add_route("/api/dashboard/{patient_id}", api_dashboard)
-    app.mount("/ui", StaticFiles(directory="ui", html=True))
+    app.mount("/ui", StaticFiles(directory=Path(__file__).parent / "ui", html=True))
 
     def _run_server():
         uvicorn.run(app, host="127.0.0.1", port=8000)

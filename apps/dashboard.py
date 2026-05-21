@@ -7,6 +7,8 @@ ORGAN_RANK_MAP = {
     (90, 101): "Optimal", (70, 90): "Good", (50, 70): "At Risk", (0, 50): "Critical"
 }
 
+RANK_EMOJI = {"Bronze": "🟤", "Silver": "⚪", "Gold": "🟡", "Platinum": "🔵", "Diamond": "💎"}
+
 def _organ_rank(score: int) -> str:
     for (lo, hi), rank in ORGAN_RANK_MAP.items():
         if lo <= score < hi:
@@ -55,7 +57,7 @@ def get_dashboard_json(store: Store, mapper: OrganMapper, patient_id: str) -> di
     level = get_level(overall)
     xp_total = store.get_xp_total(patient_id)
     xp_to_next = max(0, (level + 1) * 50 - xp_total)
-    rank_emoji = {"Bronze": "🟤", "Silver": "⚪", "Gold": "🟡", "Platinum": "🔵", "Diamond": "💎"}.get(rank, "🟤")
+    rank_emoji = RANK_EMOJI.get(rank, "🟤")
     total_params = sum(s["parameter_count"] for s in summaries)
     total_flagged = sum(s["flagged_count"] for s in summaries)
     return {
@@ -123,7 +125,7 @@ def register(mcp, get_store, get_mapper):
         xp_total = store.get_xp_total(patient_id)
         xp_to_next = max(0, (level + 1) * 50 - xp_total)
 
-        rank_emoji = {"Bronze": "🟤", "Silver": "⚪", "Gold": "🟡", "Platinum": "🔵", "Diamond": "💎"}.get(rank, "🟤")
+        rank_emoji = RANK_EMOJI.get(rank, "🟤")
         rank_variant = {"Optimal": "success", "Good": "default", "At Risk": "warning", "Critical": "destructive"}
 
         with Column(gap=6, css_class="p-6") as view:

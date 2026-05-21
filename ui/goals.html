@@ -120,14 +120,14 @@
         planTrigger.style.display = "block";
       };
 
-      loadIntoIframe(readinessIframe, "show_goal_view", { patient_id: patientId, goal });
+      readinessIframe.srcdoc = '<div style="font-family:system-ui,sans-serif;padding:2rem;color:#64748b;text-align:center"><p style="font-size:1.1rem;margin-bottom:.5rem">🚧 Coming Soon</p><p style="font-size:.9rem">Goal readiness analysis is not yet implemented.</p></div>';
     });
 
     document.getElementById("plan-btn").addEventListener("click", () => {
       const goal = document.getElementById("goal-input").value.trim();
       if (!goal) return;
       planSection.style.display = "block";
-      loadIntoIframe(planIframe, "build_goal_plan", { patient_id: patientId, goal });
+      planIframe.srcdoc = '<div style="font-family:system-ui,sans-serif;padding:2rem;color:#64748b;text-align:center"><p style="font-size:1.1rem;margin-bottom:.5rem">🚧 Coming Soon</p><p style="font-size:.9rem">Training plan generation is not yet implemented.</p></div>';
     });
   </script>
 </body>

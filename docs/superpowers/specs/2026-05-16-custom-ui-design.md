@@ -155,7 +155,7 @@ User opens /ui/
   → user clicks organ card
       → loadIntoIframe(iframe, "show_organ_panel", {patient_id, organ})
   → user clicks "Agent Dashboard" nav link
-      → agent.html?patient=<id>
+      → agent.html?patie    nt=<id>
       → user hits Run Agent → loadIntoIframe(iframe, "run_health_agent", {patient_id, context})
   → user clicks "Goals" nav link
       → goals.html?patient=<id>

@@ -10,7 +10,7 @@ export function getUrlParam(key) {
  * rendering internally — no MCP protocol needed on the caller side.
  */
 export function loadIntoIframe(iframeEl, toolName, args) {
-    const argsJson = JSON.stringify(args);
+    const argsJson = JSON.stringify({ input: args });
     iframeEl.src =
         "/render?tool=" +
         encodeURIComponent(toolName) +

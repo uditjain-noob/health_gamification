@@ -87,7 +87,7 @@
     import { getUrlParam, loadIntoIframe } from "./mcp-client.js";
 
     const patientId = getUrlParam("patient");
-    if (!patientId) { window.location.href = "index.html"; return; }
+    if (!patientId) { window.location.href = "index.html"; throw new Error("no patient"); }
 
     document.getElementById("patient-label").textContent = "Patient: " + patientId;
     document.getElementById("back-link").href = "dashboard.html?patient=" + encodeURIComponent(patientId);

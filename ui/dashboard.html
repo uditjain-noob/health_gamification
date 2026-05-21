@@ -91,7 +91,6 @@
       flex: 1; display: flex; align-items: center; justify-content: center;
       color: #94a3b8; font-size: 1rem;
     }
-    #loading-spinner { display: none; }
   </style>
 </head>
 <body>
@@ -141,7 +140,7 @@
     import { getUrlParam, loadIntoIframe, fetchDashboardData } from "./mcp-client.js";
 
     const patientId = getUrlParam("patient");
-    if (!patientId) { window.location.href = "index.html"; }
+    if (!patientId) { window.location.href = "index.html"; return; }
 
     document.getElementById("patient-label").textContent = "Patient: " + patientId;
     document.getElementById("nav-agent").href = "agent.html?patient=" + encodeURIComponent(patientId);
@@ -154,10 +153,7 @@
       "Critical": "badge-critical",
     };
 
-    let selectedOrgan = null;
-
     function selectOrgan(organ, iframeEl) {
-      selectedOrgan = organ;
       document.querySelectorAll(".organ-card").forEach(c => c.classList.remove("selected"));
       document.querySelector(`[data-organ="${organ}"]`)?.classList.add("selected");
 
@@ -166,11 +162,13 @@
       document.getElementById("placeholder").style.display = "none";
       iframeEl.style.display = "block";
 
-      loadIntoIframe(iframeEl, "show_organ_panel", { patient_id: patientId, organ });
-
       iframeEl.onload = () => {
         document.getElementById("panel-loading").style.display = "none";
       };
+
+      loadIntoIframe(iframeEl, "show_organ_panel", { patient_id: patientId, organ });
+
+      window.location.hash = "organ=" + encodeURIComponent(organ);
     }
 
     async function init() {
@@ -178,8 +176,12 @@
       try {
         data = await fetchDashboardData(patientId);
       } catch (e) {
-        document.getElementById("organ-grid").innerHTML =
-          `<div style="grid-column:1/-1;color:#ef4444">Error loading data: ${e.message}</div>`;
+        const grid = document.getElementById("organ-grid");
+        grid.innerHTML = "";
+        const errDiv = document.createElement("div");
+        errDiv.style.cssText = "grid-column:1/-1;color:#ef4444";
+        errDiv.textContent = "Error loading data: " + e.message;
+        grid.appendChild(errDiv);
         return;
       }
 
@@ -201,7 +203,10 @@
       const iframe = document.getElementById("organ-iframe");
       grid.innerHTML = "";
       if (data.organs.length === 0) {
-        grid.innerHTML = '<div style="grid-column:1/-1;color:#94a3b8">No organ data found.</div>';
+        const noDataDiv = document.createElement("div");
+        noDataDiv.style.cssText = "grid-column:1/-1;color:#94a3b8";
+        noDataDiv.textContent = "No organ data found.";
+        grid.appendChild(noDataDiv);
         return;
       }
       for (const s of data.organs) {
@@ -209,13 +214,33 @@
         card.className = "organ-card";
         card.dataset.organ = s.organ;
         const badgeCls = RANK_BADGE[s.rank] ?? "badge-good";
-        card.innerHTML = `
-          <div class="row">
-            <span class="name">${s.emoji} ${s.organ.charAt(0).toUpperCase() + s.organ.slice(1)}</span>
-            <span class="badge ${badgeCls}">${s.rank}</span>
-          </div>
-          <div class="score">${s.score}/100</div>
-          <div class="meta">${s.flagged_count} flagged / ${s.parameter_count} total</div>`;
+
+        const row = document.createElement("div");
+        row.className = "row";
+
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "name";
+        nameSpan.textContent = s.emoji + " " + s.organ.charAt(0).toUpperCase() + s.organ.slice(1);
+
+        const badgeSpan = document.createElement("span");
+        badgeSpan.className = "badge " + badgeCls;
+        badgeSpan.textContent = s.rank;
+
+        row.appendChild(nameSpan);
+        row.appendChild(badgeSpan);
+
+        const scoreDiv = document.createElement("div");
+        scoreDiv.className = "score";
+        scoreDiv.textContent = s.score + "/100";
+
+        const metaDiv = document.createElement("div");
+        metaDiv.className = "meta";
+        metaDiv.textContent = s.flagged_count + " flagged / " + s.parameter_count + " total";
+
+        card.appendChild(row);
+        card.appendChild(scoreDiv);
+        card.appendChild(metaDiv);
+
         card.addEventListener("click", () => selectOrgan(s.organ, iframe));
         grid.appendChild(card);
       }

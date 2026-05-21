@@ -94,7 +94,7 @@
     import { getUrlParam, loadIntoIframe } from "./mcp-client.js";
 
     const patientId = getUrlParam("patient");
-    if (!patientId) { window.location.href = "index.html"; }
+    if (!patientId) { window.location.href = "index.html"; return; }
 
     document.getElementById("patient-label").textContent = "Patient: " + patientId;
     document.getElementById("back-link").href = "dashboard.html?patient=" + encodeURIComponent(patientId);
@@ -115,12 +115,12 @@
       planSection.style.display  = "none";
       readinessSection.style.display = "block";
 
-      loadIntoIframe(readinessIframe, "show_goal_view", { patient_id: patientId, goal });
-
       readinessIframe.onload = () => {
         analyseBtn.disabled = false;
         planTrigger.style.display = "block";
       };
+
+      loadIntoIframe(readinessIframe, "show_goal_view", { patient_id: patientId, goal });
     });
 
     document.getElementById("plan-btn").addEventListener("click", () => {

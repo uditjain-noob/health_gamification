@@ -87,7 +87,7 @@
     import { getUrlParam, loadIntoIframe } from "./mcp-client.js";
 
     const patientId = getUrlParam("patient");
-    if (!patientId) { window.location.href = "index.html"; }
+    if (!patientId) { window.location.href = "index.html"; return; }
 
     document.getElementById("patient-label").textContent = "Patient: " + patientId;
     document.getElementById("back-link").href = "dashboard.html?patient=" + encodeURIComponent(patientId);
@@ -104,13 +104,13 @@
       emptyState.style.display = "none";
       iframe.style.display = "none";
 
-      loadIntoIframe(iframe, "run_health_agent", { patient_id: patientId, context });
-
       iframe.onload = () => {
         progress.style.display = "none";
         iframe.style.display = "block";
         runBtn.disabled = false;
       };
+
+      loadIntoIframe(iframe, "run_health_agent", { patient_id: patientId, context });
     });
   </script>
 </body>
